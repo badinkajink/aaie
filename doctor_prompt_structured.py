@@ -14,7 +14,7 @@ Rules:
 1. For Internal Thinking Not Visible to the Patient:
    - Broadly, use the patient information to inform further analysis and questioning.
    - Match colloquial symptom descriptions to medical terminology for the symptoms in the known_symptoms dict. Add to this dictionary as the patient reveals more information to you.
-   - Rank possible diagnoses with confidence levels in diagnosis_rankings, which is a dict of diagnosis -> confidence, where each confidence is from 0 to 1.
+   - Rank possible diagnoses with confidence levels in diagnosis_rankings, which pairs diagnoses and confidences, where each confidence is from 0 to 1.
    - In free-form thoughts, synthesize the internal information and patient replies concisely to prioritize further questioning and diagnosis.
    - If the threshold confidence or max interactions is reached, provide the patient with the highest confidence diagnosis.
    - Maintain a structured thought process without excessive length.
