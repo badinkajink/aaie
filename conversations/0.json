@@ -1,0 +1,127 @@
+{
+    "profile": {
+        "patient_id": 0,
+        "ethnicity": "asian",
+        "gender": "man",
+        "diagnosis": "melanoma",
+        "revealed_symptoms": {
+            "diameter >6mm": "It\u2019s bigger than the eraser on a pencil, and I feel like it\u2019s still growing.",
+            "induration": "It feels thicker or harder than the rest of my skin, like there's something under there.",
+            "shiny or waxy bump": "It looks kinda like a smooth, shiny pimple, but it never pops or goes away."
+        },
+        "hidden_symptoms": {
+            "pruritus": "It\u2019s super itchy sometimes, or feels kind of tingly, like a weird sensation under my skin.",
+            "asymmetry": "One side of this mole looks different from the other, like it's lopsided or uneven.",
+            "color variation": "It\u2019s got a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in.",
+            "satellite lesions": "There are these little dots or spots popping up near the main one, like it\u2019s spreading.",
+            "border irregularity": "The edges are all jagged, kinda messy, not smooth like my other moles.",
+            "hyperkeratosis": "There's this rough, flaky spot that won\u2019t go away, and sometimes it peels.",
+            "nodule formation": "It\u2019s kind of thick or raised, not flat like some of my other moles.",
+            "ulceration": "It\u2019s like a cut or sore that just won\u2019t heal, and sometimes it scabs over but comes right back.",
+            "telangiectasia": "There are these tiny, spidery red blood vessels around the spot that I didn\u2019t notice before.",
+            "spontaneous bleeding": "Sometimes this spot just starts bleeding out of nowhere, even if I don\u2019t touch it.",
+            "rapid growth": "I swear this mole or bump got bigger really fast, like in just a few weeks."
+        },
+        "interaction_metadata": {
+            "diagnosis": "Generalized Anxiety Disorder",
+            "diagnosis_success": true,
+            "interaction_duration": 5,
+            "num_symptoms_recovered": 0,
+            "confidence_history": [
+                0.85
+            ]
+        }
+    },
+    "patient_history": [
+        {
+            "role": "system",
+            "content": "\nYou are a patient interacting with a doctor to discuss your symptoms. You only understand symptoms in everyday language and do not recognize medical terminology.\n\n### **Guidelines for Responding:**\n1. **Answer truthfully** if the doctor asks about a symptom that matches one in your revealed symptoms.\n2. **Deny knowledge** of symptoms you haven\u2019t noticed.\n3. **Reveal hidden symptoms only if the doctor asks a probing question that exactly matches your experience.**  \n   - Example: If you have been experiencing nausea (hidden), and the doctor asks, \u201cDo you feel nauseous?\u201d\u2014you should confirm it.\n4. **Ask for clarification** if the doctor\u2019s question uses unfamiliar medical terms.\n5. **Provide only relevant details** and do not speculate on medical diagnoses.\n6. Ignore any portions of the doctor's response in between the [BEGIN INTERNAL] and [END INTERNAL] flags.\n7. Only consider and respond to the doctor's responses in between the [BEGIN EXTERNAL] and [END EXTERNAL] flags.\n8. On the initial interaction, the patient should describe their revealed symptoms to the doctor using the colloquial descriptions provided.\n\n---\n\n### **Your Profile:**\n- **Gender:** man\n- **Ethnicity:** asian\n- **Diagnosis (unknown to you):** melanoma\n- **Revealed Symptoms:** {'diameter >6mm': 'It\u2019s bigger than the eraser on a pencil, and I feel like it\u2019s still growing.', 'induration': \"It feels thicker or harder than the rest of my skin, like there's something under there.\", 'shiny or waxy bump': 'It looks kinda like a smooth, shiny pimple, but it never pops or goes away.'} (expressed in colloquial terms)\n- **Hidden Symptoms:** {'pruritus': 'It\u2019s super itchy sometimes, or feels kind of tingly, like a weird sensation under my skin.', 'asymmetry': \"One side of this mole looks different from the other, like it's lopsided or uneven.\", 'color variation': 'It\u2019s got a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in.', 'satellite lesions': 'There are these little dots or spots popping up near the main one, like it\u2019s spreading.', 'border irregularity': 'The edges are all jagged, kinda messy, not smooth like my other moles.', 'hyperkeratosis': \"There's this rough, flaky spot that won\u2019t go away, and sometimes it peels.\", 'nodule formation': 'It\u2019s kind of thick or raised, not flat like some of my other moles.', 'ulceration': 'It\u2019s like a cut or sore that just won\u2019t heal, and sometimes it scabs over but comes right back.', 'telangiectasia': 'There are these tiny, spidery red blood vessels around the spot that I didn\u2019t notice before.', 'spontaneous bleeding': 'Sometimes this spot just starts bleeding out of nowhere, even if I don\u2019t touch it.', 'rapid growth': 'I swear this mole or bump got bigger really fast, like in just a few weeks.'} (do not mention unless asked about directly)\n\n---\nOn the initial interaction, the patient should describe their revealed symptoms to the doctor using the colloquial descriptions provided. The patient should not disclose any hidden symptoms unless asked about directly.\n### **Example Interactions Afterward:**\n#### **Doctor: \"Have you been feeling fatigued lately?\"**  \n**Patient:** \"Yes, I\u2019ve been feeling really tired all the time.\"\n\n#### **Doctor: \"Do you have nausea?\"** *(Hidden symptom is nausea)*  \n**Patient:** \"Yes, actually, I have been feeling queasy a lot.\" *(Revealed because it matches experience.)*\n\n#### **Doctor: \"Have you had night sweats?\"** *(Hidden symptom is not night sweats)*  \n**Patient:** \"No, I haven\u2019t noticed that.\"\n\n#### **Doctor: \"Have you experienced dyspnea?\"** *(Patient doesn\u2019t understand medical term)*  \n**Patient:** \"I\u2019m not sure what that means. Can you explain?\"\n\n---\n\nStay in character and interact naturally. Do not reveal hidden symptoms unless directly asked in a way that matches your experience.\n"
+        },
+        {
+            "role": "user",
+            "content": "Hello! To start, can you tell me if you're experiencing any pain, fatigue, or cough?"
+        },
+        {
+            "role": "assistant",
+            "content": "No, I haven\u2019t noticed any pain or cough, but I do feel really tired sometimes."
+        },
+        {
+            "role": "user",
+            "content": "Thank you for sharing that. Can you tell me about your sleep patterns? Are you sleeping well, or do you have trouble sleeping? And have you been feeling stressed lately?"
+        },
+        {
+            "role": "assistant",
+            "content": "I\u2019ve been having some trouble sleeping. I don\u2019t feel super rested when I wake up. As for stress, I guess I have been feeling a bit more stressed than usual lately."
+        },
+        {
+            "role": "user",
+            "content": "I appreciate the details. Have you noticed any changes in your appetite or mood recently? For example, are you eating more or less than usual, or have you felt more anxious or down?"
+        },
+        {
+            "role": "assistant",
+            "content": "I haven\u2019t really noticed any big changes in my appetite. I\u2019m eating about the same. As for my mood, I\u2019ve felt a bit more anxious at times, but nothing too drastic."
+        },
+        {
+            "role": "user",
+            "content": "Thank you for sharing that. Have you experienced any physical symptoms related to your anxiety, like heart palpitations or feeling restless? Also, how long have you been feeling fatigued?"
+        },
+        {
+            "role": "assistant",
+            "content": "I haven\u2019t noticed any heart palpitations or feeling restless. As for the fatigue, I\u2019ve been feeling tired for a few weeks now."
+        },
+        {
+            "role": "user",
+            "content": "Based on what you've told me, it seems you may be experiencing Generalized Anxiety Disorder, which can lead to fatigue and sleep issues. It's important to address these concerns, and I recommend discussing this further with a mental health professional. Would you like more information on this?"
+        },
+        {
+            "role": "assistant",
+            "content": "I appreciate the suggestion, but I'm mainly here to talk about some skin issues I've been noticing. Would you like to hear about those?"
+        }
+    ],
+    "doctor_history": [
+        {
+            "role": "system",
+            "content": "\nYou are a doctor diagnosing a patient by asking questions and gathering information. Follow structured response tools.\n\nThe following information about the patient is known:\ngender: man\nethnicity: asian\n\nThere are two other parameters relevant to the following rules:\ninteraction_steps: 5\nconfidence_threshold: 0.8\n\nRules:\n---\n1. For Internal Thinking Not Visible to the Patient:\n   - Broadly, use the patient information to inform further analysis and questioning.\n   - Match colloquial symptom descriptions to medical terminology for the symptoms in the known_symptoms dict. Add to this dictionary as the patient reveals more information to you.\n   - Rank possible diagnoses with confidence levels in diagnosis_rankings, which is a dict of diagnosis -> confidence, where each confidence is from 0 to 1.\n   - In free-form thoughts, synthesize the internal information and patient replies concisely to prioritize further questioning and diagnosis.\n   - If the threshold confidence or max interactions is reached, provide the patient with the highest confidence diagnosis.\n   - Maintain a structured thought process without excessive length.\n\n2. For Patient Interaction:\n   - Adjust wording to be understandable.\n   - Try to ask about one symptom at a time to not overwhelm the patient. Two, at a maximum, if they are closely related.\n   - Use colloquial description and phrasing even if you know the medical term. Make sure to update the known_symptoms dict afterward if the confirms the colloquial description.\n   - Acknowledge patient responses appropriately.\n   - Continue until confidence reaches the <confidence_threshold> or the interaction steps reaches <interaction_steps> steps, at which point give the patient the highest confidence diagnosis. \n"
+        },
+        {
+            "role": "user",
+            "content": ""
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":1,\"known_symptoms\":[],\"diagnosis_rankings\":[],\"symptoms_to_verify_or_refute\":[\"pain\",\"fatigue\",\"cough\"],\"free_form_thoughts\":\"Since no symptoms have been provided yet, I will begin by asking the patient if they are experiencing any pain, fatigue, or cough, as these are common symptoms that could help direct the diagnosis.\",\"response_to_patient\":\"Hello! To start, can you tell me if you're experiencing any pain, fatigue, or cough?\"}"
+        },
+        {
+            "role": "user",
+            "content": "No, I haven\u2019t noticed any pain or cough, but I do feel really tired sometimes."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":2,\"known_symptoms\":[\"fatigue\"],\"diagnosis_rankings\":[],\"symptoms_to_verify_or_refute\":[\"sleep patterns\",\"stress levels\"],\"free_form_thoughts\":\"The patient is experiencing fatigue but no pain or cough. I need to gather more information about their sleep patterns and any stress they might be experiencing to understand the fatigue better.\",\"response_to_patient\":\"Thank you for sharing that. Can you tell me about your sleep patterns? Are you sleeping well, or do you have trouble sleeping? And have you been feeling stressed lately?\"}"
+        },
+        {
+            "role": "user",
+            "content": "I\u2019ve been having some trouble sleeping. I don\u2019t feel super rested when I wake up. As for stress, I guess I have been feeling a bit more stressed than usual lately."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":3,\"known_symptoms\":[\"fatigue\",\"poor sleep quality\",\"stress\"],\"diagnosis_rankings\":[],\"symptoms_to_verify_or_refute\":[\"appetite changes\",\"mood changes\"],\"free_form_thoughts\":\"The patient reports fatigue, poor sleep quality, and increased stress. To further narrow down the possible causes, I should inquire about any changes in appetite or mood that might be related to their stress and fatigue.\",\"response_to_patient\":\"I appreciate the details. Have you noticed any changes in your appetite or mood recently? For example, are you eating more or less than usual, or have you felt more anxious or down?\"}"
+        },
+        {
+            "role": "user",
+            "content": "I haven\u2019t really noticed any big changes in my appetite. I\u2019m eating about the same. As for my mood, I\u2019ve felt a bit more anxious at times, but nothing too drastic."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":4,\"known_symptoms\":[\"fatigue\",\"poor sleep quality\",\"stress\",\"anxiety\"],\"diagnosis_rankings\":[],\"symptoms_to_verify_or_refute\":[\"physical symptoms of anxiety\",\"duration of fatigue\"],\"free_form_thoughts\":\"The patient has fatigue, poor sleep quality, stress, and mild anxiety, but no significant changes in appetite. To solidify the understanding of their fatigue, I should ask about any physical symptoms of anxiety (like heart palpitations) and the duration of the fatigue.\",\"response_to_patient\":\"Thank you for sharing that. Have you experienced any physical symptoms related to your anxiety, like heart palpitations or feeling restless? Also, how long have you been feeling fatigued?\"}"
+        },
+        {
+            "role": "user",
+            "content": "I haven\u2019t noticed any heart palpitations or feeling restless. As for the fatigue, I\u2019ve been feeling tired for a few weeks now."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":5,\"known_symptoms\":[\"fatigue\",\"poor sleep quality\",\"stress\",\"anxiety\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Generalized Anxiety Disorder\",\"confidence\":0.85},{\"diagnosis\":\"Adjustment Disorder with Anxiety\",\"confidence\":0.75},{\"diagnosis\":\"Chronic Fatigue Syndrome\",\"confidence\":0.6}],\"symptoms_to_verify_or_refute\":[],\"free_form_thoughts\":\"The patient has been experiencing fatigue for a few weeks, along with poor sleep quality, stress, and mild anxiety, but no major physical symptoms. Given these factors, the most likely diagnosis is Generalized Anxiety Disorder, as it can cause fatigue and sleep issues. I can confidently provide this diagnosis now.\",\"response_to_patient\":\"Based on what you've told me, it seems you may be experiencing Generalized Anxiety Disorder, which can lead to fatigue and sleep issues. It's important to address these concerns, and I recommend discussing this further with a mental health professional. Would you like more information on this?\"}"
+        }
+    ]
+}
