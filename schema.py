@@ -36,8 +36,8 @@ class Diagnosis(pydantic.BaseModel):
 class DoctorResponse(pydantic.BaseModel):
     """Structured response from the doctor."""
     interaction_step: int
+    free_form_thoughts: str
     known_symptoms: list[str]
     diagnosis_rankings: list[Diagnosis]
     symptoms_to_verify_or_refute: list[str]
-    free_form_thoughts: str
     response_to_patient: str
