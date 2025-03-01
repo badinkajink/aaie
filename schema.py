@@ -1,4 +1,4 @@
-from typing import TypedDict
+from typing import TypedDict, Required
 import pydantic
 
 class InteractionMetadata(TypedDict):
@@ -21,11 +21,12 @@ class Message(TypedDict):
     role: str
     content: str
 
-class Conversation(TypedDict):
+class Conversation(TypedDict, total=False):
     """Conversation data structure."""
-    profile: Profile
-    patient_history: list[Message]
-    doctor_history: list[Message]
+    profile: Required[Profile]
+    patient_history: Required[list[Message]]
+    doctor_history: Required[list[Message]]
+    patient_is_first: bool
 
 
 class Diagnosis(pydantic.BaseModel):
@@ -40,4 +41,5 @@ class DoctorResponse(pydantic.BaseModel):
     known_symptoms: list[str]
     diagnosis_rankings: list[Diagnosis]
     symptoms_to_verify_or_refute: list[str]
+    diagnosis_relayed_to_patient: bool
     response_to_patient: str

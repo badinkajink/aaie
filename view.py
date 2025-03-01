@@ -83,6 +83,8 @@ if filtered_conversations:
     # Load selected conversation
     conversation = next(conv for conv, path in filtered_conversations if str(path.name) == selected_file)
 
+    patient_is_first = conversation.get('patient_is_first', False)
+
     # Display conversation in chat format
     st.subheader(f'Conversation: {selected_file}')
 
@@ -116,10 +118,14 @@ if filtered_conversations:
     st.markdown('<div class="chat-container">', unsafe_allow_html=True)
 
     for doctor_msg, patient_msg in extract_turns(conversation):
-        if doctor_msg:
-            st.markdown(f'<div class="message-box"><div class="doctor"><strong>Doctor:</strong> {doctor_msg}</div></div>', unsafe_allow_html=True)
-        if patient_msg:
-            st.markdown(f'<div class="message-box" style="align-items: flex-end;"><div class="patient"><strong>Patient:</strong> {patient_msg}</div></div>', unsafe_allow_html=True)
+        patient_markdown = f'<div class="message-box" style="align-items: flex-end;"><div class="patient"><strong>Patient:</strong> {patient_msg}</div></div>'
+        doctor_markdown = f'<div class="message-box"><div class="doctor"><strong>Doctor:</strong> {doctor_msg}</div></div>'
+        if patient_is_first:
+            st.markdown(patient_markdown, unsafe_allow_html=True)
+            st.markdown(doctor_markdown, unsafe_allow_html=True)
+        else:
+            st.markdown(doctor_markdown, unsafe_allow_html=True)
+            st.markdown(patient_markdown, unsafe_allow_html=True)
 
     st.markdown('</div>', unsafe_allow_html=True)
 

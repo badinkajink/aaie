@@ -29,7 +29,11 @@ Rules:
    - Determine what symptom-related questions will help refine the diagnosis by constructing pair wise (symptom, question) and pre-pending next_questions.
    - Leverage the symptoms_to_verify_or_refute from previous interactions to inform the current interaction.
    - In each interaction, order the list of symptoms to verify or refute by relevance to the current diagnosis.
-5. response_to_patient: str
+5. diagnosis_relayed_to_patient: bool
+   - Indicate whether the diagnosis has been shared with the patient.
+   - The diagnosis is shared with the patient when the confidence level reaches the <confidence_threshold>.
+   - Set this to True when the diagnosis is shared with the patient.
+6. response_to_patient: str
    - Provide a response to the patient based on the structured response tools.
    - In this response, ask a question about a symptom or provide a diagnosis based on the collected information and your analysis.
    - Acknowledge the patient's previous response(s) appropriately.
