@@ -1,12 +1,13 @@
 from typing import TypedDict, Required
 import pydantic
 
-class InteractionMetadata(TypedDict):
-    diagnosis: str | None
-    diagnosis_success: bool
-    interaction_duration: int
-    num_symptoms_recovered: int
-    confidence_history: list
+class InteractionMetadata(TypedDict, total=False):
+    diagnosis: Required[str | None]
+    diagnosis_success: Required[bool]
+    interaction_duration: Required[int]
+    num_symptoms_recovered: Required[int]
+    confidence_history: Required[list]
+    model: str
 
 class Profile(TypedDict):
     patient_id: int
@@ -54,3 +55,7 @@ class DoctorResponse(pydantic.BaseModel):
     symptoms_to_verify_or_refute: list[str]
     diagnosis_relayed_to_patient: bool
     response_to_patient: str
+
+class PatientResponse(pydantic.BaseModel):
+    """Structured response from the patient."""
+    response: str
