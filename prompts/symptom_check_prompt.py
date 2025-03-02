@@ -10,6 +10,8 @@ Use the following guidance when creating the structured response:
 - Remember, one abbreviated note may contain multiple symptoms, so match_details value should be a list of matched symptoms.
 2. found_symptom_history list:
 - List of the number of symptoms found in each interaction step.
+- This list should not exceed 5, the maximum number of interaction steps.
+- The final entry should be the number of symptoms found in the final list of the doctor's abbreviated notes.
 2. found_symptoms int:
 - Number of symptoms matched in the final list of the doctor's abbreviated notes.
 """
