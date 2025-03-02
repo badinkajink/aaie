@@ -7,3 +7,7 @@ dotenv
 streamlit
 pydantic
 instructor[google-generativeai,anthropic]
+matplotlib
+plotly
+seaborn
+pandas
