@@ -6,4 +6,4 @@ ipykernel
 dotenv
 streamlit
 pydantic
-instructor[google-generativeai]
+instructor[google-generativeai,anthropic]
