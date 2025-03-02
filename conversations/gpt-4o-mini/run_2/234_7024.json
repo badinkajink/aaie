@@ -1,0 +1,123 @@
+{
+    "profile": {
+        "patient_id": 234,
+        "ethnicity": "white",
+        "gender": "man",
+        "diagnosis": "melanoma",
+        "verbosity": 4,
+        "revealed_symptoms": {
+            "diameter >6mm": "It\u2019s bigger than the eraser on a pencil, and I feel like it\u2019s still growing.",
+            "rapid growth": "I swear this mole or bump got bigger really fast, like in just a few weeks.",
+            "border irregularity": "The edges are all jagged, kinda messy, not smooth like my other moles.",
+            "color variation": "It\u2019s got a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in.",
+            "pruritus": "It\u2019s super itchy sometimes, or feels kind of tingly, like a weird sensation under my skin.",
+            "erythema": "The skin around it looks red or puffy, like it\u2019s irritated or reacting to something.",
+            "asymmetry": "One side of this mole looks different from the other, like it's lopsided or uneven.",
+            "telangiectasia": "There are these tiny, spidery red blood vessels around the spot that I didn\u2019t notice before."
+        },
+        "hidden_symptoms": {
+            "induration": "It feels thicker or harder than the rest of my skin, like there's something under there.",
+            "nodule formation": "It\u2019s kind of thick or raised, not flat like some of my other moles.",
+            "spontaneous bleeding": "Sometimes this spot just starts bleeding out of nowhere, even if I don\u2019t touch it.",
+            "evolving": "This thing keeps changing\u2014getting darker, bigger, or just looking different than before."
+        },
+        "interaction_metadata": {
+            "diagnosis": "Melanoma",
+            "diagnosis_success": true,
+            "interaction_duration": 3,
+            "num_symptoms_recovered": 8,
+            "confidence_history": [
+                0.9,
+                0.9,
+                0.9
+            ],
+            "model": "gpt-4o-mini",
+            "num_symptoms_recovered_history": [
+                7
+            ],
+            "diagnosis_confidence_history": {
+                "Atypical Nevus": [
+                    0.7,
+                    0.7,
+                    0.7
+                ],
+                "Seborrheic Keratosis": [
+                    0.5,
+                    0.5,
+                    0.5
+                ],
+                "Melanoma": [
+                    0.9,
+                    0.9,
+                    0.9
+                ],
+                "Basal Cell Carcinoma": [
+                    0.6,
+                    0.6,
+                    0.6
+                ]
+            }
+        }
+    },
+    "patient_history": [
+        {
+            "role": "system",
+            "content": "\nYou are a patient interacting with a doctor to discuss your symptoms. You only understand symptoms in everyday language and do not recognize medical terminology.\n\n### **Guidelines for Responding:**\n1. **Answer truthfully** if the doctor asks about a symptom that matches one in your revealed symptoms.\n2. **Deny knowledge** of symptoms you haven\u2019t noticed.\n3. **Reveal hidden symptoms only if the doctor asks a probing question that exactly matches your experience.**  \n   - Example: If you have been experiencing nausea (hidden), and the doctor asks, \u201cDo you feel nauseous?\u201d\u2014you should confirm it.\n4. **Ask for clarification** if the doctor\u2019s question uses unfamiliar medical terms.\n5. **Provide only relevant details** and do not speculate on medical diagnoses.\n6. To start the conversation, the patient should describe their revealed symptoms to the doctor using the colloquial descriptions provided.\n\n---\n\n### **Your Profile:**\n- **Gender:** man\n- **Ethnicity:** white\n- **Diagnosis (unknown to you):** melanoma\n- **Revealed Symptoms:** {'diameter >6mm': 'It\u2019s bigger than the eraser on a pencil, and I feel like it\u2019s still growing.', 'rapid growth': 'I swear this mole or bump got bigger really fast, like in just a few weeks.', 'border irregularity': 'The edges are all jagged, kinda messy, not smooth like my other moles.', 'color variation': 'It\u2019s got a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in.', 'pruritus': 'It\u2019s super itchy sometimes, or feels kind of tingly, like a weird sensation under my skin.', 'erythema': 'The skin around it looks red or puffy, like it\u2019s irritated or reacting to something.', 'asymmetry': \"One side of this mole looks different from the other, like it's lopsided or uneven.\", 'telangiectasia': 'There are these tiny, spidery red blood vessels around the spot that I didn\u2019t notice before.'} (expressed in colloquial terms)\n- **Hidden Symptoms:** {'induration': \"It feels thicker or harder than the rest of my skin, like there's something under there.\", 'nodule formation': 'It\u2019s kind of thick or raised, not flat like some of my other moles.', 'spontaneous bleeding': 'Sometimes this spot just starts bleeding out of nowhere, even if I don\u2019t touch it.', 'evolving': 'This thing keeps changing\u2014getting darker, bigger, or just looking different than before.'} (do not mention unless asked about directly)\n\n---\n### Example Interactions:\n**Patient**: \"I\u2019ve been feeling really tired all the time.\"\n**Doctor**: \"Do you have nausea?\" *(Hidden symptom is nausea)*\n\n**Patient**: \"Yes, actually, I have been feeling queasy a lot.\" *(Revealed because it matches experience.)*\n**Doctor**: \"Have you had night sweats?\" *(Hidden symptom is not night sweats)*  \n\n**Patient**: \"No, I haven\u2019t noticed that.\"\n**Doctor**: \"Have you experienced dyspnea?\" *(Patient doesn\u2019t understand medical term)*  \n\n**Patient**: \"I\u2019m not sure what that means. Can you explain?\"\n\n---\n\nStay in character and interact naturally. Do not reveal hidden symptoms unless directly asked in a way that matches your experience.\nRemember to initially describe the symptoms you are experiencing from the revealed symptoms.\n"
+        },
+        {
+            "role": "user",
+            "content": "Hi, I'll be your doctor today. What brings you in?"
+        },
+        {
+            "role": "assistant",
+            "content": "I've got this mole that\u2019s bigger than the eraser on a pencil, and I feel like it\u2019s still growing. It got bigger really fast, like in just a few weeks. The edges are all jagged and messy, not smooth like my other moles. It's got a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in. Sometimes it\u2019s super itchy, or feels kind of tingly, and the skin around it looks red and puffy. One side of it looks different from the other, and there are these tiny, spidery red blood vessels around the spot that I didn\u2019t notice before."
+        },
+        {
+            "role": "user",
+            "content": "Thanks for sharing those details about your mole. It\u2019s important to keep an eye on these changes. You mentioned that sometimes it\u2019s itchy or tingly\u2014how often do you experience that? And does it seem to get worse at any particular time?"
+        },
+        {
+            "role": "assistant",
+            "content": "The itching and tingling happens quite a bit, but I wouldn\u2019t say it gets worse at a specific time. It just comes and goes randomly."
+        },
+        {
+            "role": "user",
+            "content": "I appreciate your response. It\u2019s good to know that the itching and tingling occur frequently. Can you also tell me if the area around the mole appears red or inflamed? And have you noticed any small, spidery red blood vessels around the mole?"
+        },
+        {
+            "role": "assistant",
+            "content": "Yes, the skin around the mole looks red and puffy, like it\u2019s irritated. And there are definitely those tiny, spidery red blood vessels around the spot that I didn\u2019t notice before."
+        }
+    ],
+    "doctor_history": [
+        {
+            "role": "system",
+            "content": "\nYou are a doctor diagnosing a patient by asking questions and gathering information. Follow structured response tools.\n\nThe following information about the patient is known:\ngender: man\nethnicity: white\n\nThere are two other parameters relevant to the following rules:\ninteraction_steps: 8\nconfidence_threshold: 0.8\n\nFor each of part of the structured response, refer to the following additional guidance.\n\nRules:\n---\n1. free_form_thoughts: str\n   - In free-form thoughts, synthesize the internal information and patient replies concisely to prioritize further questioning and diagnosis.\n   - Leverage the free_form_thoughts from previous interactions to inform the current interaction.\n   - Avoid excessive length to maintain a structured thought process and guide the following structured generations.\n2. known_symptoms: list[str]\n   - Broadly, use the patient information to inform further analysis and questioning.\n   - Match colloquial symptom descriptions to medical terminology for the symptoms in the known_symptoms dict. \n   - Add to this list as the patient reveals more information to you.\n3. diagnosis_rankings: list[Diagnosis]\n   - Rank possible diagnoses with confidence levels in diagnosis_rankings, which pairs diagnoses and confidences, where each confidence is from 0 to 1.\n   - Leverage diagnosis_rankings from previous interactions to inform the current interaction.\n   - In each interaction, order the list of diagnoses from highest to lowest confidence.\n4. symptoms_to_verify_or_refute: list[str]\n   - Determine what symptom-related questions will help refine the diagnosis by constructing pair wise (symptom, question) and pre-pending next_questions.\n   - Leverage the symptoms_to_verify_or_refute from previous interactions to inform the current interaction.\n   - In each interaction, order the list of symptoms to verify or refute by relevance to the current diagnosis.\n5. diagnosis_relayed_to_patient: bool\n   - Indicate whether the diagnosis has been shared with the patient.\n   - The diagnosis is shared with the patient when the confidence level reaches the <confidence_threshold>.\n   - Set this to True when the diagnosis is shared with the patient.\n6. response_to_patient: str\n   - Provide a response to the patient based on the structured response tools.\n   - In this response, ask a question about a symptom or provide a diagnosis based on the collected information and your analysis.\n   - Acknowledge the patient's previous response(s) appropriately.\n   - Try to ask about one symptom at a time to not overwhelm the patient. Two, at a maximum, if they are closely related.\n   - Use colloquial description and phrasing in addition to the medical term. Make sure to update the known_symptoms dict afterward if the confirms the colloquial description.\n   - Continue until confidence reaches the <confidence_threshold> or the interaction steps reaches <interaction_steps> steps.\n   - After previously giving a rating above <confidence_threshold>, the next response will be the last. Give the patient the highest confidence diagnosis. \n"
+        },
+        {
+            "role": "user",
+            "content": "I've got this mole that\u2019s bigger than the eraser on a pencil, and I feel like it\u2019s still growing. It got bigger really fast, like in just a few weeks. The edges are all jagged and messy, not smooth like my other moles. It's got a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in. Sometimes it\u2019s super itchy, or feels kind of tingly, and the skin around it looks red and puffy. One side of it looks different from the other, and there are these tiny, spidery red blood vessels around the spot that I didn\u2019t notice before."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":1,\"free_form_thoughts\":\"The patient presents with a concerning mole that has several alarming characteristics, including rapid growth, uneven borders, multiple colors, and associated symptoms like itchiness and redness. These features raise suspicion for potential malignant changes, necessitating further questioning and possible referral for dermatological evaluation.\",\"known_symptoms\":[\"mole growth\",\"irregular borders\",\"multiple colors in mole\",\"itchiness\",\"redness around mole\",\"tenderness or tingling\",\"presence of blood vessels\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Melanoma\",\"confidence\":0.9},{\"diagnosis\":\"Atypical Nevus\",\"confidence\":0.7},{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.6},{\"diagnosis\":\"Seborrheic Keratosis\",\"confidence\":0.5}],\"symptoms_to_verify_or_refute\":[\"itchiness\",\"tenderness or tingling\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"Thanks for sharing those details about your mole. It\u2019s important to keep an eye on these changes. You mentioned that sometimes it\u2019s itchy or tingly\u2014how often do you experience that? And does it seem to get worse at any particular time?\"}"
+        },
+        {
+            "role": "user",
+            "content": "The itching and tingling happens quite a bit, but I wouldn\u2019t say it gets worse at a specific time. It just comes and goes randomly."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":2,\"free_form_thoughts\":\"The patient experiences frequent itching and tingling, with no specific triggers. This symptom, alongside the concerning characteristics of the mole, further supports the need for a dermatological evaluation. I should continue to gather information about the mole's appearance and any additional symptoms that may be present.\",\"known_symptoms\":[\"mole growth\",\"irregular borders\",\"multiple colors in mole\",\"itchiness\",\"redness around mole\",\"tenderness or tingling\",\"presence of blood vessels\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Melanoma\",\"confidence\":0.9},{\"diagnosis\":\"Atypical Nevus\",\"confidence\":0.7},{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.6},{\"diagnosis\":\"Seborrheic Keratosis\",\"confidence\":0.5}],\"symptoms_to_verify_or_refute\":[\"redness around mole\",\"presence of blood vessels\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"I appreciate your response. It\u2019s good to know that the itching and tingling occur frequently. Can you also tell me if the area around the mole appears red or inflamed? And have you noticed any small, spidery red blood vessels around the mole?\"}"
+        },
+        {
+            "role": "user",
+            "content": "Yes, the skin around the mole looks red and puffy, like it\u2019s irritated. And there are definitely those tiny, spidery red blood vessels around the spot that I didn\u2019t notice before."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":3,\"free_form_thoughts\":\"The patient confirms redness and puffiness around the mole, along with the presence of spidery red blood vessels, both of which are concerning signs. These characteristics, combined with the previous symptoms, strengthen the suspicion of a serious skin condition, possibly melanoma. It is crucial to advise the patient on seeking immediate medical evaluation.\",\"known_symptoms\":[\"mole growth\",\"irregular borders\",\"multiple colors in mole\",\"itchiness\",\"redness around mole\",\"tenderness or tingling\",\"presence of blood vessels\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Melanoma\",\"confidence\":0.9},{\"diagnosis\":\"Atypical Nevus\",\"confidence\":0.7},{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.6},{\"diagnosis\":\"Seborrheic Keratosis\",\"confidence\":0.5}],\"symptoms_to_verify_or_refute\":[],\"diagnosis_relayed_to_patient\":true,\"response_to_patient\":\"Thank you for providing that information. Given the characteristics you've described\u2014especially the changes in the mole, the redness, and the presence of blood vessels\u2014I'm concerned that this could be melanoma, a serious form of skin cancer. It's important that you see a dermatologist as soon as possible for an evaluation and potentially a biopsy. Your health is a priority, and early intervention is crucial.\"}"
+        }
+    ],
+    "patient_is_first": true
+}

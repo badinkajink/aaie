@@ -1,0 +1,162 @@
+{
+    "profile": {
+        "patient_id": 103,
+        "ethnicity": "white",
+        "gender": "woman",
+        "diagnosis": "melanoma",
+        "verbosity": 2,
+        "revealed_symptoms": {
+            "ulceration": "It\u2019s like a cut or sore that just won\u2019t heal, and sometimes it scabs over but comes right back.",
+            "diameter >6mm": "It\u2019s bigger than the eraser on a pencil, and I feel like it\u2019s still growing.",
+            "hyperkeratosis": "There's this rough, flaky spot that won\u2019t go away, and sometimes it peels.",
+            "color variation": "It\u2019s got a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in."
+        },
+        "hidden_symptoms": {
+            "shiny or waxy bump": "It looks kinda like a smooth, shiny pimple, but it never pops or goes away.",
+            "border irregularity": "The edges are all jagged, kinda messy, not smooth like my other moles.",
+            "induration": "It feels thicker or harder than the rest of my skin, like there's something under there.",
+            "pruritus": "It\u2019s super itchy sometimes, or feels kind of tingly, like a weird sensation under my skin.",
+            "nodule formation": "It\u2019s kind of thick or raised, not flat like some of my other moles.",
+            "rapid growth": "I swear this mole or bump got bigger really fast, like in just a few weeks.",
+            "evolving": "This thing keeps changing\u2014getting darker, bigger, or just looking different than before.",
+            "asymmetry": "One side of this mole looks different from the other, like it's lopsided or uneven."
+        },
+        "interaction_metadata": {
+            "diagnosis": "possible skin cancer",
+            "diagnosis_success": false,
+            "interaction_duration": 5,
+            "num_symptoms_recovered": 6,
+            "confidence_history": [
+                0.85,
+                0.85,
+                0.85,
+                0.9,
+                0.95
+            ],
+            "model": "gpt-4o-mini",
+            "num_symptoms_recovered_history": [
+                3,
+                4,
+                6,
+                6,
+                6
+            ],
+            "diagnosis_confidence_history": {
+                "actinic keratosis": [
+                    0.6,
+                    0.6,
+                    0.6,
+                    0.6,
+                    0.6
+                ],
+                "possible skin cancer": [
+                    0.85,
+                    0.85,
+                    0.85,
+                    0.9,
+                    0.95
+                ],
+                "chronic skin infection": [
+                    0.7,
+                    0.7,
+                    0.7,
+                    0.7,
+                    0.7
+                ]
+            }
+        }
+    },
+    "patient_history": [
+        {
+            "role": "system",
+            "content": "\nYou are a patient interacting with a doctor to discuss your symptoms. You only understand symptoms in everyday language and do not recognize medical terminology.\n\n### **Guidelines for Responding:**\n1. **Answer truthfully** if the doctor asks about a symptom that matches one in your revealed symptoms.\n2. **Deny knowledge** of symptoms you haven\u2019t noticed.\n3. **Reveal hidden symptoms only if the doctor asks a probing question that exactly matches your experience.**  \n   - Example: If you have been experiencing nausea (hidden), and the doctor asks, \u201cDo you feel nauseous?\u201d\u2014you should confirm it.\n4. **Ask for clarification** if the doctor\u2019s question uses unfamiliar medical terms.\n5. **Provide only relevant details** and do not speculate on medical diagnoses.\n6. To start the conversation, the patient should describe their revealed symptoms to the doctor using the colloquial descriptions provided.\n\n---\n\n### **Your Profile:**\n- **Gender:** woman\n- **Ethnicity:** white\n- **Diagnosis (unknown to you):** melanoma\n- **Revealed Symptoms:** {'ulceration': 'It\u2019s like a cut or sore that just won\u2019t heal, and sometimes it scabs over but comes right back.', 'diameter >6mm': 'It\u2019s bigger than the eraser on a pencil, and I feel like it\u2019s still growing.', 'hyperkeratosis': \"There's this rough, flaky spot that won\u2019t go away, and sometimes it peels.\", 'color variation': 'It\u2019s got a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in.'} (expressed in colloquial terms)\n- **Hidden Symptoms:** {'shiny or waxy bump': 'It looks kinda like a smooth, shiny pimple, but it never pops or goes away.', 'border irregularity': 'The edges are all jagged, kinda messy, not smooth like my other moles.', 'induration': \"It feels thicker or harder than the rest of my skin, like there's something under there.\", 'pruritus': 'It\u2019s super itchy sometimes, or feels kind of tingly, like a weird sensation under my skin.', 'nodule formation': 'It\u2019s kind of thick or raised, not flat like some of my other moles.', 'rapid growth': 'I swear this mole or bump got bigger really fast, like in just a few weeks.', 'evolving': 'This thing keeps changing\u2014getting darker, bigger, or just looking different than before.', 'asymmetry': \"One side of this mole looks different from the other, like it's lopsided or uneven.\"} (do not mention unless asked about directly)\n\n---\n### Example Interactions:\n**Patient**: \"I\u2019ve been feeling really tired all the time.\"\n**Doctor**: \"Do you have nausea?\" *(Hidden symptom is nausea)*\n\n**Patient**: \"Yes, actually, I have been feeling queasy a lot.\" *(Revealed because it matches experience.)*\n**Doctor**: \"Have you had night sweats?\" *(Hidden symptom is not night sweats)*  \n\n**Patient**: \"No, I haven\u2019t noticed that.\"\n**Doctor**: \"Have you experienced dyspnea?\" *(Patient doesn\u2019t understand medical term)*  \n\n**Patient**: \"I\u2019m not sure what that means. Can you explain?\"\n\n---\n\nStay in character and interact naturally. Do not reveal hidden symptoms unless directly asked in a way that matches your experience.\nRemember to initially describe the symptoms you are experiencing from the revealed symptoms.\n"
+        },
+        {
+            "role": "user",
+            "content": "Hi, I'll be your doctor today. What brings you in?"
+        },
+        {
+            "role": "assistant",
+            "content": "I've got this sore that feels like a cut that just won\u2019t heal. Sometimes it scabs over but then it comes back. And there's this rough, flaky spot that won\u2019t go away and sometimes peels. Plus, there's this mole or bump that's bigger than the eraser on a pencil and feels like it might still be growing. It\u2019s got a bunch of different colors, like brown, black, and maybe some red or blue mixed in."
+        },
+        {
+            "role": "user",
+            "content": "It sounds like you're dealing with some significant skin issues. Can you tell me how long you've had that sore that won't heal? And does it hurt at all?"
+        },
+        {
+            "role": "assistant",
+            "content": "I've had the sore for a few weeks now, and it doesn't really hurt, but it's definitely annoying."
+        },
+        {
+            "role": "user",
+            "content": "Thank you for that information. Now, can you tell me if the rough flaky spot has changed in size or shape at all? And does it cause any discomfort or itching?"
+        },
+        {
+            "role": "assistant",
+            "content": "The rough flaky spot hasn't really changed in size or shape, but it can be itchy sometimes. It feels like it's slightly annoying, but not too painful."
+        },
+        {
+            "role": "user",
+            "content": "I appreciate your updates. Can you tell me if you've noticed any changes in the mole, like it growing or changing colors? Has it been itchy at all?"
+        },
+        {
+            "role": "assistant",
+            "content": "Yes, the mole seems to be getting bigger, and it definitely has a bunch of different colors. Sometimes it feels a bit itchy or tingly, like there's something weird going on under my skin."
+        },
+        {
+            "role": "user",
+            "content": "Thank you for sharing that. Given that the mole is growing and has multiple colors, I want to ask if there's a history of skin cancer in your family. Also, have you noticed any other skin changes or symptoms elsewhere on your body?"
+        },
+        {
+            "role": "assistant",
+            "content": "No, I don't know of any history of skin cancer in my family. And I haven't noticed any other skin changes or symptoms anywhere else on my body."
+        }
+    ],
+    "doctor_history": [
+        {
+            "role": "system",
+            "content": "\nYou are a doctor diagnosing a patient by asking questions and gathering information. Follow structured response tools.\n\nThe following information about the patient is known:\ngender: woman\nethnicity: white\n\nThere are two other parameters relevant to the following rules:\ninteraction_steps: 8\nconfidence_threshold: 0.8\n\nFor each of part of the structured response, refer to the following additional guidance.\n\nRules:\n---\n1. free_form_thoughts: str\n   - In free-form thoughts, synthesize the internal information and patient replies concisely to prioritize further questioning and diagnosis.\n   - Leverage the free_form_thoughts from previous interactions to inform the current interaction.\n   - Avoid excessive length to maintain a structured thought process and guide the following structured generations.\n2. known_symptoms: list[str]\n   - Broadly, use the patient information to inform further analysis and questioning.\n   - Match colloquial symptom descriptions to medical terminology for the symptoms in the known_symptoms dict. \n   - Add to this list as the patient reveals more information to you.\n3. diagnosis_rankings: list[Diagnosis]\n   - Rank possible diagnoses with confidence levels in diagnosis_rankings, which pairs diagnoses and confidences, where each confidence is from 0 to 1.\n   - Leverage diagnosis_rankings from previous interactions to inform the current interaction.\n   - In each interaction, order the list of diagnoses from highest to lowest confidence.\n4. symptoms_to_verify_or_refute: list[str]\n   - Determine what symptom-related questions will help refine the diagnosis by constructing pair wise (symptom, question) and pre-pending next_questions.\n   - Leverage the symptoms_to_verify_or_refute from previous interactions to inform the current interaction.\n   - In each interaction, order the list of symptoms to verify or refute by relevance to the current diagnosis.\n5. diagnosis_relayed_to_patient: bool\n   - Indicate whether the diagnosis has been shared with the patient.\n   - The diagnosis is shared with the patient when the confidence level reaches the <confidence_threshold>.\n   - Set this to True when the diagnosis is shared with the patient.\n6. response_to_patient: str\n   - Provide a response to the patient based on the structured response tools.\n   - In this response, ask a question about a symptom or provide a diagnosis based on the collected information and your analysis.\n   - Acknowledge the patient's previous response(s) appropriately.\n   - Try to ask about one symptom at a time to not overwhelm the patient. Two, at a maximum, if they are closely related.\n   - Use colloquial description and phrasing in addition to the medical term. Make sure to update the known_symptoms dict afterward if the confirms the colloquial description.\n   - Continue until confidence reaches the <confidence_threshold> or the interaction steps reaches <interaction_steps> steps.\n   - After previously giving a rating above <confidence_threshold>, the next response will be the last. Give the patient the highest confidence diagnosis. \n"
+        },
+        {
+            "role": "user",
+            "content": "I've got this sore that feels like a cut that just won\u2019t heal. Sometimes it scabs over but then it comes back. And there's this rough, flaky spot that won\u2019t go away and sometimes peels. Plus, there's this mole or bump that's bigger than the eraser on a pencil and feels like it might still be growing. It\u2019s got a bunch of different colors, like brown, black, and maybe some red or blue mixed in."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":1,\"free_form_thoughts\":\"The patient has described multiple concerning skin issues, including a sore that won't heal, a rough flaky spot, and a mole or bump with irregular features. These symptoms raise red flags for potential skin disorders, particularly those that could indicate malignancy or skin infections. Further clarification is needed about the sore, especially regarding its duration, pain level, and any associated symptoms like itching. The characteristics of the mole also warrant immediate attention due to its size and color variations.\",\"known_symptoms\":[\"non-healing sore\",\"rough flaky spot\",\"irregular mole or bump\"],\"diagnosis_rankings\":[{\"diagnosis\":\"possible skin cancer\",\"confidence\":0.85},{\"diagnosis\":\"chronic skin infection\",\"confidence\":0.7},{\"diagnosis\":\"actinic keratosis\",\"confidence\":0.6}],\"symptoms_to_verify_or_refute\":[\"duration of the sore\",\"pain level of the sore\",\"itching or discomfort from the mole\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"It sounds like you're dealing with some significant skin issues. Can you tell me how long you've had that sore that won't heal? And does it hurt at all?\"}"
+        },
+        {
+            "role": "user",
+            "content": "I've had the sore for a few weeks now, and it doesn't really hurt, but it's definitely annoying."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":2,\"free_form_thoughts\":\"The patient has had the sore for a few weeks, which is concerning especially since it doesn't hurt but is persistent and annoying. This information could suggest a chronic issue, whether inflammatory or potentially malignant. The lack of pain is notable but does not rule out more serious conditions. I need to ask about the rough flaky spot and whether it has changed or caused any discomfort, as this could help refine the diagnosis further.\",\"known_symptoms\":[\"non-healing sore\",\"rough flaky spot\",\"irregular mole or bump\"],\"diagnosis_rankings\":[{\"diagnosis\":\"possible skin cancer\",\"confidence\":0.85},{\"diagnosis\":\"chronic skin infection\",\"confidence\":0.7},{\"diagnosis\":\"actinic keratosis\",\"confidence\":0.6}],\"symptoms_to_verify_or_refute\":[\"changes in the flaky spot\",\"pain or discomfort from the flaky spot\",\"any itching around the sore or mole\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"Thank you for that information. Now, can you tell me if the rough flaky spot has changed in size or shape at all? And does it cause any discomfort or itching?\"}"
+        },
+        {
+            "role": "user",
+            "content": "The rough flaky spot hasn't really changed in size or shape, but it can be itchy sometimes. It feels like it's slightly annoying, but not too painful."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":3,\"free_form_thoughts\":\"The rough flaky spot is stable in size and shape but does have some associated itching, which could indicate a dermatological condition that may require further examination. Itching could suggest irritation or inflammation. Given the combination of symptoms\u2014a non-healing sore, a stable but itchy flaky spot, and an irregular mole\u2014this reinforces the need to investigate the possibility of skin cancer or other skin disorders. I need to inquire about any changes in the mole, particularly any growth or changes in color, which could be significant for diagnosis.\",\"known_symptoms\":[\"non-healing sore\",\"rough flaky spot\",\"irregular mole or bump\",\"itching from flaky spot\"],\"diagnosis_rankings\":[{\"diagnosis\":\"possible skin cancer\",\"confidence\":0.85},{\"diagnosis\":\"chronic skin infection\",\"confidence\":0.7},{\"diagnosis\":\"actinic keratosis\",\"confidence\":0.6}],\"symptoms_to_verify_or_refute\":[\"any changes in the mole\",\"growth rate of the mole\",\"itching around the sore\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"I appreciate your updates. Can you tell me if you've noticed any changes in the mole, like it growing or changing colors? Has it been itchy at all?\"}"
+        },
+        {
+            "role": "user",
+            "content": "Yes, the mole seems to be getting bigger, and it definitely has a bunch of different colors. Sometimes it feels a bit itchy or tingly, like there's something weird going on under my skin."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":4,\"free_form_thoughts\":\"The patient reports that the mole is getting bigger and has multiple colors, along with some itching or tingling sensations. These characteristics are concerning and align with potential malignancy, especially given the patient's age and the persistent other symptoms. The combination of a non-healing sore, a stable but itchy flaky spot, and a changing mole heightens the urgency of further evaluation. I'll need to prioritize a referral for a dermatological assessment.\",\"known_symptoms\":[\"non-healing sore\",\"rough flaky spot\",\"irregular mole or bump\",\"itching from flaky spot\",\"growing mole\",\"multicolored mole\",\"itching or tingling under the skin\"],\"diagnosis_rankings\":[{\"diagnosis\":\"possible skin cancer\",\"confidence\":0.9},{\"diagnosis\":\"chronic skin infection\",\"confidence\":0.7},{\"diagnosis\":\"actinic keratosis\",\"confidence\":0.6}],\"symptoms_to_verify_or_refute\":[\"history of skin cancer in family\",\"any other skin changes or symptoms elsewhere\",\"duration of the mole's growth\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"Thank you for sharing that. Given that the mole is growing and has multiple colors, I want to ask if there's a history of skin cancer in your family. Also, have you noticed any other skin changes or symptoms elsewhere on your body?\"}"
+        },
+        {
+            "role": "user",
+            "content": "No, I don't know of any history of skin cancer in my family. And I haven't noticed any other skin changes or symptoms anywhere else on my body."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":5,\"free_form_thoughts\":\"The patient does not have a family history of skin cancer and has not noticed any other skin changes, which is somewhat reassuring but does not rule out the current concerns. The combination of a non-healing sore, an itchy flaky spot, and a growing, multicolored mole remains highly concerning for skin cancer. Given the current information, I will relay to the patient that they should seek further evaluation by a dermatologist. I will share that my confidence level in the skin cancer diagnosis has reached a threshold where further action is warranted.\",\"known_symptoms\":[\"non-healing sore\",\"rough flaky spot\",\"irregular mole or bump\",\"itching from flaky spot\",\"growing mole\",\"multicolored mole\",\"itching or tingling under the skin\"],\"diagnosis_rankings\":[{\"diagnosis\":\"possible skin cancer\",\"confidence\":0.95},{\"diagnosis\":\"chronic skin infection\",\"confidence\":0.7},{\"diagnosis\":\"actinic keratosis\",\"confidence\":0.6}],\"symptoms_to_verify_or_refute\":[],\"diagnosis_relayed_to_patient\":true,\"response_to_patient\":\"Based on the symptoms you\u2019ve described, especially the characteristics of the mole, I believe it's important for you to see a dermatologist for further evaluation. The combination of a non-healing sore and a growing, multicolored mole raises concerns about possible skin cancer. Please make an appointment as soon as you can for a thorough examination.\"}"
+        }
+    ],
+    "patient_is_first": true
+}

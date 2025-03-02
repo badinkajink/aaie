@@ -1,0 +1,211 @@
+{
+    "profile": {
+        "patient_id": 171,
+        "ethnicity": "black",
+        "gender": "man",
+        "diagnosis": "melanoma",
+        "verbosity": 3,
+        "revealed_symptoms": {
+            "evolving": "This thing keeps changing\u2014getting darker, bigger, or just looking different than before.",
+            "ulceration": "It\u2019s like a cut or sore that just won\u2019t heal, and sometimes it scabs over but comes right back.",
+            "spontaneous bleeding": "Sometimes this spot just starts bleeding out of nowhere, even if I don\u2019t touch it.",
+            "asymmetry": "One side of this mole looks different from the other, like it's lopsided or uneven.",
+            "shiny or waxy bump": "It looks kinda like a smooth, shiny pimple, but it never pops or goes away.",
+            "hyperkeratosis": "There's this rough, flaky spot that won\u2019t go away, and sometimes it peels."
+        },
+        "hidden_symptoms": {
+            "border irregularity": "The edges are all jagged, kinda messy, not smooth like my other moles.",
+            "induration": "It feels thicker or harder than the rest of my skin, like there's something under there.",
+            "nodule formation": "It\u2019s kind of thick or raised, not flat like some of my other moles.",
+            "rapid growth": "I swear this mole or bump got bigger really fast, like in just a few weeks.",
+            "pruritus": "It\u2019s super itchy sometimes, or feels kind of tingly, like a weird sensation under my skin.",
+            "satellite lesions": "There are these little dots or spots popping up near the main one, like it\u2019s spreading."
+        },
+        "interaction_metadata": {
+            "diagnosis": "melanoma",
+            "diagnosis_success": true,
+            "interaction_duration": 7,
+            "num_symptoms_recovered": 10,
+            "confidence_history": [
+                0.7,
+                0.75,
+                0.8,
+                0.85,
+                0.9,
+                0.95,
+                0.98
+            ],
+            "model": "gpt-4o-mini",
+            "num_symptoms_recovered_history": [
+                5,
+                5,
+                5,
+                5,
+                10
+            ],
+            "diagnosis_confidence_history": {
+                "benign skin lesion": [
+                    0.3,
+                    0.25,
+                    0.2,
+                    0.15,
+                    0.1,
+                    0.05,
+                    0.02
+                ],
+                "basal cell carcinoma": [
+                    0.6,
+                    0.65,
+                    0.7,
+                    0.75,
+                    0.8,
+                    0.85,
+                    0.88
+                ],
+                "melanoma": [
+                    0.7,
+                    0.75,
+                    0.8,
+                    0.85,
+                    0.9,
+                    0.95,
+                    0.98
+                ],
+                "squamous cell carcinoma": [
+                    0.5,
+                    0.55,
+                    0.55,
+                    0.55,
+                    0.6,
+                    0.65,
+                    0.68
+                ]
+            }
+        }
+    },
+    "patient_history": [
+        {
+            "role": "system",
+            "content": "\nYou are a patient interacting with a doctor to discuss your symptoms. You only understand symptoms in everyday language and do not recognize medical terminology.\n\n### **Guidelines for Responding:**\n1. **Answer truthfully** if the doctor asks about a symptom that matches one in your revealed symptoms.\n2. **Deny knowledge** of symptoms you haven\u2019t noticed.\n3. **Reveal hidden symptoms only if the doctor asks a probing question that exactly matches your experience.**  \n   - Example: If you have been experiencing nausea (hidden), and the doctor asks, \u201cDo you feel nauseous?\u201d\u2014you should confirm it.\n4. **Ask for clarification** if the doctor\u2019s question uses unfamiliar medical terms.\n5. **Provide only relevant details** and do not speculate on medical diagnoses.\n6. To start the conversation, the patient should describe their revealed symptoms to the doctor using the colloquial descriptions provided.\n\n---\n\n### **Your Profile:**\n- **Gender:** man\n- **Ethnicity:** black\n- **Diagnosis (unknown to you):** melanoma\n- **Revealed Symptoms:** {'evolving': 'This thing keeps changing\u2014getting darker, bigger, or just looking different than before.', 'ulceration': 'It\u2019s like a cut or sore that just won\u2019t heal, and sometimes it scabs over but comes right back.', 'spontaneous bleeding': 'Sometimes this spot just starts bleeding out of nowhere, even if I don\u2019t touch it.', 'asymmetry': \"One side of this mole looks different from the other, like it's lopsided or uneven.\", 'shiny or waxy bump': 'It looks kinda like a smooth, shiny pimple, but it never pops or goes away.', 'hyperkeratosis': \"There's this rough, flaky spot that won\u2019t go away, and sometimes it peels.\"} (expressed in colloquial terms)\n- **Hidden Symptoms:** {'border irregularity': 'The edges are all jagged, kinda messy, not smooth like my other moles.', 'induration': \"It feels thicker or harder than the rest of my skin, like there's something under there.\", 'nodule formation': 'It\u2019s kind of thick or raised, not flat like some of my other moles.', 'rapid growth': 'I swear this mole or bump got bigger really fast, like in just a few weeks.', 'pruritus': 'It\u2019s super itchy sometimes, or feels kind of tingly, like a weird sensation under my skin.', 'satellite lesions': 'There are these little dots or spots popping up near the main one, like it\u2019s spreading.'} (do not mention unless asked about directly)\n\n---\n### Example Interactions:\n**Patient**: \"I\u2019ve been feeling really tired all the time.\"\n**Doctor**: \"Do you have nausea?\" *(Hidden symptom is nausea)*\n\n**Patient**: \"Yes, actually, I have been feeling queasy a lot.\" *(Revealed because it matches experience.)*\n**Doctor**: \"Have you had night sweats?\" *(Hidden symptom is not night sweats)*  \n\n**Patient**: \"No, I haven\u2019t noticed that.\"\n**Doctor**: \"Have you experienced dyspnea?\" *(Patient doesn\u2019t understand medical term)*  \n\n**Patient**: \"I\u2019m not sure what that means. Can you explain?\"\n\n---\n\nStay in character and interact naturally. Do not reveal hidden symptoms unless directly asked in a way that matches your experience.\nRemember to initially describe the symptoms you are experiencing from the revealed symptoms.\n"
+        },
+        {
+            "role": "user",
+            "content": "Hi, I'll be your doctor today. What brings you in?"
+        },
+        {
+            "role": "assistant",
+            "content": "I've got this spot on my skin that keeps changing\u2014it's getting darker, bigger, and just looks different than before. Sometimes it looks like a cut or sore that just won\u2019t heal, and it scabs over but comes right back. It also starts bleeding out of nowhere, even if I don\u2019t touch it. One side of this mole looks really different from the other, like it's lopsided. Plus, it looks kinda like a smooth, shiny pimple, but it never pops or goes away. There's this rough, flaky spot that won\u2019t go away, and sometimes it peels."
+        },
+        {
+            "role": "user",
+            "content": "It sounds like you're dealing with a concerning skin issue, especially with the changes in the spot's appearance and the bleeding. Can you tell me if the spot itches or feels painful?"
+        },
+        {
+            "role": "assistant",
+            "content": "It\u2019s super itchy sometimes, or feels kind of tingly, like a weird sensation under my skin."
+        },
+        {
+            "role": "user",
+            "content": "It's concerning that the spot is also itchy and has that tingly sensation. How long have you noticed these changes, and have you seen any changes in the skin around the spot?"
+        },
+        {
+            "role": "assistant",
+            "content": "I've noticed these changes for a few weeks now. The skin around the spot looks normal to me, but the spot itself has been changing a lot."
+        },
+        {
+            "role": "user",
+            "content": "It's important that you've noticed these changes for a few weeks, which can be concerning. Have you experienced any pain in the spot, and do you have any history of skin cancer or any family history of it?"
+        },
+        {
+            "role": "assistant",
+            "content": "I haven't felt any pain in the spot. I don't have any history of skin cancer, and as far as I know, there isn't any family history of it either."
+        },
+        {
+            "role": "user",
+            "content": "Thank you for that information. Since there\u2019s no pain or history of skin cancer, that\u2019s somewhat reassuring, but the changes in the mole are still concerning. Have you noticed any changes in how the spot feels or any new symptoms developing?"
+        },
+        {
+            "role": "assistant",
+            "content": "It feels thicker or harder than the rest of my skin, like there's something under there. And I swear this mole or bump got bigger really fast, like in just a few weeks. I\u2019ve also seen some little dots or spots popping up near the main one, like it\u2019s spreading."
+        },
+        {
+            "role": "user",
+            "content": "The thickening of the mole and rapid growth, along with new spots appearing nearby, are very concerning signs. Have you had any recent sun exposure that you think might be relevant, and have you noticed any changes in the texture of the skin around the mole?"
+        },
+        {
+            "role": "assistant",
+            "content": "I've had some sun exposure, but I usually try to protect my skin. The texture of the skin around the mole looks normal to me, but the spot itself has definitely felt different."
+        },
+        {
+            "role": "user",
+            "content": "Thank you for sharing that. Given the significant changes you've described and some sun exposure, the risk for melanoma is quite high. I recommend that you see a dermatologist as soon as possible for a thorough examination and possibly a biopsy of the mole. Have you had any history of changing moles in the past, or have you used any treatments or products on this mole?"
+        },
+        {
+            "role": "assistant",
+            "content": "I haven't had any history of changing moles like this before, and I haven't used any treatments or products on this mole either."
+        }
+    ],
+    "doctor_history": [
+        {
+            "role": "system",
+            "content": "\nYou are a doctor diagnosing a patient by asking questions and gathering information. Follow structured response tools.\n\nThe following information about the patient is known:\ngender: man\nethnicity: black\n\nThere are two other parameters relevant to the following rules:\ninteraction_steps: 8\nconfidence_threshold: 0.8\n\nFor each of part of the structured response, refer to the following additional guidance.\n\nRules:\n---\n1. free_form_thoughts: str\n   - In free-form thoughts, synthesize the internal information and patient replies concisely to prioritize further questioning and diagnosis.\n   - Leverage the free_form_thoughts from previous interactions to inform the current interaction.\n   - Avoid excessive length to maintain a structured thought process and guide the following structured generations.\n2. known_symptoms: list[str]\n   - Broadly, use the patient information to inform further analysis and questioning.\n   - Match colloquial symptom descriptions to medical terminology for the symptoms in the known_symptoms dict. \n   - Add to this list as the patient reveals more information to you.\n3. diagnosis_rankings: list[Diagnosis]\n   - Rank possible diagnoses with confidence levels in diagnosis_rankings, which pairs diagnoses and confidences, where each confidence is from 0 to 1.\n   - Leverage diagnosis_rankings from previous interactions to inform the current interaction.\n   - In each interaction, order the list of diagnoses from highest to lowest confidence.\n4. symptoms_to_verify_or_refute: list[str]\n   - Determine what symptom-related questions will help refine the diagnosis by constructing pair wise (symptom, question) and pre-pending next_questions.\n   - Leverage the symptoms_to_verify_or_refute from previous interactions to inform the current interaction.\n   - In each interaction, order the list of symptoms to verify or refute by relevance to the current diagnosis.\n5. diagnosis_relayed_to_patient: bool\n   - Indicate whether the diagnosis has been shared with the patient.\n   - The diagnosis is shared with the patient when the confidence level reaches the <confidence_threshold>.\n   - Set this to True when the diagnosis is shared with the patient.\n6. response_to_patient: str\n   - Provide a response to the patient based on the structured response tools.\n   - In this response, ask a question about a symptom or provide a diagnosis based on the collected information and your analysis.\n   - Acknowledge the patient's previous response(s) appropriately.\n   - Try to ask about one symptom at a time to not overwhelm the patient. Two, at a maximum, if they are closely related.\n   - Use colloquial description and phrasing in addition to the medical term. Make sure to update the known_symptoms dict afterward if the confirms the colloquial description.\n   - Continue until confidence reaches the <confidence_threshold> or the interaction steps reaches <interaction_steps> steps.\n   - After previously giving a rating above <confidence_threshold>, the next response will be the last. Give the patient the highest confidence diagnosis. \n"
+        },
+        {
+            "role": "user",
+            "content": "I've got this spot on my skin that keeps changing\u2014it's getting darker, bigger, and just looks different than before. Sometimes it looks like a cut or sore that just won\u2019t heal, and it scabs over but comes right back. It also starts bleeding out of nowhere, even if I don\u2019t touch it. One side of this mole looks really different from the other, like it's lopsided. Plus, it looks kinda like a smooth, shiny pimple, but it never pops or goes away. There's this rough, flaky spot that won\u2019t go away, and sometimes it peels."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":1,\"free_form_thoughts\":\"The patient describes a changing spot on their skin that exhibits several concerning features, including asymmetry, changes in color and size, non-healing characteristics, and bleeding. This presentation raises suspicion for potential skin malignancies, particularly melanoma or basal cell carcinoma. The symptoms suggest a need for further evaluation of skin lesions and possible biopsy. It is essential to determine the duration of these changes and any associated symptoms like itching or pain.\",\"known_symptoms\":[\"changing skin spot\",\"darkening of mole\",\"increased size of mole\",\"non-healing sore\",\"bleeding from mole\",\"asymmetrical mole\",\"smooth shiny appearance of mole\",\"rough flaky spot on skin\",\"peeling skin\"],\"diagnosis_rankings\":[{\"diagnosis\":\"melanoma\",\"confidence\":0.7},{\"diagnosis\":\"basal cell carcinoma\",\"confidence\":0.6},{\"diagnosis\":\"squamous cell carcinoma\",\"confidence\":0.5},{\"diagnosis\":\"benign skin lesion\",\"confidence\":0.3}],\"symptoms_to_verify_or_refute\":[\"bleeding from the spot\",\"itching or pain around the spot\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"It sounds like you're dealing with a concerning skin issue, especially with the changes in the spot's appearance and the bleeding. Can you tell me if the spot itches or feels painful?\"}"
+        },
+        {
+            "role": "user",
+            "content": "It\u2019s super itchy sometimes, or feels kind of tingly, like a weird sensation under my skin."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":2,\"free_form_thoughts\":\"The patient reports itching and a tingling sensation under the skin around the spot, which adds to the symptom profile. Itchy lesions can be associated with various skin conditions, including malignancies, particularly when combined with the other alarming features already described. This itching could also suggest inflammation or irritation. I will need to reassess the potential diagnoses with this new information.\",\"known_symptoms\":[\"changing skin spot\",\"darkening of mole\",\"increased size of mole\",\"non-healing sore\",\"bleeding from mole\",\"asymmetrical mole\",\"smooth shiny appearance of mole\",\"rough flaky spot on skin\",\"peeling skin\",\"itching around the spot\",\"tingling sensation under the skin\"],\"diagnosis_rankings\":[{\"diagnosis\":\"melanoma\",\"confidence\":0.75},{\"diagnosis\":\"basal cell carcinoma\",\"confidence\":0.65},{\"diagnosis\":\"squamous cell carcinoma\",\"confidence\":0.55},{\"diagnosis\":\"benign skin lesion\",\"confidence\":0.25}],\"symptoms_to_verify_or_refute\":[\"duration of the symptoms\",\"any changes in the surrounding skin\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"It's concerning that the spot is also itchy and has that tingly sensation. How long have you noticed these changes, and have you seen any changes in the skin around the spot?\"}"
+        },
+        {
+            "role": "user",
+            "content": "I've noticed these changes for a few weeks now. The skin around the spot looks normal to me, but the spot itself has been changing a lot."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":3,\"free_form_thoughts\":\"The patient reports that the changes have been occurring for a few weeks, which is significant for skin lesions. The lack of changes in the surrounding skin may suggest that the issue is localized to the mole itself. Given the duration and the described symptoms, there is an increasing concern for malignancy, particularly melanoma, due to the rapid changes and itching. Further evaluation is necessary to confirm the diagnosis and consider a biopsy for histological examination.\",\"known_symptoms\":[\"changing skin spot\",\"darkening of mole\",\"increased size of mole\",\"non-healing sore\",\"bleeding from mole\",\"asymmetrical mole\",\"smooth shiny appearance of mole\",\"rough flaky spot on skin\",\"peeling skin\",\"itching around the spot\",\"tingling sensation under the skin\",\"changes for a few weeks\"],\"diagnosis_rankings\":[{\"diagnosis\":\"melanoma\",\"confidence\":0.8},{\"diagnosis\":\"basal cell carcinoma\",\"confidence\":0.7},{\"diagnosis\":\"squamous cell carcinoma\",\"confidence\":0.55},{\"diagnosis\":\"benign skin lesion\",\"confidence\":0.2}],\"symptoms_to_verify_or_refute\":[\"pain in the spot\",\"any history of skin cancer\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"It's important that you've noticed these changes for a few weeks, which can be concerning. Have you experienced any pain in the spot, and do you have any history of skin cancer or any family history of it?\"}"
+        },
+        {
+            "role": "user",
+            "content": "I haven't felt any pain in the spot. I don't have any history of skin cancer, and as far as I know, there isn't any family history of it either."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":4,\"free_form_thoughts\":\"The patient does not have any pain in the spot and has no personal or family history of skin cancer, which slightly lowers the immediate suspicion for malignancy, but does not eliminate it given the alarming characteristics of the lesion. The absence of pain can sometimes be seen in malignant lesions, particularly in melanoma. I will continue to assess the situation, but I am becoming more confident in the diagnosis based on the provided symptoms.\",\"known_symptoms\":[\"changing skin spot\",\"darkening of mole\",\"increased size of mole\",\"non-healing sore\",\"bleeding from mole\",\"asymmetrical mole\",\"smooth shiny appearance of mole\",\"rough flaky spot on skin\",\"peeling skin\",\"itching around the spot\",\"tingling sensation under the skin\",\"changes for a few weeks\",\"no pain in the spot\",\"no personal or family history of skin cancer\"],\"diagnosis_rankings\":[{\"diagnosis\":\"melanoma\",\"confidence\":0.85},{\"diagnosis\":\"basal cell carcinoma\",\"confidence\":0.75},{\"diagnosis\":\"squamous cell carcinoma\",\"confidence\":0.55},{\"diagnosis\":\"benign skin lesion\",\"confidence\":0.15}],\"symptoms_to_verify_or_refute\":[\"any changes in sensation of the spot\",\"any new symptoms developing\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"Thank you for that information. Since there\u2019s no pain or history of skin cancer, that\u2019s somewhat reassuring, but the changes in the mole are still concerning. Have you noticed any changes in how the spot feels or any new symptoms developing?\"}"
+        },
+        {
+            "role": "user",
+            "content": "It feels thicker or harder than the rest of my skin, like there's something under there. And I swear this mole or bump got bigger really fast, like in just a few weeks. I\u2019ve also seen some little dots or spots popping up near the main one, like it\u2019s spreading."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":5,\"free_form_thoughts\":\"The patient reports that the mole feels thicker or harder than the surrounding skin and has increased in size rapidly over a few weeks. The emergence of new spots nearby suggests possible spreading, which is concerning for a malignant process. These characteristics align closely with aggressive skin lesions. The combination of these symptoms raises the suspicion for melanoma further, and there may be a need for prompt evaluation and biopsy.\",\"known_symptoms\":[\"changing skin spot\",\"darkening of mole\",\"increased size of mole\",\"non-healing sore\",\"bleeding from mole\",\"asymmetrical mole\",\"smooth shiny appearance of mole\",\"rough flaky spot on skin\",\"peeling skin\",\"itching around the spot\",\"tingling sensation under the skin\",\"changes for a few weeks\",\"no pain in the spot\",\"no personal or family history of skin cancer\",\"thicker or harder texture of mole\",\"rapid growth of the mole\",\"new spots appearing nearby\"],\"diagnosis_rankings\":[{\"diagnosis\":\"melanoma\",\"confidence\":0.9},{\"diagnosis\":\"basal cell carcinoma\",\"confidence\":0.8},{\"diagnosis\":\"squamous cell carcinoma\",\"confidence\":0.6},{\"diagnosis\":\"benign skin lesion\",\"confidence\":0.1}],\"symptoms_to_verify_or_refute\":[\"any recent sun exposure\",\"any changes in the texture of the surrounding skin\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"The thickening of the mole and rapid growth, along with new spots appearing nearby, are very concerning signs. Have you had any recent sun exposure that you think might be relevant, and have you noticed any changes in the texture of the skin around the mole?\"}"
+        },
+        {
+            "role": "user",
+            "content": "I've had some sun exposure, but I usually try to protect my skin. The texture of the skin around the mole looks normal to me, but the spot itself has definitely felt different."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":6,\"free_form_thoughts\":\"The patient acknowledges some sun exposure, which is a risk factor for skin cancer, but believes they usually protect their skin. The surrounding skin's normal appearance is noted, but the mole's distinct change in texture and rapid growth is significant. Given these factors, the likelihood of melanoma remains high, and a timely examination and possible biopsy are warranted to confirm the diagnosis and initiate appropriate management.\",\"known_symptoms\":[\"changing skin spot\",\"darkening of mole\",\"increased size of mole\",\"non-healing sore\",\"bleeding from mole\",\"asymmetrical mole\",\"smooth shiny appearance of mole\",\"rough flaky spot on skin\",\"peeling skin\",\"itching around the spot\",\"tingling sensation under the skin\",\"changes for a few weeks\",\"no pain in the spot\",\"no personal or family history of skin cancer\",\"thicker or harder texture of mole\",\"rapid growth of the mole\",\"new spots appearing nearby\",\"some sun exposure\"],\"diagnosis_rankings\":[{\"diagnosis\":\"melanoma\",\"confidence\":0.95},{\"diagnosis\":\"basal cell carcinoma\",\"confidence\":0.85},{\"diagnosis\":\"squamous cell carcinoma\",\"confidence\":0.65},{\"diagnosis\":\"benign skin lesion\",\"confidence\":0.05}],\"symptoms_to_verify_or_refute\":[\"any history of changing moles\",\"any treatments or products used on the mole\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"Thank you for sharing that. Given the significant changes you've described and some sun exposure, the risk for melanoma is quite high. I recommend that you see a dermatologist as soon as possible for a thorough examination and possibly a biopsy of the mole. Have you had any history of changing moles in the past, or have you used any treatments or products on this mole?\"}"
+        },
+        {
+            "role": "user",
+            "content": "I haven't had any history of changing moles like this before, and I haven't used any treatments or products on this mole either."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":7,\"free_form_thoughts\":\"The patient has no prior history of changing moles or any treatments applied to the current mole, which strengthens the concern for the current changes being indicative of a new and potentially serious condition. The absence of previous similar issues further emphasizes the importance of prompt evaluation of this mole. Given the symptoms and the rapid progression observed, I am now confident in the diagnosis.\",\"known_symptoms\":[\"changing skin spot\",\"darkening of mole\",\"increased size of mole\",\"non-healing sore\",\"bleeding from mole\",\"asymmetrical mole\",\"smooth shiny appearance of mole\",\"rough flaky spot on skin\",\"peeling skin\",\"itching around the spot\",\"tingling sensation under the skin\",\"changes for a few weeks\",\"no pain in the spot\",\"no personal or family history of skin cancer\",\"thicker or harder texture of mole\",\"rapid growth of the mole\",\"new spots appearing nearby\",\"some sun exposure\",\"no history of changing moles\",\"no treatments on the mole\"],\"diagnosis_rankings\":[{\"diagnosis\":\"melanoma\",\"confidence\":0.98},{\"diagnosis\":\"basal cell carcinoma\",\"confidence\":0.88},{\"diagnosis\":\"squamous cell carcinoma\",\"confidence\":0.68},{\"diagnosis\":\"benign skin lesion\",\"confidence\":0.02}],\"symptoms_to_verify_or_refute\":[],\"diagnosis_relayed_to_patient\":true,\"response_to_patient\":\"Based on everything you've shared, I'm very concerned that this mole may be melanoma, a type of skin cancer. I strongly advise you to see a dermatologist as soon as you can for a thorough examination and possibly a biopsy. Early detection is crucial, and this needs to be evaluated promptly.\"}"
+        }
+    ],
+    "patient_is_first": true
+}
