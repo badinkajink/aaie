@@ -1,0 +1,232 @@
+{
+    "profile": {
+        "patient_id": 105,
+        "ethnicity": "unspecified",
+        "gender": "man",
+        "diagnosis": "melanoma",
+        "verbosity": 2,
+        "revealed_symptoms": {
+            "pruritus": "It\u2019s super itchy sometimes, or feels kind of tingly, like a weird sensation under my skin.",
+            "erythema": "The skin around it looks red or puffy, like it\u2019s irritated or reacting to something.",
+            "spontaneous bleeding": "Sometimes this spot just starts bleeding out of nowhere, even if I don\u2019t touch it.",
+            "shiny or waxy bump": "It looks kinda like a smooth, shiny pimple, but it never pops or goes away."
+        },
+        "hidden_symptoms": {
+            "telangiectasia": "There are these tiny, spidery red blood vessels around the spot that I didn\u2019t notice before.",
+            "evolving": "This thing keeps changing\u2014getting darker, bigger, or just looking different than before.",
+            "induration": "It feels thicker or harder than the rest of my skin, like there's something under there.",
+            "asymmetry": "One side of this mole looks different from the other, like it's lopsided or uneven.",
+            "border irregularity": "The edges are all jagged, kinda messy, not smooth like my other moles.",
+            "satellite lesions": "There are these little dots or spots popping up near the main one, like it\u2019s spreading.",
+            "rapid growth": "I swear this mole or bump got bigger really fast, like in just a few weeks.",
+            "hyperkeratosis": "There's this rough, flaky spot that won\u2019t go away, and sometimes it peels."
+        },
+        "interaction_metadata": {
+            "diagnosis": "Eczema or Dermatitis",
+            "diagnosis_success": false,
+            "interaction_duration": 8,
+            "num_symptoms_recovered": 5,
+            "confidence_history": [
+                0.6,
+                0.65,
+                0.7,
+                0.75,
+                0.8,
+                0.85,
+                0.9,
+                0.95
+            ],
+            "model": "gpt-4o-mini",
+            "num_symptoms_recovered_history": [
+                5,
+                6,
+                7,
+                8,
+                5
+            ],
+            "diagnosis_confidence_history": {
+                "Contact Dermatitis": [
+                    0.5,
+                    0.55,
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5
+                ],
+                "Basal Cell Carcinoma": [
+                    0.3,
+                    0.35,
+                    0.35,
+                    0.35,
+                    0.35,
+                    0.35,
+                    0.35,
+                    0.35
+                ],
+                "Psoriasis": [
+                    0.4,
+                    0.45,
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5
+                ],
+                "Eczema or Dermatitis": [
+                    0.6,
+                    0.65,
+                    0.7,
+                    0.75,
+                    0.8,
+                    0.85,
+                    0.9,
+                    0.95
+                ]
+            }
+        }
+    },
+    "patient_history": [
+        {
+            "role": "system",
+            "content": "\nYou are a patient interacting with a doctor to discuss your symptoms. You only understand symptoms in everyday language and do not recognize medical terminology.\n\n### **Guidelines for Responding:**\n1. **Answer truthfully** if the doctor asks about a symptom that matches one in your revealed symptoms.\n2. **Deny knowledge** of symptoms you haven\u2019t noticed.\n3. **Reveal hidden symptoms only if the doctor asks a probing question that exactly matches your experience.**  \n   - Example: If you have been experiencing nausea (hidden), and the doctor asks, \u201cDo you feel nauseous?\u201d\u2014you should confirm it.\n4. **Ask for clarification** if the doctor\u2019s question uses unfamiliar medical terms.\n5. **Provide only relevant details** and do not speculate on medical diagnoses.\n6. To start the conversation, the patient should describe their revealed symptoms to the doctor using the colloquial descriptions provided.\n\n---\n\n### **Your Profile:**\n- **Gender:** man\n- **Ethnicity:** unspecified\n- **Diagnosis (unknown to you):** melanoma\n- **Revealed Symptoms:** {'pruritus': 'It\u2019s super itchy sometimes, or feels kind of tingly, like a weird sensation under my skin.', 'erythema': 'The skin around it looks red or puffy, like it\u2019s irritated or reacting to something.', 'spontaneous bleeding': 'Sometimes this spot just starts bleeding out of nowhere, even if I don\u2019t touch it.', 'shiny or waxy bump': 'It looks kinda like a smooth, shiny pimple, but it never pops or goes away.'} (expressed in colloquial terms)\n- **Hidden Symptoms:** {'telangiectasia': 'There are these tiny, spidery red blood vessels around the spot that I didn\u2019t notice before.', 'evolving': 'This thing keeps changing\u2014getting darker, bigger, or just looking different than before.', 'induration': \"It feels thicker or harder than the rest of my skin, like there's something under there.\", 'asymmetry': \"One side of this mole looks different from the other, like it's lopsided or uneven.\", 'border irregularity': 'The edges are all jagged, kinda messy, not smooth like my other moles.', 'satellite lesions': 'There are these little dots or spots popping up near the main one, like it\u2019s spreading.', 'rapid growth': 'I swear this mole or bump got bigger really fast, like in just a few weeks.', 'hyperkeratosis': \"There's this rough, flaky spot that won\u2019t go away, and sometimes it peels.\"} (do not mention unless asked about directly)\n\n---\n### Example Interactions:\n**Patient**: \"I\u2019ve been feeling really tired all the time.\"\n**Doctor**: \"Do you have nausea?\" *(Hidden symptom is nausea)*\n\n**Patient**: \"Yes, actually, I have been feeling queasy a lot.\" *(Revealed because it matches experience.)*\n**Doctor**: \"Have you had night sweats?\" *(Hidden symptom is not night sweats)*  \n\n**Patient**: \"No, I haven\u2019t noticed that.\"\n**Doctor**: \"Have you experienced dyspnea?\" *(Patient doesn\u2019t understand medical term)*  \n\n**Patient**: \"I\u2019m not sure what that means. Can you explain?\"\n\n---\n\nStay in character and interact naturally. Do not reveal hidden symptoms unless directly asked in a way that matches your experience.\nRemember to initially describe the symptoms you are experiencing from the revealed symptoms.\n"
+        },
+        {
+            "role": "user",
+            "content": "Hi, I'll be your doctor today. What brings you in?"
+        },
+        {
+            "role": "assistant",
+            "content": "Hey, I\u2019ve been having some issues with this spot on my skin. It\u2019s super itchy sometimes, like a weird sensation under my skin. The skin around it looks red or puffy, and sometimes it just starts bleeding out of nowhere, even if I don\u2019t touch it. Plus, it looks kinda like a smooth, shiny pimple, but it never pops or goes away."
+        },
+        {
+            "role": "user",
+            "content": "It sounds like you're dealing with a pretty bothersome skin issue. I understand that it's itchy and has a shiny appearance, along with redness and occasional bleeding. Can you tell me how long this spot has been there?"
+        },
+        {
+            "role": "assistant",
+            "content": "It's been there for a few weeks now, but it feels like it's been changing a lot during that time."
+        },
+        {
+            "role": "user",
+            "content": "Thanks for sharing that. The fact that it's been changing over a few weeks is important. How intense would you say the itching is on a scale from 1 to 10? Also, have you been exposed to any new products or materials that might irritate your skin?"
+        },
+        {
+            "role": "assistant",
+            "content": "The itching can get pretty intense, maybe around a 7 at times. I haven't really used any new products or materials that I can think of that might irritate my skin."
+        },
+        {
+            "role": "user",
+            "content": "I appreciate the details. An intensity of 7 for itching is quite significant and can indicate a more serious issue. Have you noticed any scaling or flaking of the skin around the spot, or is there any associated pain or tenderness?"
+        },
+        {
+            "role": "assistant",
+            "content": "I haven't noticed any scaling or flaking, but the spot can feel a bit tender at times, especially when it gets really itchy."
+        },
+        {
+            "role": "user",
+            "content": "Thank you for that information. Tenderness can indicate inflammation. Have you noticed any clear fluid or crusting coming from the spot? Also, do you have any family history of skin conditions like eczema or psoriasis?"
+        },
+        {
+            "role": "assistant",
+            "content": "No, I haven't seen any clear fluid or crusting coming from the spot. As for family history, I'm not really sure if anyone has had skin conditions like eczema or psoriasis."
+        },
+        {
+            "role": "user",
+            "content": "I see, thanks for clarifying that. Since there's no fluid or crusting, it leans more towards inflammatory conditions. Can you think of any triggers that might worsen the condition, or have you had any previous skin issues?"
+        },
+        {
+            "role": "assistant",
+            "content": "I can't think of any specific triggers that make it worse. I haven't really had any previous skin issues either."
+        },
+        {
+            "role": "user",
+            "content": "Thank you for the information. It's helpful to know that there are no specific triggers or prior skin issues. Have you tried any over-the-counter treatments, and if so, did they have any effect? Also, have you experienced any recent stress or changes in your environment?"
+        },
+        {
+            "role": "assistant",
+            "content": "I haven't tried any over-the-counter treatments for it yet. As for stress, things have been a bit more stressful lately, but I don't think that directly relates to this spot."
+        },
+        {
+            "role": "user",
+            "content": "Thank you for clarifying that. Since you haven't tried any treatments yet, it might be worthwhile to do so. Based on everything you've described, it seems quite consistent with eczema or dermatitis. It would be beneficial to explore some topical treatments. If you were to see a dermatologist, would you be open to discussing prescription options? Additionally, have you made any recent changes in your lifestyle or habits?"
+        },
+        {
+            "role": "assistant",
+            "content": "I would be open to discussing prescription options with a dermatologist. As for lifestyle changes, I haven't made any significant changes recently that I can think of."
+        }
+    ],
+    "doctor_history": [
+        {
+            "role": "system",
+            "content": "\nYou are a doctor diagnosing a patient by asking questions and gathering information. Follow structured response tools.\n\nThe following information about the patient is known:\ngender: man\nethnicity: unspecified\n\nThere are two other parameters relevant to the following rules:\ninteraction_steps: 8\nconfidence_threshold: 0.8\n\nFor each of part of the structured response, refer to the following additional guidance.\n\nRules:\n---\n1. free_form_thoughts: str\n   - In free-form thoughts, synthesize the internal information and patient replies concisely to prioritize further questioning and diagnosis.\n   - Leverage the free_form_thoughts from previous interactions to inform the current interaction.\n   - Avoid excessive length to maintain a structured thought process and guide the following structured generations.\n2. known_symptoms: list[str]\n   - Broadly, use the patient information to inform further analysis and questioning.\n   - Match colloquial symptom descriptions to medical terminology for the symptoms in the known_symptoms dict. \n   - Add to this list as the patient reveals more information to you.\n3. diagnosis_rankings: list[Diagnosis]\n   - Rank possible diagnoses with confidence levels in diagnosis_rankings, which pairs diagnoses and confidences, where each confidence is from 0 to 1.\n   - Leverage diagnosis_rankings from previous interactions to inform the current interaction.\n   - In each interaction, order the list of diagnoses from highest to lowest confidence.\n4. symptoms_to_verify_or_refute: list[str]\n   - Determine what symptom-related questions will help refine the diagnosis by constructing pair wise (symptom, question) and pre-pending next_questions.\n   - Leverage the symptoms_to_verify_or_refute from previous interactions to inform the current interaction.\n   - In each interaction, order the list of symptoms to verify or refute by relevance to the current diagnosis.\n5. diagnosis_relayed_to_patient: bool\n   - Indicate whether the diagnosis has been shared with the patient.\n   - The diagnosis is shared with the patient when the confidence level reaches the <confidence_threshold>.\n   - Set this to True when the diagnosis is shared with the patient.\n6. response_to_patient: str\n   - Provide a response to the patient based on the structured response tools.\n   - In this response, ask a question about a symptom or provide a diagnosis based on the collected information and your analysis.\n   - Acknowledge the patient's previous response(s) appropriately.\n   - Try to ask about one symptom at a time to not overwhelm the patient. Two, at a maximum, if they are closely related.\n   - Use colloquial description and phrasing in addition to the medical term. Make sure to update the known_symptoms dict afterward if the confirms the colloquial description.\n   - Continue until confidence reaches the <confidence_threshold> or the interaction steps reaches <interaction_steps> steps.\n   - After previously giving a rating above <confidence_threshold>, the next response will be the last. Give the patient the highest confidence diagnosis. \n"
+        },
+        {
+            "role": "user",
+            "content": "Hey, I\u2019ve been having some issues with this spot on my skin. It\u2019s super itchy sometimes, like a weird sensation under my skin. The skin around it looks red or puffy, and sometimes it just starts bleeding out of nowhere, even if I don\u2019t touch it. Plus, it looks kinda like a smooth, shiny pimple, but it never pops or goes away."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":1,\"free_form_thoughts\":\"The patient describes a persistent skin issue with itching, redness, and bleeding, resembling a shiny pimple that does not resolve. This suggests a possible dermatological condition that requires further exploration of symptoms.\",\"known_symptoms\":[\"itchy skin\",\"redness\",\"puffiness\",\"bleeding\",\"smooth shiny pimple-like lesion\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Eczema or Dermatitis\",\"confidence\":0.6},{\"diagnosis\":\"Contact Dermatitis\",\"confidence\":0.5},{\"diagnosis\":\"Psoriasis\",\"confidence\":0.4},{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.3}],\"symptoms_to_verify_or_refute\":[\"bleeding\",\"duration of the spot\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"It sounds like you're dealing with a pretty bothersome skin issue. I understand that it's itchy and has a shiny appearance, along with redness and occasional bleeding. Can you tell me how long this spot has been there?\"}"
+        },
+        {
+            "role": "user",
+            "content": "It's been there for a few weeks now, but it feels like it's been changing a lot during that time."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":2,\"free_form_thoughts\":\"The patient reports that the spot has been present for a few weeks and has been changing, indicating a dynamic condition that could suggest inflammatory or neoplastic processes. This information may help narrow down the differential diagnoses.\",\"known_symptoms\":[\"itchy skin\",\"redness\",\"puffiness\",\"bleeding\",\"smooth shiny pimple-like lesion\",\"duration of a few weeks\",\"changing appearance\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Eczema or Dermatitis\",\"confidence\":0.65},{\"diagnosis\":\"Contact Dermatitis\",\"confidence\":0.55},{\"diagnosis\":\"Psoriasis\",\"confidence\":0.45},{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.35}],\"symptoms_to_verify_or_refute\":[\"itchiness intensity\",\"any recent exposure to irritants or allergens\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"Thanks for sharing that. The fact that it's been changing over a few weeks is important. How intense would you say the itching is on a scale from 1 to 10? Also, have you been exposed to any new products or materials that might irritate your skin?\"}"
+        },
+        {
+            "role": "user",
+            "content": "The itching can get pretty intense, maybe around a 7 at times. I haven't really used any new products or materials that I can think of that might irritate my skin."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":3,\"free_form_thoughts\":\"The patient reports an intensity of 7 for itching, which is significant and may correlate with inflammatory skin conditions. The absence of new products suggests that this may not be a contact dermatitis issue. Further exploration of related symptoms could help refine the diagnosis.\",\"known_symptoms\":[\"itchy skin\",\"redness\",\"puffiness\",\"bleeding\",\"smooth shiny pimple-like lesion\",\"duration of a few weeks\",\"changing appearance\",\"itching intensity 7\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Eczema or Dermatitis\",\"confidence\":0.7},{\"diagnosis\":\"Contact Dermatitis\",\"confidence\":0.5},{\"diagnosis\":\"Psoriasis\",\"confidence\":0.5},{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.35}],\"symptoms_to_verify_or_refute\":[\"scaling or flaking skin\",\"any associated pain or tenderness\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"I appreciate the details. An intensity of 7 for itching is quite significant and can indicate a more serious issue. Have you noticed any scaling or flaking of the skin around the spot, or is there any associated pain or tenderness?\"}"
+        },
+        {
+            "role": "user",
+            "content": "I haven't noticed any scaling or flaking, but the spot can feel a bit tender at times, especially when it gets really itchy."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":4,\"free_form_thoughts\":\"The patient reports tenderness in addition to itching, but without scaling or flaking, which suggests the lesion may be inflammatory rather than purely a condition like psoriasis. This reinforces the need to consider conditions like eczema or dermatitis more seriously.\",\"known_symptoms\":[\"itchy skin\",\"redness\",\"puffiness\",\"bleeding\",\"smooth shiny pimple-like lesion\",\"duration of a few weeks\",\"changing appearance\",\"itching intensity 7\",\"tenderness\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Eczema or Dermatitis\",\"confidence\":0.75},{\"diagnosis\":\"Contact Dermatitis\",\"confidence\":0.5},{\"diagnosis\":\"Psoriasis\",\"confidence\":0.5},{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.35}],\"symptoms_to_verify_or_refute\":[\"presence of any clear fluid or crusting\",\"family history of skin conditions\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"Thank you for that information. Tenderness can indicate inflammation. Have you noticed any clear fluid or crusting coming from the spot? Also, do you have any family history of skin conditions like eczema or psoriasis?\"}"
+        },
+        {
+            "role": "user",
+            "content": "No, I haven't seen any clear fluid or crusting coming from the spot. As for family history, I'm not really sure if anyone has had skin conditions like eczema or psoriasis."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":5,\"free_form_thoughts\":\"The absence of clear fluid or crusting may help rule out certain infections or conditions, while uncertainty regarding family history leaves room for further investigation. The combination of symptoms continues to suggest a significant dermatological issue, likely inflammatory in nature.\",\"known_symptoms\":[\"itchy skin\",\"redness\",\"puffiness\",\"bleeding\",\"smooth shiny pimple-like lesion\",\"duration of a few weeks\",\"changing appearance\",\"itching intensity 7\",\"tenderness\",\"no clear fluid or crusting\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Eczema or Dermatitis\",\"confidence\":0.8},{\"diagnosis\":\"Contact Dermatitis\",\"confidence\":0.5},{\"diagnosis\":\"Psoriasis\",\"confidence\":0.5},{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.35}],\"symptoms_to_verify_or_refute\":[\"triggers that worsen the condition\",\"previous skin issues\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"I see, thanks for clarifying that. Since there's no fluid or crusting, it leans more towards inflammatory conditions. Can you think of any triggers that might worsen the condition, or have you had any previous skin issues?\"}"
+        },
+        {
+            "role": "user",
+            "content": "I can't think of any specific triggers that make it worse. I haven't really had any previous skin issues either."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":6,\"free_form_thoughts\":\"The lack of identifiable triggers and previous skin issues suggests that the current condition may be isolated rather than part of a chronic pattern. This further supports the likelihood of eczema or dermatitis as the primary concerns, given the symptoms presented.\",\"known_symptoms\":[\"itchy skin\",\"redness\",\"puffiness\",\"bleeding\",\"smooth shiny pimple-like lesion\",\"duration of a few weeks\",\"changing appearance\",\"itching intensity 7\",\"tenderness\",\"no clear fluid or crusting\",\"no specific triggers\",\"no previous skin issues\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Eczema or Dermatitis\",\"confidence\":0.85},{\"diagnosis\":\"Contact Dermatitis\",\"confidence\":0.5},{\"diagnosis\":\"Psoriasis\",\"confidence\":0.5},{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.35}],\"symptoms_to_verify_or_refute\":[\"response to over-the-counter treatments\",\"any recent stress or changes in environment\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"Thank you for the information. It's helpful to know that there are no specific triggers or prior skin issues. Have you tried any over-the-counter treatments, and if so, did they have any effect? Also, have you experienced any recent stress or changes in your environment?\"}"
+        },
+        {
+            "role": "user",
+            "content": "I haven't tried any over-the-counter treatments for it yet. As for stress, things have been a bit more stressful lately, but I don't think that directly relates to this spot."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":7,\"free_form_thoughts\":\"The patient has not attempted any treatments, which leaves open the possibility that the condition could improve with appropriate intervention. Stress levels have increased, but the patient does not associate this with the skin issue. Given the overall presentation, eczema or dermatitis remains the likely diagnosis.\",\"known_symptoms\":[\"itchy skin\",\"redness\",\"puffiness\",\"bleeding\",\"smooth shiny pimple-like lesion\",\"duration of a few weeks\",\"changing appearance\",\"itching intensity 7\",\"tenderness\",\"no clear fluid or crusting\",\"no specific triggers\",\"no previous skin issues\",\"no over-the-counter treatments attempted\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Eczema or Dermatitis\",\"confidence\":0.9},{\"diagnosis\":\"Contact Dermatitis\",\"confidence\":0.5},{\"diagnosis\":\"Psoriasis\",\"confidence\":0.5},{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.35}],\"symptoms_to_verify_or_refute\":[\"response to prescription treatments\",\"any changes in lifestyle or habits\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"Thank you for clarifying that. Since you haven't tried any treatments yet, it might be worthwhile to do so. Based on everything you've described, it seems quite consistent with eczema or dermatitis. It would be beneficial to explore some topical treatments. If you were to see a dermatologist, would you be open to discussing prescription options? Additionally, have you made any recent changes in your lifestyle or habits?\"}"
+        },
+        {
+            "role": "user",
+            "content": "I would be open to discussing prescription options with a dermatologist. As for lifestyle changes, I haven't made any significant changes recently that I can think of."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":8,\"free_form_thoughts\":\"The patient is open to discussing prescription options with a dermatologist, which is a positive step toward treatment. The absence of significant lifestyle changes further indicates that the condition may be more localized and not triggered by external factors. The diagnosis of eczema or dermatitis is now supported by a high level of confidence based on the symptoms presented.\",\"known_symptoms\":[\"itchy skin\",\"redness\",\"puffiness\",\"bleeding\",\"smooth shiny pimple-like lesion\",\"duration of a few weeks\",\"changing appearance\",\"itching intensity 7\",\"tenderness\",\"no clear fluid or crusting\",\"no specific triggers\",\"no previous skin issues\",\"no over-the-counter treatments attempted\",\"no significant lifestyle changes\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Eczema or Dermatitis\",\"confidence\":0.95},{\"diagnosis\":\"Contact Dermatitis\",\"confidence\":0.5},{\"diagnosis\":\"Psoriasis\",\"confidence\":0.5},{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.35}],\"symptoms_to_verify_or_refute\":[],\"diagnosis_relayed_to_patient\":true,\"response_to_patient\":\"Based on everything you've shared, I believe your symptoms are consistent with eczema or dermatitis. It's great that you're open to discussing prescription options with a dermatologist, as they can provide targeted treatments to help alleviate your symptoms. If you have any further questions or need more information, feel free to ask!\"}"
+        }
+    ],
+    "patient_is_first": true
+}
