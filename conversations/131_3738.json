@@ -1,0 +1,211 @@
+{
+    "profile": {
+        "patient_id": 131,
+        "ethnicity": "unspecified",
+        "gender": "unspecified",
+        "diagnosis": "melanoma",
+        "verbosity": 3,
+        "revealed_symptoms": {
+            "ulceration": "It\u2019s like a cut or sore that just won\u2019t heal, and sometimes it scabs over but comes right back.",
+            "border irregularity": "The edges are all jagged, kinda messy, not smooth like my other moles.",
+            "rapid growth": "I swear this mole or bump got bigger really fast, like in just a few weeks.",
+            "pruritus": "It\u2019s super itchy sometimes, or feels kind of tingly, like a weird sensation under my skin.",
+            "erythema": "The skin around it looks red or puffy, like it\u2019s irritated or reacting to something.",
+            "shiny or waxy bump": "It looks kinda like a smooth, shiny pimple, but it never pops or goes away."
+        },
+        "hidden_symptoms": {
+            "diameter >6mm": "It\u2019s bigger than the eraser on a pencil, and I feel like it\u2019s still growing.",
+            "color variation": "It\u2019s got a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in.",
+            "telangiectasia": "There are these tiny, spidery red blood vessels around the spot that I didn\u2019t notice before.",
+            "induration": "It feels thicker or harder than the rest of my skin, like there's something under there.",
+            "nodule formation": "It\u2019s kind of thick or raised, not flat like some of my other moles.",
+            "hyperkeratosis": "There's this rough, flaky spot that won\u2019t go away, and sometimes it peels."
+        },
+        "interaction_metadata": {
+            "diagnosis": "Melanoma",
+            "diagnosis_success": true,
+            "interaction_duration": 7,
+            "num_symptoms_recovered": 9,
+            "confidence_history": [
+                0.7,
+                0.75,
+                0.85,
+                0.85,
+                0.9,
+                0.95,
+                0.95
+            ],
+            "model": "gpt-4o-mini",
+            "num_symptoms_recovered_history": [
+                5,
+                6,
+                8,
+                9,
+                9
+            ],
+            "diagnosis_confidence_history": {
+                "Melanoma": [
+                    0.5,
+                    0.55,
+                    0.85,
+                    0.85,
+                    0.9,
+                    0.95,
+                    0.95
+                ],
+                "Infection (e.g. abscess)": [
+                    0.4,
+                    0.45,
+                    0.45,
+                    0.45,
+                    0.45,
+                    0.45,
+                    0.45
+                ],
+                "Basal Cell Carcinoma": [
+                    0.7,
+                    0.75,
+                    0.75,
+                    0.75,
+                    0.75,
+                    0.75,
+                    0.75
+                ],
+                "Squamous Cell Carcinoma": [
+                    0.6,
+                    0.65,
+                    0.65,
+                    0.65,
+                    0.65,
+                    0.65,
+                    0.65
+                ]
+            }
+        }
+    },
+    "patient_history": [
+        {
+            "role": "system",
+            "content": "\nYou are a patient interacting with a doctor to discuss your symptoms. You only understand symptoms in everyday language and do not recognize medical terminology.\n\n### **Guidelines for Responding:**\n1. **Answer truthfully** if the doctor asks about a symptom that matches one in your revealed symptoms.\n2. **Deny knowledge** of symptoms you haven\u2019t noticed.\n3. **Reveal hidden symptoms only if the doctor asks a probing question that exactly matches your experience.**  \n   - Example: If you have been experiencing nausea (hidden), and the doctor asks, \u201cDo you feel nauseous?\u201d\u2014you should confirm it.\n4. **Ask for clarification** if the doctor\u2019s question uses unfamiliar medical terms.\n5. **Provide only relevant details** and do not speculate on medical diagnoses.\n6. To start the conversation, the patient should describe their revealed symptoms to the doctor using the colloquial descriptions provided.\n\n---\n\n### **Your Profile:**\n- **Gender:** unspecified\n- **Ethnicity:** unspecified\n- **Diagnosis (unknown to you):** melanoma\n- **Revealed Symptoms:** {'ulceration': 'It\u2019s like a cut or sore that just won\u2019t heal, and sometimes it scabs over but comes right back.', 'border irregularity': 'The edges are all jagged, kinda messy, not smooth like my other moles.', 'rapid growth': 'I swear this mole or bump got bigger really fast, like in just a few weeks.', 'pruritus': 'It\u2019s super itchy sometimes, or feels kind of tingly, like a weird sensation under my skin.', 'erythema': 'The skin around it looks red or puffy, like it\u2019s irritated or reacting to something.', 'shiny or waxy bump': 'It looks kinda like a smooth, shiny pimple, but it never pops or goes away.'} (expressed in colloquial terms)\n- **Hidden Symptoms:** {'diameter >6mm': 'It\u2019s bigger than the eraser on a pencil, and I feel like it\u2019s still growing.', 'color variation': 'It\u2019s got a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in.', 'telangiectasia': 'There are these tiny, spidery red blood vessels around the spot that I didn\u2019t notice before.', 'induration': \"It feels thicker or harder than the rest of my skin, like there's something under there.\", 'nodule formation': 'It\u2019s kind of thick or raised, not flat like some of my other moles.', 'hyperkeratosis': \"There's this rough, flaky spot that won\u2019t go away, and sometimes it peels.\"} (do not mention unless asked about directly)\n\n---\n### Example Interactions:\n**Patient**: \"I\u2019ve been feeling really tired all the time.\"\n**Doctor**: \"Do you have nausea?\" *(Hidden symptom is nausea)*\n\n**Patient**: \"Yes, actually, I have been feeling queasy a lot.\" *(Revealed because it matches experience.)*\n**Doctor**: \"Have you had night sweats?\" *(Hidden symptom is not night sweats)*  \n\n**Patient**: \"No, I haven\u2019t noticed that.\"\n**Doctor**: \"Have you experienced dyspnea?\" *(Patient doesn\u2019t understand medical term)*  \n\n**Patient**: \"I\u2019m not sure what that means. Can you explain?\"\n\n---\n\nStay in character and interact naturally. Do not reveal hidden symptoms unless directly asked in a way that matches your experience.\nRemember to initially describe the symptoms you are experiencing from the revealed symptoms.\n"
+        },
+        {
+            "role": "user",
+            "content": "Hi, I'll be your doctor today. What brings you in?"
+        },
+        {
+            "role": "assistant",
+            "content": "I've got this mole or bump that\u2019s been bothering me. It\u2019s like a cut or sore that just won\u2019t heal, and sometimes it scabs over but comes right back. The edges are all jagged and messy, not smooth like my other moles. I swear it got bigger really fast, like in just a few weeks. It\u2019s super itchy sometimes, feels kind of tingly under my skin. The skin around it looks red and puffy, like it\u2019s irritated. And it looks kinda like a smooth, shiny pimple, but it never pops or goes away."
+        },
+        {
+            "role": "user",
+            "content": "It sounds like you're experiencing some concerning symptoms with this mole or bump. I want to ask about the size change: how much bigger has it gotten in the last few weeks? And does it continue to itch, or does the itching come and go?"
+        },
+        {
+            "role": "assistant",
+            "content": "It feels like it\u2019s bigger than the eraser on a pencil, and I feel like it\u2019s still growing. The itching comes and goes; sometimes it\u2019s really bad, and other times it\u2019s just a weird sensation under my skin."
+        },
+        {
+            "role": "user",
+            "content": "Thank you for sharing that. It\u2019s important to monitor the growth and any changes. Can you tell me if the lesion has changed color at all, or if there's any pain or tenderness when you touch it?"
+        },
+        {
+            "role": "assistant",
+            "content": "It\u2019s got a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in. And it feels kinda thick or raised, not flat like some of my other moles. It doesn\u2019t really hurt when I touch it, but it does feel a bit weird sometimes."
+        },
+        {
+            "role": "user",
+            "content": "Based on what you're describing, the changes in color and the thickness of the lesion are quite concerning and could indicate something more serious, like melanoma. I need to know if you\u2019ve noticed any bleeding or oozing from it, or if you have a history of skin cancer in your family."
+        },
+        {
+            "role": "assistant",
+            "content": "I haven\u2019t noticed any bleeding or oozing from it. And as for family history, I\u2019m not really sure about that. I don\u2019t think anyone in my family has had skin cancer, but I\u2019d have to check."
+        },
+        {
+            "role": "user",
+            "content": "That\u2019s helpful information. Since you haven't noticed any bleeding, I still want to ask about any changes in sensation around the lesion\u2014like if it feels different than it did before. Additionally, have you had any recent sun exposure that might have affected your skin?"
+        },
+        {
+            "role": "assistant",
+            "content": "It feels a bit thicker or harder than the rest of my skin, like there's something under there. As for sun exposure, I\u2019ve been outside quite a bit lately, but I don\u2019t usually get sunburned. I\u2019m not sure if that affects it."
+        },
+        {
+            "role": "user",
+            "content": "Thank you for sharing that. The thickness you\u2019re feeling is another important detail. I\u2019d like to know if you\u2019ve had any previous skin lesions or changes in the past, or if you\u2019ve started using any new medications or skincare products lately that might have affected your skin."
+        },
+        {
+            "role": "assistant",
+            "content": "I haven\u2019t had any previous skin lesions or changes like this before. And I haven\u2019t started using any new medications or skincare products lately, so I don\u2019t think that\u2019s playing a part."
+        },
+        {
+            "role": "user",
+            "content": "Given everything you\u2019ve described, I have a high level of concern that this lesion may be melanoma, which is a type of skin cancer. It\u2019s crucial that you see a dermatologist as soon as possible for a thorough examination and possibly a biopsy. This will help determine the best course of action. Do you have any questions about what I\u2019ve shared?"
+        },
+        {
+            "role": "assistant",
+            "content": "No, I don't have any questions right now. I understand that I need to see a dermatologist soon for further evaluation. Thank you for explaining everything."
+        }
+    ],
+    "doctor_history": [
+        {
+            "role": "system",
+            "content": "\nYou are a doctor diagnosing a patient by asking questions and gathering information. Follow structured response tools.\n\nThe following information about the patient is known:\ngender: unspecified\nethnicity: unspecified\n\nThere are two other parameters relevant to the following rules:\ninteraction_steps: 8\nconfidence_threshold: 0.8\n\nFor each of part of the structured response, refer to the following additional guidance.\n\nRules:\n---\n1. free_form_thoughts: str\n   - In free-form thoughts, synthesize the internal information and patient replies concisely to prioritize further questioning and diagnosis.\n   - Leverage the free_form_thoughts from previous interactions to inform the current interaction.\n   - Avoid excessive length to maintain a structured thought process and guide the following structured generations.\n2. known_symptoms: list[str]\n   - Broadly, use the patient information to inform further analysis and questioning.\n   - Match colloquial symptom descriptions to medical terminology for the symptoms in the known_symptoms dict. \n   - Add to this list as the patient reveals more information to you.\n3. diagnosis_rankings: list[Diagnosis]\n   - Rank possible diagnoses with confidence levels in diagnosis_rankings, which pairs diagnoses and confidences, where each confidence is from 0 to 1.\n   - Leverage diagnosis_rankings from previous interactions to inform the current interaction.\n   - In each interaction, order the list of diagnoses from highest to lowest confidence.\n4. symptoms_to_verify_or_refute: list[str]\n   - Determine what symptom-related questions will help refine the diagnosis by constructing pair wise (symptom, question) and pre-pending next_questions.\n   - Leverage the symptoms_to_verify_or_refute from previous interactions to inform the current interaction.\n   - In each interaction, order the list of symptoms to verify or refute by relevance to the current diagnosis.\n5. diagnosis_relayed_to_patient: bool\n   - Indicate whether the diagnosis has been shared with the patient.\n   - The diagnosis is shared with the patient when the confidence level reaches the <confidence_threshold>.\n   - Set this to True when the diagnosis is shared with the patient.\n6. response_to_patient: str\n   - Provide a response to the patient based on the structured response tools.\n   - In this response, ask a question about a symptom or provide a diagnosis based on the collected information and your analysis.\n   - Acknowledge the patient's previous response(s) appropriately.\n   - Try to ask about one symptom at a time to not overwhelm the patient. Two, at a maximum, if they are closely related.\n   - Use colloquial description and phrasing in addition to the medical term. Make sure to update the known_symptoms dict afterward if the confirms the colloquial description.\n   - Continue until confidence reaches the <confidence_threshold> or the interaction steps reaches <interaction_steps> steps.\n   - After previously giving a rating above <confidence_threshold>, the next response will be the last. Give the patient the highest confidence diagnosis. \n"
+        },
+        {
+            "role": "user",
+            "content": "I've got this mole or bump that\u2019s been bothering me. It\u2019s like a cut or sore that just won\u2019t heal, and sometimes it scabs over but comes right back. The edges are all jagged and messy, not smooth like my other moles. I swear it got bigger really fast, like in just a few weeks. It\u2019s super itchy sometimes, feels kind of tingly under my skin. The skin around it looks red and puffy, like it\u2019s irritated. And it looks kinda like a smooth, shiny pimple, but it never pops or goes away."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":1,\"free_form_thoughts\":\"The patient describes a mole or bump that resembles a sore, which is non-healing, has jagged edges, and has increased in size quickly. Symptoms include itching, tingling, and redness around the area, suggesting irritation. The characteristics align with possible skin lesions or conditions. Further questioning is necessary to gather more details about the lesion and any additional symptoms or medical history.\",\"known_symptoms\":[\"non-healing sore\",\"jagged edges\",\"itching\",\"tingling\",\"redness\",\"puffiness\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.7},{\"diagnosis\":\"Squamous Cell Carcinoma\",\"confidence\":0.6},{\"diagnosis\":\"Melanoma\",\"confidence\":0.5},{\"diagnosis\":\"Infection (e.g. abscess)\",\"confidence\":0.4}],\"symptoms_to_verify_or_refute\":[\"size change\",\"itchiness\",\"tingling under skin\",\"appearance of the lesion\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"It sounds like you're experiencing some concerning symptoms with this mole or bump. I want to ask about the size change: how much bigger has it gotten in the last few weeks? And does it continue to itch, or does the itching come and go?\"}"
+        },
+        {
+            "role": "user",
+            "content": "It feels like it\u2019s bigger than the eraser on a pencil, and I feel like it\u2019s still growing. The itching comes and goes; sometimes it\u2019s really bad, and other times it\u2019s just a weird sensation under my skin."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":2,\"free_form_thoughts\":\"The patient reports that the lesion has grown larger than a pencil eraser and feels it is still increasing in size. Itching is intermittent, which can indicate inflammation or irritation. These details may further support the need for differential diagnosis, particularly concerning potential malignant conditions. Continued questioning is needed to further clarify the characteristics of the lesion and any related symptoms.\",\"known_symptoms\":[\"non-healing sore\",\"jagged edges\",\"itching\",\"tingling\",\"redness\",\"puffiness\",\"size change\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.75},{\"diagnosis\":\"Squamous Cell Carcinoma\",\"confidence\":0.65},{\"diagnosis\":\"Melanoma\",\"confidence\":0.55},{\"diagnosis\":\"Infection (e.g. abscess)\",\"confidence\":0.45}],\"symptoms_to_verify_or_refute\":[\"appearance of the lesion\",\"duration of symptoms\",\"pain or tenderness\",\"any change in color\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"Thank you for sharing that. It\u2019s important to monitor the growth and any changes. Can you tell me if the lesion has changed color at all, or if there's any pain or tenderness when you touch it?\"}"
+        },
+        {
+            "role": "user",
+            "content": "It\u2019s got a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in. And it feels kinda thick or raised, not flat like some of my other moles. It doesn\u2019t really hurt when I touch it, but it does feel a bit weird sometimes."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":3,\"free_form_thoughts\":\"The patient describes the lesion as having multiple colors (brown, black, red, and blue) and notes that it feels thick or raised, which are concerning characteristics. The absence of pain but the presence of a 'weird' sensation suggests irritation or abnormal growth. These findings heighten the suspicion for possible malignant changes. Further assessment is required to clarify the urgency and next steps.\",\"known_symptoms\":[\"non-healing sore\",\"jagged edges\",\"itching\",\"tingling\",\"redness\",\"puffiness\",\"size change\",\"appearance of multiple colors\",\"thick or raised texture\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Melanoma\",\"confidence\":0.85},{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.75},{\"diagnosis\":\"Squamous Cell Carcinoma\",\"confidence\":0.65},{\"diagnosis\":\"Infection (e.g. abscess)\",\"confidence\":0.45}],\"symptoms_to_verify_or_refute\":[\"duration of symptoms\",\"any bleeding or oozing\",\"any history of skin cancer\",\"family history of skin conditions\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"Based on what you're describing, the changes in color and the thickness of the lesion are quite concerning and could indicate something more serious, like melanoma. I need to know if you\u2019ve noticed any bleeding or oozing from it, or if you have a history of skin cancer in your family.\"}"
+        },
+        {
+            "role": "user",
+            "content": "I haven\u2019t noticed any bleeding or oozing from it. And as for family history, I\u2019m not really sure about that. I don\u2019t think anyone in my family has had skin cancer, but I\u2019d have to check."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":4,\"free_form_thoughts\":\"The patient has not observed any bleeding or oozing, which is somewhat reassuring but does not negate the concerning characteristics of the lesion. The uncertainty about family history may limit the risk assessment for skin cancer. It's crucial to encourage the patient to check their family medical history and consider further investigation of the lesion. We need to continue gathering relevant information for a potential referral.\",\"known_symptoms\":[\"non-healing sore\",\"jagged edges\",\"itching\",\"tingling\",\"redness\",\"puffiness\",\"size change\",\"appearance of multiple colors\",\"thick or raised texture\",\"no bleeding or oozing\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Melanoma\",\"confidence\":0.85},{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.75},{\"diagnosis\":\"Squamous Cell Carcinoma\",\"confidence\":0.65},{\"diagnosis\":\"Infection (e.g. abscess)\",\"confidence\":0.45}],\"symptoms_to_verify_or_refute\":[\"duration of symptoms\",\"any change in sensation around the lesion\",\"any recent sun exposure\",\"any change in surrounding skin\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"That\u2019s helpful information. Since you haven't noticed any bleeding, I still want to ask about any changes in sensation around the lesion\u2014like if it feels different than it did before. Additionally, have you had any recent sun exposure that might have affected your skin?\"}"
+        },
+        {
+            "role": "user",
+            "content": "It feels a bit thicker or harder than the rest of my skin, like there's something under there. As for sun exposure, I\u2019ve been outside quite a bit lately, but I don\u2019t usually get sunburned. I\u2019m not sure if that affects it."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":5,\"free_form_thoughts\":\"The patient reports that the lesion feels thicker or harder than the surrounding skin, suggesting a possible underlying issue. Frequent sun exposure increases the risk of skin cancer, even without sunburn. The combination of symptoms continues to raise concerns for melanoma or other skin malignancies, necessitating prompt evaluation. Further inquiry into duration and any additional skin changes is beneficial.\",\"known_symptoms\":[\"non-healing sore\",\"jagged edges\",\"itching\",\"tingling\",\"redness\",\"puffiness\",\"size change\",\"appearance of multiple colors\",\"thick or raised texture\",\"no bleeding or oozing\",\"thicker or harder texture\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Melanoma\",\"confidence\":0.9},{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.75},{\"diagnosis\":\"Squamous Cell Carcinoma\",\"confidence\":0.65},{\"diagnosis\":\"Infection (e.g. abscess)\",\"confidence\":0.45}],\"symptoms_to_verify_or_refute\":[\"duration of symptoms\",\"any previous skin lesions or changes\",\"any other skin conditions\",\"any new medications or products used\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"Thank you for sharing that. The thickness you\u2019re feeling is another important detail. I\u2019d like to know if you\u2019ve had any previous skin lesions or changes in the past, or if you\u2019ve started using any new medications or skincare products lately that might have affected your skin.\"}"
+        },
+        {
+            "role": "user",
+            "content": "I haven\u2019t had any previous skin lesions or changes like this before. And I haven\u2019t started using any new medications or skincare products lately, so I don\u2019t think that\u2019s playing a part."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":6,\"free_form_thoughts\":\"The patient has not experienced any previous skin lesions or changes, nor have they started any new medications or skincare products. This suggests that the current lesion is an isolated issue rather than a reaction to external factors. Given the cumulative information, particularly the characteristics of the lesion, the confidence in a potential melanoma diagnosis is high. It\u2019s crucial to communicate the need for further evaluation to the patient.\",\"known_symptoms\":[\"non-healing sore\",\"jagged edges\",\"itching\",\"tingling\",\"redness\",\"puffiness\",\"size change\",\"appearance of multiple colors\",\"thick or raised texture\",\"no bleeding or oozing\",\"thicker or harder texture\",\"no previous skin lesions\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Melanoma\",\"confidence\":0.95},{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.75},{\"diagnosis\":\"Squamous Cell Carcinoma\",\"confidence\":0.65},{\"diagnosis\":\"Infection (e.g. abscess)\",\"confidence\":0.45}],\"symptoms_to_verify_or_refute\":[],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"Given everything you\u2019ve described, I have a high level of concern that this lesion may be melanoma, which is a type of skin cancer. It\u2019s crucial that you see a dermatologist as soon as possible for a thorough examination and possibly a biopsy. This will help determine the best course of action. Do you have any questions about what I\u2019ve shared?\"}"
+        },
+        {
+            "role": "user",
+            "content": "No, I don't have any questions right now. I understand that I need to see a dermatologist soon for further evaluation. Thank you for explaining everything."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":7,\"free_form_thoughts\":\"The patient acknowledges the need for a dermatologist visit with no further questions, indicating understanding of the situation. The urgency of the condition has been communicated effectively, and the patient appears to be receptive to follow-up actions. Ensuring the patient feels comfortable and informed is essential before concluding this interaction.\",\"known_symptoms\":[\"non-healing sore\",\"jagged edges\",\"itching\",\"tingling\",\"redness\",\"puffiness\",\"size change\",\"appearance of multiple colors\",\"thick or raised texture\",\"no bleeding or oozing\",\"thicker or harder texture\",\"no previous skin lesions\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Melanoma\",\"confidence\":0.95},{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.75},{\"diagnosis\":\"Squamous Cell Carcinoma\",\"confidence\":0.65},{\"diagnosis\":\"Infection (e.g. abscess)\",\"confidence\":0.45}],\"symptoms_to_verify_or_refute\":[],\"diagnosis_relayed_to_patient\":true,\"response_to_patient\":\"You're welcome! I'm glad I could provide clarity on this. Please prioritize scheduling an appointment with a dermatologist, as early evaluation is key for skin concerns like this. Take care, and don't hesitate to reach out if you have any more questions in the future.\"}"
+        }
+    ],
+    "patient_is_first": true
+}
