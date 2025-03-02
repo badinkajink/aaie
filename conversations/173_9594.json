@@ -23,7 +23,7 @@
         },
         "interaction_metadata": {
             "diagnosis": "possible melanoma",
-            "diagnosis_success": false,
+            "diagnosis_success": true,
             "interaction_duration": 5,
             "num_symptoms_recovered": 8,
             "confidence_history": [
