@@ -22,14 +22,15 @@ def load_conversation(file_name: str) -> tuple[schema.Conversation, pathlib.Path
         data = cast(schema.Conversation, json.load(f))
     return data, file
 
-def filter_conversations(conversations: list[tuple[schema.Conversation, pathlib.Path]], ethnicity: str, gender: str, diagnosis: str) -> list[tuple[schema.Conversation, pathlib.Path]]:
+def filter_conversations(conversations: list[tuple[schema.Conversation, pathlib.Path]], ethnicity: str, gender: str, diagnosis: str, model: str) -> list[tuple[schema.Conversation, pathlib.Path]]:
     """Filter conversations based on profile criteria."""
     filtered = []
     for conversation, path in conversations:
         profile = conversation['profile']
         if (ethnicity == 'All' or profile['ethnicity'] == ethnicity) and \
            (gender == 'All' or profile['gender'] == gender) and \
-           (diagnosis == 'All' or profile['diagnosis'] == diagnosis):
+           (diagnosis == 'All' or profile['diagnosis'] == diagnosis) and \
+            (model == 'All' or profile['interaction_metadata'].get('model', 'gpt-4o-mini') == model):
             filtered.append((conversation, path))
     return filtered
 
@@ -67,14 +68,17 @@ conversations = [load_conversation(file) for file in conversation_files]
 ethnicities = ['All'] + sorted(set(conv['profile']['ethnicity'] for conv, _ in conversations))
 genders = ['All'] + sorted(set(conv['profile']['gender'] for conv, _ in conversations))
 diagnoses = ['All'] + sorted(set(conv['profile']['diagnosis'] for conv, _ in conversations))
+# Old data didn't have model information
+models = ['All'] + sorted(set(conv['profile']['interaction_metadata'].get('model', 'gpt-4o-mini') for conv, _ in conversations))
 
 # Filter selections
 selected_ethnicity = st.selectbox('Select Ethnicity:', ethnicities)
 selected_gender = st.selectbox('Select Gender:', genders)
 selected_diagnosis = st.selectbox('Select Diagnosis:', diagnoses)
+selected_model = st.selectbox('Select Model:', models)
 
 # Filter conversations
-filtered_conversations = filter_conversations(conversations, selected_ethnicity, selected_gender, selected_diagnosis)
+filtered_conversations = filter_conversations(conversations, selected_ethnicity, selected_gender, selected_diagnosis, selected_model)
 
 if filtered_conversations:
     # Searchable selection
