@@ -27,6 +27,17 @@ class Conversation(TypedDict):
     patient_history: list[Message]
     doctor_history: list[Message]
 
+class Symptom(pydantic.BaseModel):
+    """Diagnosis data structure."""
+    doctor_note: str
+    term: str
+    desc: str
+
+class SymptomCheck(pydantic.BaseModel):
+    """Symptom check data structure."""
+    match_details: list[Symptom]
+    found_symptoms_history: list[int]
+    found_symptoms: int
 
 class Diagnosis(pydantic.BaseModel):
     """Diagnosis data structure."""
