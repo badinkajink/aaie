@@ -7,6 +7,7 @@ class InteractionMetadata(TypedDict, total=False):
     interaction_duration: Required[int]
     num_symptoms_recovered: Required[int]
     confidence_history: Required[list]
+    diagnosis_confidence_history: Required[dict[str, list[float]]]
     model: str
 
 class Profile(TypedDict):

@@ -11,15 +11,13 @@ import schema
 
 CONVERSATIONS_DIR: pathlib.Path = pathlib.Path(__file__).parent / 'conversations'
 
-def load_conversation_list() -> list[str]:
+def load_conversation_list() -> list[pathlib.Path]:
     """Load available conversation filenames."""
-    return sorted([file.name for file in CONVERSATIONS_DIR.iterdir() if file.suffix == '.json'])
+    return sorted(CONVERSATIONS_DIR.rglob('*.json'))
 
-def load_conversation(file_name: str) -> tuple[schema.Conversation, pathlib.Path]:
+def load_conversation(file: pathlib.Path) -> tuple[schema.Conversation, pathlib.Path]:
     """Load a single conversation from JSON."""
-    file: pathlib.Path = CONVERSATIONS_DIR / file_name
-    with file.open('r', encoding='utf-8') as f:
-        data = cast(schema.Conversation, json.load(f))
+    data = cast(schema.Conversation, json.load(file.open('r', encoding='utf-8')))
     return data, file
 
 def filter_conversations(conversations: list[tuple[schema.Conversation, pathlib.Path]], ethnicity: str, gender: str, diagnosis: str, model: str) -> list[tuple[schema.Conversation, pathlib.Path]]:
@@ -34,11 +32,12 @@ def filter_conversations(conversations: list[tuple[schema.Conversation, pathlib.
             filtered.append((conversation, path))
     return filtered
 
-def extract_turns(conversation: schema.Conversation) -> list[tuple[str | None, str | None]]:
+def extract_turns(conversation: schema.Conversation) -> list[tuple[str | None, str | None, str | None]]:
     """Extract doctor and patient turns from a conversation."""
     patient_history = conversation['patient_history']
     doctor_history = conversation['doctor_history']
 
+    doctor_thoughts: list[str] = []
     doctor_messages: list[str] = []
     patient_messages: list[str] = []
 
@@ -47,6 +46,7 @@ def extract_turns(conversation: schema.Conversation) -> list[tuple[str | None, s
             continue
         message = json.loads(h['content'])
         message = schema.DoctorResponse(**message)
+        doctor_thoughts.append(message.free_form_thoughts)
         doctor_messages.append(message.response_to_patient)
 
     for h in patient_history:
@@ -54,14 +54,14 @@ def extract_turns(conversation: schema.Conversation) -> list[tuple[str | None, s
             continue
         patient_messages.append(h['content'])
 
-    return list(itertools.zip_longest(doctor_messages, patient_messages, fillvalue=None))
+    return list(itertools.zip_longest(doctor_thoughts, doctor_messages, patient_messages, fillvalue=None))
 
 
 # Streamlit UI
 st.title('AI Conversation Viewer')
 
 # Load conversation list
-conversation_files: list[str] = load_conversation_list()
+conversation_files: list[pathlib.Path] = load_conversation_list()
 conversations = [load_conversation(file) for file in conversation_files]
 
 # Extract filter options
@@ -121,13 +121,16 @@ if filtered_conversations:
     st.markdown(chat_style, unsafe_allow_html=True)
     st.markdown('<div class="chat-container">', unsafe_allow_html=True)
 
-    for doctor_msg, patient_msg in extract_turns(conversation):
+    for doctor_thoughts, doctor_msg, patient_msg in extract_turns(conversation):
         patient_markdown = f'<div class="message-box" style="align-items: flex-end;"><div class="patient"><strong>Patient:</strong> {patient_msg}</div></div>'
+        doctor_thoughts_markdown = f'<div class="message-box"><div class="doctor"><strong>Doctor Thoughts:</strong> {doctor_thoughts}</div></div>'
         doctor_markdown = f'<div class="message-box"><div class="doctor"><strong>Doctor:</strong> {doctor_msg}</div></div>'
         if patient_is_first:
             st.markdown(patient_markdown, unsafe_allow_html=True)
+            st.markdown(doctor_thoughts_markdown, unsafe_allow_html=True)
             st.markdown(doctor_markdown, unsafe_allow_html=True)
         else:
+            st.markdown(doctor_thoughts_markdown, unsafe_allow_html=True)
             st.markdown(doctor_markdown, unsafe_allow_html=True)
             st.markdown(patient_markdown, unsafe_allow_html=True)
 
