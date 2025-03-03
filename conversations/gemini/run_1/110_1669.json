@@ -22,8 +22,8 @@
             "rapid growth": "I swear this mole or bump got bigger really fast, like in just a few weeks."
         },
         "interaction_metadata": {
-            "diagnosis": "Skin Cancer (likely Melanoma)",
-            "diagnosis_success": false,
+            "diagnosis": "melanoma",
+            "diagnosis_success": true,
             "interaction_duration": 6,
             "num_symptoms_recovered": 5,
             "confidence_history": [
@@ -43,7 +43,7 @@
                 5
             ],
             "diagnosis_confidence_history": {
-                "Skin Cancer (likely Melanoma)": [
+                "melanoma": [
                     NaN,
                     NaN,
                     0.65,
@@ -51,7 +51,7 @@
                     0.85,
                     0.9
                 ],
-                "Actinic Keratosis": [
+                "actinic keratosis": [
                     0.15,
                     0.2,
                     0.1,
@@ -59,7 +59,7 @@
                     0.1,
                     0.1
                 ],
-                "Skin Cancer (likely Basal Cell Carcinoma or Squamous Cell Carcinoma)": [
+                "skin cancer (likely basal cell carcinoma or squamous cell carcinoma)": [
                     0.3,
                     0.5,
                     0.25,
@@ -67,7 +67,7 @@
                     0.4,
                     0.45
                 ],
-                "Eczema": [
+                "eczema": [
                     0.1,
                     0.1,
                     NaN,

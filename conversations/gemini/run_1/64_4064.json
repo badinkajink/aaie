@@ -22,8 +22,8 @@
             "border irregularity": "The edges are all jagged, kinda messy, not smooth like my other moles."
         },
         "interaction_metadata": {
-            "diagnosis": "Skin Cancer (Melanoma or other)",
-            "diagnosis_success": false,
+            "diagnosis": "melanoma",
+            "diagnosis_success": true,
             "interaction_duration": 5,
             "num_symptoms_recovered": 6,
             "confidence_history": [
@@ -42,21 +42,21 @@
                 6
             ],
             "diagnosis_confidence_history": {
-                "Skin Cancer (Melanoma or other)": [
+                "melanoma": [
                     0.3,
                     0.6,
                     0.75,
                     0.8,
                     0.85
                 ],
-                "Benign Skin Lesion (e.g., atypical mole, benign growth)": [
+                "benign skin lesion (e.g., atypical mole, benign growth)": [
                     0.1,
                     0.1,
                     0.1,
                     0.1,
                     0.1
                 ],
-                "Inflammatory Skin Condition (e.g., dermatitis, psoriasis)": [
+                "inflammatory skin condition (e.g., dermatitis, psoriasis)": [
                     0.2,
                     0.2,
                     0.2,

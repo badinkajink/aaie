@@ -22,7 +22,7 @@
             "shiny or waxy bump": "It looks kinda like a smooth, shiny pimple, but it never pops or goes away."
         },
         "interaction_metadata": {
-            "diagnosis": "Melanoma",
+            "diagnosis": "melanoma",
             "diagnosis_success": true,
             "interaction_duration": 4,
             "num_symptoms_recovered": 7,
@@ -41,13 +41,13 @@
                 7
             ],
             "diagnosis_confidence_history": {
-                "Melanoma": [
+                "melanoma": [
                     0.7,
                     0.75,
                     0.8,
                     0.85
                 ],
-                "Atypical Nevus": [
+                "atypical nevus": [
                     0.3,
                     0.25,
                     0.2,

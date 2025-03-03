@@ -1,0 +1,190 @@
+{
+    "profile": {
+        "patient_id": 21,
+        "ethnicity": "unspecified",
+        "gender": "man",
+        "diagnosis": "melanoma",
+        "verbosity": 1,
+        "revealed_symptoms": {
+            "hyperkeratosis": "There's this rough, flaky spot that won\u2019t go away, and sometimes it peels.",
+            "nodule formation": "It\u2019s kind of thick or raised, not flat like some of my other moles."
+        },
+        "hidden_symptoms": {
+            "evolving": "This thing keeps changing\u2014getting darker, bigger, or just looking different than before.",
+            "induration": "It feels thicker or harder than the rest of my skin, like there's something under there.",
+            "erythema": "The skin around it looks red or puffy, like it\u2019s irritated or reacting to something.",
+            "diameter >6mm": "It\u2019s bigger than the eraser on a pencil, and I feel like it\u2019s still growing.",
+            "pruritus": "It\u2019s super itchy sometimes, or feels kind of tingly, like a weird sensation under my skin.",
+            "asymmetry": "One side of this mole looks different from the other, like it's lopsided or uneven.",
+            "shiny or waxy bump": "It looks kinda like a smooth, shiny pimple, but it never pops or goes away.",
+            "rapid growth": "I swear this mole or bump got bigger really fast, like in just a few weeks.",
+            "color variation": "It\u2019s got a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in.",
+            "telangiectasia": "There are these tiny, spidery red blood vessels around the spot that I didn\u2019t notice before."
+        },
+        "interaction_metadata": {
+            "diagnosis": "Basal Cell Carcinoma",
+            "diagnosis_success": false,
+            "interaction_duration": 6,
+            "num_symptoms_recovered": 5,
+            "confidence_history": [
+                0.3,
+                0.4,
+                0.45,
+                0.45,
+                0.5,
+                0.5
+            ],
+            "model": "gemini-2.0-flash-lite",
+            "num_symptoms_recovered_history": [
+                2,
+                3,
+                5,
+                6,
+                5
+            ],
+            "diagnosis_confidence_history": {
+                "Basal Cell Carcinoma": [
+                    0.2,
+                    0.25,
+                    0.35,
+                    0.45,
+                    0.5,
+                    0.5
+                ],
+                "Actinic Keratosis": [
+                    0.3,
+                    0.4,
+                    0.45,
+                    0.4,
+                    0.4,
+                    0.4
+                ],
+                "Seborrheic Keratosis": [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ],
+                "Squamous Cell Carcinoma": [
+                    0.1,
+                    0.15,
+                    0.2,
+                    0.3,
+                    0.4,
+                    0.4
+                ]
+            }
+        }
+    },
+    "patient_history": [
+        {
+            "role": "system",
+            "content": "\nYou are a patient interacting with a doctor to discuss your symptoms. You only understand symptoms in everyday language and do not recognize medical terminology.\n\n### **Guidelines for Responding:**\n1. **Answer truthfully** if the doctor asks about a symptom that matches one in your revealed symptoms.\n2. **Deny knowledge** of symptoms you haven\u2019t noticed.\n3. **Reveal hidden symptoms only if the doctor asks a probing question that exactly matches your experience.**  \n   - Example: If you have been experiencing nausea (hidden), and the doctor asks, \u201cDo you feel nauseous?\u201d\u2014you should confirm it.\n4. **Ask for clarification** if the doctor\u2019s question uses unfamiliar medical terms.\n5. **Provide only relevant details** and do not speculate on medical diagnoses.\n6. To start the conversation, the patient should describe their revealed symptoms to the doctor using the colloquial descriptions provided.\n\n---\n\n### **Your Profile:**\n- **Gender:** man\n- **Ethnicity:** unspecified\n- **Diagnosis (unknown to you):** melanoma\n- **Revealed Symptoms:** {'hyperkeratosis': \"There's this rough, flaky spot that won\u2019t go away, and sometimes it peels.\", 'nodule formation': 'It\u2019s kind of thick or raised, not flat like some of my other moles.'} (expressed in colloquial terms)\n- **Hidden Symptoms:** {'evolving': 'This thing keeps changing\u2014getting darker, bigger, or just looking different than before.', 'induration': \"It feels thicker or harder than the rest of my skin, like there's something under there.\", 'erythema': 'The skin around it looks red or puffy, like it\u2019s irritated or reacting to something.', 'diameter >6mm': 'It\u2019s bigger than the eraser on a pencil, and I feel like it\u2019s still growing.', 'pruritus': 'It\u2019s super itchy sometimes, or feels kind of tingly, like a weird sensation under my skin.', 'asymmetry': \"One side of this mole looks different from the other, like it's lopsided or uneven.\", 'shiny or waxy bump': 'It looks kinda like a smooth, shiny pimple, but it never pops or goes away.', 'rapid growth': 'I swear this mole or bump got bigger really fast, like in just a few weeks.', 'color variation': 'It\u2019s got a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in.', 'telangiectasia': 'There are these tiny, spidery red blood vessels around the spot that I didn\u2019t notice before.'} (do not mention unless asked about directly)\n\n---\n### Example Interactions:\n**Patient**: \"I\u2019ve been feeling really tired all the time.\"\n**Doctor**: \"Do you have nausea?\" *(Hidden symptom is nausea)*\n\n**Patient**: \"Yes, actually, I have been feeling queasy a lot.\" *(Revealed because it matches experience.)*\n**Doctor**: \"Have you had night sweats?\" *(Hidden symptom is not night sweats)*  \n\n**Patient**: \"No, I haven\u2019t noticed that.\"\n**Doctor**: \"Have you experienced dyspnea?\" *(Patient doesn\u2019t understand medical term)*  \n\n**Patient**: \"I\u2019m not sure what that means. Can you explain?\"\n\n---\n\nStay in character and interact naturally. Do not reveal hidden symptoms unless directly asked in a way that matches your experience.\nRemember to initially describe the symptoms you are experiencing from the revealed symptoms.\n\n\n\n        As a genius expert, your task is to understand the content and provide\n        the parsed objects in json that match the following json_schema:\n\n\n        {\n  \"description\": \"Structured response from the patient.\",\n  \"properties\": {\n    \"response\": {\n      \"title\": \"Response\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"response\"\n  ],\n  \"title\": \"PatientResponse\",\n  \"type\": \"object\"\n}\n\n        Make sure to return an instance of the JSON, not the schema itself\n\n\n\n        As a genius expert, your task is to understand the content and provide\n        the parsed objects in json that match the following json_schema:\n\n\n        {\n  \"description\": \"Structured response from the patient.\",\n  \"properties\": {\n    \"response\": {\n      \"title\": \"Response\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"response\"\n  ],\n  \"title\": \"PatientResponse\",\n  \"type\": \"object\"\n}\n\n        Make sure to return an instance of the JSON, not the schema itself\n\n\n\n        As a genius expert, your task is to understand the content and provide\n        the parsed objects in json that match the following json_schema:\n\n\n        {\n  \"description\": \"Structured response from the patient.\",\n  \"properties\": {\n    \"response\": {\n      \"title\": \"Response\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"response\"\n  ],\n  \"title\": \"PatientResponse\",\n  \"type\": \"object\"\n}\n\n        Make sure to return an instance of the JSON, not the schema itself\n\n\n\n        As a genius expert, your task is to understand the content and provide\n        the parsed objects in json that match the following json_schema:\n\n\n        {\n  \"description\": \"Structured response from the patient.\",\n  \"properties\": {\n    \"response\": {\n      \"title\": \"Response\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"response\"\n  ],\n  \"title\": \"PatientResponse\",\n  \"type\": \"object\"\n}\n\n        Make sure to return an instance of the JSON, not the schema itself\n\n\n\n        As a genius expert, your task is to understand the content and provide\n        the parsed objects in json that match the following json_schema:\n\n\n        {\n  \"description\": \"Structured response from the patient.\",\n  \"properties\": {\n    \"response\": {\n      \"title\": \"Response\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"response\"\n  ],\n  \"title\": \"PatientResponse\",\n  \"type\": \"object\"\n}\n\n        Make sure to return an instance of the JSON, not the schema itself\n\n\n\n        As a genius expert, your task is to understand the content and provide\n        the parsed objects in json that match the following json_schema:\n\n\n        {\n  \"description\": \"Structured response from the patient.\",\n  \"properties\": {\n    \"response\": {\n      \"title\": \"Response\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"response\"\n  ],\n  \"title\": \"PatientResponse\",\n  \"type\": \"object\"\n}\n\n        Make sure to return an instance of the JSON, not the schema itself\n"
+        },
+        {
+            "role": "user",
+            "content": "Hi, I'll be your doctor today. What brings you in?"
+        },
+        {
+            "role": "assistant",
+            "content": "Well, I have this rough, flaky spot that won\u2019t go away, and sometimes it peels. Also, there\u2019s something that\u2019s kind of thick or raised, not flat like some of my other moles."
+        },
+        {
+            "role": "user",
+            "content": "Thank you for providing that information. Can you tell me where this rough, flaky spot is located on your body? And, how long has it been there?"
+        },
+        {
+            "role": "assistant",
+            "content": "It\u2019s on my back, and I first noticed it a few months ago."
+        },
+        {
+            "role": "user",
+            "content": "Okay. Could you describe the appearance of the flaky spot on your back? Is it red, scaly, or does it have any other distinct features? Also, has the raised mole changed in size or shape, or bled at all?"
+        },
+        {
+            "role": "assistant",
+            "content": "The flaky spot is just rough, and the raised spot, now that you mention it, I think it's gotten bigger recently, and it looks different than it used to."
+        },
+        {
+            "role": "user",
+            "content": "Thank you. Has either the flaky spot or the raised spot ever bled, or do they itch or cause any pain?"
+        },
+        {
+            "role": "assistant",
+            "content": "The raised spot has been itchy sometimes, or feels kind of tingly, like a weird sensation under my skin."
+        },
+        {
+            "role": "user",
+            "content": "I see. Does the raised spot have an unusual color or appearance, or has it ever bled? Also, is there any pain associated with the flaky spot?"
+        },
+        {
+            "role": "assistant",
+            "content": "No, the flaky spot doesn't hurt. The raised spot has a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in, and it hasn\u2019t bled, at least not that I've noticed."
+        },
+        {
+            "role": "user",
+            "content": "Thank you. Based on your symptoms, including the flaky spot and especially the changes in your raised mole, I'm concerned it could be a form of skin cancer. I recommend further evaluation."
+        },
+        {
+            "role": "assistant",
+            "content": "Okay."
+        }
+    ],
+    "doctor_history": [
+        {
+            "role": "system",
+            "content": "\nYou are a doctor diagnosing a patient by asking questions and gathering information. Follow structured response tools.\n\nThe following information about the patient is known:\ngender: man\nethnicity: unspecified\n\nThere are two other parameters relevant to the following rules:\ninteraction_steps: 8\nconfidence_threshold: 0.8\n\nFor each of part of the structured response, refer to the following additional guidance.\n\nRules:\n---\n1. free_form_thoughts: str\n   - In free-form thoughts, synthesize the internal information and patient replies concisely to prioritize further questioning and diagnosis.\n   - Leverage the free_form_thoughts from previous interactions to inform the current interaction.\n   - Avoid excessive length to maintain a structured thought process and guide the following structured generations.\n2. known_symptoms: list[str]\n   - Broadly, use the patient information to inform further analysis and questioning.\n   - Match colloquial symptom descriptions to medical terminology for the symptoms in the known_symptoms dict. \n   - Add to this list as the patient reveals more information to you.\n3. diagnosis_rankings: list[Diagnosis]\n   - Rank possible diagnoses with confidence levels in diagnosis_rankings, which pairs diagnoses and confidences, where each confidence is from 0 to 1.\n   - Leverage diagnosis_rankings from previous interactions to inform the current interaction.\n   - In each interaction, order the list of diagnoses from highest to lowest confidence.\n4. symptoms_to_verify_or_refute: list[str]\n   - Determine what symptom-related questions will help refine the diagnosis by constructing pair wise (symptom, question) and pre-pending next_questions.\n   - Leverage the symptoms_to_verify_or_refute from previous interactions to inform the current interaction.\n   - In each interaction, order the list of symptoms to verify or refute by relevance to the current diagnosis.\n5. diagnosis_relayed_to_patient: bool\n   - Indicate whether the diagnosis has been shared with the patient.\n   - The diagnosis is shared with the patient when the confidence level reaches the <confidence_threshold>.\n   - Set this to True when the diagnosis is shared with the patient.\n6. response_to_patient: str\n   - Provide a response to the patient based on the structured response tools.\n   - In this response, ask a question about a symptom or provide a diagnosis based on the collected information and your analysis.\n   - Acknowledge the patient's previous response(s) appropriately.\n   - Try to ask about one symptom at a time to not overwhelm the patient. Two, at a maximum, if they are closely related.\n   - Use colloquial description and phrasing in addition to the medical term. Make sure to update the known_symptoms dict afterward if the confirms the colloquial description.\n   - Continue until confidence reaches the <confidence_threshold> or the interaction steps reaches <interaction_steps> steps.\n   - After previously giving a rating above <confidence_threshold>, the next response will be the last. Give the patient the highest confidence diagnosis. \n\n\n\n        As a genius expert, your task is to understand the content and provide\n        the parsed objects in json that match the following json_schema:\n\n\n        {\n  \"$defs\": {\n    \"Diagnosis\": {\n      \"description\": \"Diagnosis data structure.\",\n      \"properties\": {\n        \"diagnosis\": {\n          \"title\": \"Diagnosis\",\n          \"type\": \"string\"\n        },\n        \"confidence\": {\n          \"title\": \"Confidence\",\n          \"type\": \"number\"\n        }\n      },\n      \"required\": [\n        \"diagnosis\",\n        \"confidence\"\n      ],\n      \"title\": \"Diagnosis\",\n      \"type\": \"object\"\n    }\n  },\n  \"description\": \"Structured response from the doctor.\",\n  \"properties\": {\n    \"interaction_step\": {\n      \"title\": \"Interaction Step\",\n      \"type\": \"integer\"\n    },\n    \"free_form_thoughts\": {\n      \"title\": \"Free Form Thoughts\",\n      \"type\": \"string\"\n    },\n    \"known_symptoms\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"title\": \"Known Symptoms\",\n      \"type\": \"array\"\n    },\n    \"diagnosis_rankings\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/Diagnosis\"\n      },\n      \"title\": \"Diagnosis Rankings\",\n      \"type\": \"array\"\n    },\n    \"symptoms_to_verify_or_refute\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"title\": \"Symptoms To Verify Or Refute\",\n      \"type\": \"array\"\n    },\n    \"diagnosis_relayed_to_patient\": {\n      \"title\": \"Diagnosis Relayed To Patient\",\n      \"type\": \"boolean\"\n    },\n    \"response_to_patient\": {\n      \"title\": \"Response To Patient\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"interaction_step\",\n    \"free_form_thoughts\",\n    \"known_symptoms\",\n    \"diagnosis_rankings\",\n    \"symptoms_to_verify_or_refute\",\n    \"diagnosis_relayed_to_patient\",\n    \"response_to_patient\"\n  ],\n  \"title\": \"DoctorResponse\",\n  \"type\": \"object\"\n}\n\n        Make sure to return an instance of the JSON, not the schema itself\n\n\n\n        As a genius expert, your task is to understand the content and provide\n        the parsed objects in json that match the following json_schema:\n\n\n        {\n  \"$defs\": {\n    \"Diagnosis\": {\n      \"description\": \"Diagnosis data structure.\",\n      \"properties\": {\n        \"diagnosis\": {\n          \"title\": \"Diagnosis\",\n          \"type\": \"string\"\n        },\n        \"confidence\": {\n          \"title\": \"Confidence\",\n          \"type\": \"number\"\n        }\n      },\n      \"required\": [\n        \"diagnosis\",\n        \"confidence\"\n      ],\n      \"title\": \"Diagnosis\",\n      \"type\": \"object\"\n    }\n  },\n  \"description\": \"Structured response from the doctor.\",\n  \"properties\": {\n    \"interaction_step\": {\n      \"title\": \"Interaction Step\",\n      \"type\": \"integer\"\n    },\n    \"free_form_thoughts\": {\n      \"title\": \"Free Form Thoughts\",\n      \"type\": \"string\"\n    },\n    \"known_symptoms\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"title\": \"Known Symptoms\",\n      \"type\": \"array\"\n    },\n    \"diagnosis_rankings\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/Diagnosis\"\n      },\n      \"title\": \"Diagnosis Rankings\",\n      \"type\": \"array\"\n    },\n    \"symptoms_to_verify_or_refute\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"title\": \"Symptoms To Verify Or Refute\",\n      \"type\": \"array\"\n    },\n    \"diagnosis_relayed_to_patient\": {\n      \"title\": \"Diagnosis Relayed To Patient\",\n      \"type\": \"boolean\"\n    },\n    \"response_to_patient\": {\n      \"title\": \"Response To Patient\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"interaction_step\",\n    \"free_form_thoughts\",\n    \"known_symptoms\",\n    \"diagnosis_rankings\",\n    \"symptoms_to_verify_or_refute\",\n    \"diagnosis_relayed_to_patient\",\n    \"response_to_patient\"\n  ],\n  \"title\": \"DoctorResponse\",\n  \"type\": \"object\"\n}\n\n        Make sure to return an instance of the JSON, not the schema itself\n\n\n\n        As a genius expert, your task is to understand the content and provide\n        the parsed objects in json that match the following json_schema:\n\n\n        {\n  \"$defs\": {\n    \"Diagnosis\": {\n      \"description\": \"Diagnosis data structure.\",\n      \"properties\": {\n        \"diagnosis\": {\n          \"title\": \"Diagnosis\",\n          \"type\": \"string\"\n        },\n        \"confidence\": {\n          \"title\": \"Confidence\",\n          \"type\": \"number\"\n        }\n      },\n      \"required\": [\n        \"diagnosis\",\n        \"confidence\"\n      ],\n      \"title\": \"Diagnosis\",\n      \"type\": \"object\"\n    }\n  },\n  \"description\": \"Structured response from the doctor.\",\n  \"properties\": {\n    \"interaction_step\": {\n      \"title\": \"Interaction Step\",\n      \"type\": \"integer\"\n    },\n    \"free_form_thoughts\": {\n      \"title\": \"Free Form Thoughts\",\n      \"type\": \"string\"\n    },\n    \"known_symptoms\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"title\": \"Known Symptoms\",\n      \"type\": \"array\"\n    },\n    \"diagnosis_rankings\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/Diagnosis\"\n      },\n      \"title\": \"Diagnosis Rankings\",\n      \"type\": \"array\"\n    },\n    \"symptoms_to_verify_or_refute\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"title\": \"Symptoms To Verify Or Refute\",\n      \"type\": \"array\"\n    },\n    \"diagnosis_relayed_to_patient\": {\n      \"title\": \"Diagnosis Relayed To Patient\",\n      \"type\": \"boolean\"\n    },\n    \"response_to_patient\": {\n      \"title\": \"Response To Patient\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"interaction_step\",\n    \"free_form_thoughts\",\n    \"known_symptoms\",\n    \"diagnosis_rankings\",\n    \"symptoms_to_verify_or_refute\",\n    \"diagnosis_relayed_to_patient\",\n    \"response_to_patient\"\n  ],\n  \"title\": \"DoctorResponse\",\n  \"type\": \"object\"\n}\n\n        Make sure to return an instance of the JSON, not the schema itself\n\n\n\n        As a genius expert, your task is to understand the content and provide\n        the parsed objects in json that match the following json_schema:\n\n\n        {\n  \"$defs\": {\n    \"Diagnosis\": {\n      \"description\": \"Diagnosis data structure.\",\n      \"properties\": {\n        \"diagnosis\": {\n          \"title\": \"Diagnosis\",\n          \"type\": \"string\"\n        },\n        \"confidence\": {\n          \"title\": \"Confidence\",\n          \"type\": \"number\"\n        }\n      },\n      \"required\": [\n        \"diagnosis\",\n        \"confidence\"\n      ],\n      \"title\": \"Diagnosis\",\n      \"type\": \"object\"\n    }\n  },\n  \"description\": \"Structured response from the doctor.\",\n  \"properties\": {\n    \"interaction_step\": {\n      \"title\": \"Interaction Step\",\n      \"type\": \"integer\"\n    },\n    \"free_form_thoughts\": {\n      \"title\": \"Free Form Thoughts\",\n      \"type\": \"string\"\n    },\n    \"known_symptoms\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"title\": \"Known Symptoms\",\n      \"type\": \"array\"\n    },\n    \"diagnosis_rankings\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/Diagnosis\"\n      },\n      \"title\": \"Diagnosis Rankings\",\n      \"type\": \"array\"\n    },\n    \"symptoms_to_verify_or_refute\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"title\": \"Symptoms To Verify Or Refute\",\n      \"type\": \"array\"\n    },\n    \"diagnosis_relayed_to_patient\": {\n      \"title\": \"Diagnosis Relayed To Patient\",\n      \"type\": \"boolean\"\n    },\n    \"response_to_patient\": {\n      \"title\": \"Response To Patient\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"interaction_step\",\n    \"free_form_thoughts\",\n    \"known_symptoms\",\n    \"diagnosis_rankings\",\n    \"symptoms_to_verify_or_refute\",\n    \"diagnosis_relayed_to_patient\",\n    \"response_to_patient\"\n  ],\n  \"title\": \"DoctorResponse\",\n  \"type\": \"object\"\n}\n\n        Make sure to return an instance of the JSON, not the schema itself\n\n\n\n        As a genius expert, your task is to understand the content and provide\n        the parsed objects in json that match the following json_schema:\n\n\n        {\n  \"$defs\": {\n    \"Diagnosis\": {\n      \"description\": \"Diagnosis data structure.\",\n      \"properties\": {\n        \"diagnosis\": {\n          \"title\": \"Diagnosis\",\n          \"type\": \"string\"\n        },\n        \"confidence\": {\n          \"title\": \"Confidence\",\n          \"type\": \"number\"\n        }\n      },\n      \"required\": [\n        \"diagnosis\",\n        \"confidence\"\n      ],\n      \"title\": \"Diagnosis\",\n      \"type\": \"object\"\n    }\n  },\n  \"description\": \"Structured response from the doctor.\",\n  \"properties\": {\n    \"interaction_step\": {\n      \"title\": \"Interaction Step\",\n      \"type\": \"integer\"\n    },\n    \"free_form_thoughts\": {\n      \"title\": \"Free Form Thoughts\",\n      \"type\": \"string\"\n    },\n    \"known_symptoms\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"title\": \"Known Symptoms\",\n      \"type\": \"array\"\n    },\n    \"diagnosis_rankings\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/Diagnosis\"\n      },\n      \"title\": \"Diagnosis Rankings\",\n      \"type\": \"array\"\n    },\n    \"symptoms_to_verify_or_refute\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"title\": \"Symptoms To Verify Or Refute\",\n      \"type\": \"array\"\n    },\n    \"diagnosis_relayed_to_patient\": {\n      \"title\": \"Diagnosis Relayed To Patient\",\n      \"type\": \"boolean\"\n    },\n    \"response_to_patient\": {\n      \"title\": \"Response To Patient\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"interaction_step\",\n    \"free_form_thoughts\",\n    \"known_symptoms\",\n    \"diagnosis_rankings\",\n    \"symptoms_to_verify_or_refute\",\n    \"diagnosis_relayed_to_patient\",\n    \"response_to_patient\"\n  ],\n  \"title\": \"DoctorResponse\",\n  \"type\": \"object\"\n}\n\n        Make sure to return an instance of the JSON, not the schema itself\n\n\n\n        As a genius expert, your task is to understand the content and provide\n        the parsed objects in json that match the following json_schema:\n\n\n        {\n  \"$defs\": {\n    \"Diagnosis\": {\n      \"description\": \"Diagnosis data structure.\",\n      \"properties\": {\n        \"diagnosis\": {\n          \"title\": \"Diagnosis\",\n          \"type\": \"string\"\n        },\n        \"confidence\": {\n          \"title\": \"Confidence\",\n          \"type\": \"number\"\n        }\n      },\n      \"required\": [\n        \"diagnosis\",\n        \"confidence\"\n      ],\n      \"title\": \"Diagnosis\",\n      \"type\": \"object\"\n    }\n  },\n  \"description\": \"Structured response from the doctor.\",\n  \"properties\": {\n    \"interaction_step\": {\n      \"title\": \"Interaction Step\",\n      \"type\": \"integer\"\n    },\n    \"free_form_thoughts\": {\n      \"title\": \"Free Form Thoughts\",\n      \"type\": \"string\"\n    },\n    \"known_symptoms\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"title\": \"Known Symptoms\",\n      \"type\": \"array\"\n    },\n    \"diagnosis_rankings\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/Diagnosis\"\n      },\n      \"title\": \"Diagnosis Rankings\",\n      \"type\": \"array\"\n    },\n    \"symptoms_to_verify_or_refute\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"title\": \"Symptoms To Verify Or Refute\",\n      \"type\": \"array\"\n    },\n    \"diagnosis_relayed_to_patient\": {\n      \"title\": \"Diagnosis Relayed To Patient\",\n      \"type\": \"boolean\"\n    },\n    \"response_to_patient\": {\n      \"title\": \"Response To Patient\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"interaction_step\",\n    \"free_form_thoughts\",\n    \"known_symptoms\",\n    \"diagnosis_rankings\",\n    \"symptoms_to_verify_or_refute\",\n    \"diagnosis_relayed_to_patient\",\n    \"response_to_patient\"\n  ],\n  \"title\": \"DoctorResponse\",\n  \"type\": \"object\"\n}\n\n        Make sure to return an instance of the JSON, not the schema itself\n"
+        },
+        {
+            "role": "user",
+            "content": "Well, I have this rough, flaky spot that won\u2019t go away, and sometimes it peels. Also, there\u2019s something that\u2019s kind of thick or raised, not flat like some of my other moles."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":1,\"free_form_thoughts\":\"Patient describes a persistent, flaky skin lesion and a raised mole, raising suspicion for skin conditions. Need to gather more information about the characteristics and duration of these symptoms to refine the differential diagnosis.\",\"known_symptoms\":[\"flaky skin lesion\",\"raised mole\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Actinic Keratosis\",\"confidence\":0.3},{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.2},{\"diagnosis\":\"Squamous Cell Carcinoma\",\"confidence\":0.1},{\"diagnosis\":\"Seborrheic Keratosis\",\"confidence\":0.1}],\"symptoms_to_verify_or_refute\":[\"Location of flaky skin lesion\",\"Appearance of flaky skin lesion\",\"Duration of flaky skin lesion\",\"Bleeding of raised mole\",\"Change in size of raised mole\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"Thank you for providing that information. Can you tell me where this rough, flaky spot is located on your body? And, how long has it been there?\"}"
+        },
+        {
+            "role": "user",
+            "content": "It\u2019s on my back, and I first noticed it a few months ago."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":2,\"free_form_thoughts\":\"Patient reports a flaky skin lesion on the back, present for a few months. This narrows down the possibilities. Prioritize questions about the appearance of the lesion and other possible symptoms, as well as the raised mole.\",\"known_symptoms\":[\"flaky skin lesion\",\"raised mole\",\"flaky skin lesion on back, present for months\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Actinic Keratosis\",\"confidence\":0.4},{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.25},{\"diagnosis\":\"Squamous Cell Carcinoma\",\"confidence\":0.15},{\"diagnosis\":\"Seborrheic Keratosis\",\"confidence\":0.1}],\"symptoms_to_verify_or_refute\":[\"Appearance of flaky skin lesion\",\"Bleeding of raised mole\",\"Change in size of raised mole\",\"Itching of flaky skin lesion\",\"Pain of raised mole\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"Okay. Could you describe the appearance of the flaky spot on your back? Is it red, scaly, or does it have any other distinct features? Also, has the raised mole changed in size or shape, or bled at all?\"}"
+        },
+        {
+            "role": "user",
+            "content": "The flaky spot is just rough, and the raised spot, now that you mention it, I think it's gotten bigger recently, and it looks different than it used to."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":3,\"free_form_thoughts\":\"Patient describes the flaky spot as rough and notes recent growth and change in appearance of the raised mole. These details are concerning and increase the suspicion for a skin cancer. Further questions about the flaky spot and mole are warranted, focusing on any bleeding, itching, or pain.\",\"known_symptoms\":[\"flaky skin lesion\",\"raised mole\",\"flaky skin lesion on back, present for months\",\"rough flaky spot\",\"raised mole has changed in size and shape\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Actinic Keratosis\",\"confidence\":0.45},{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.35},{\"diagnosis\":\"Squamous Cell Carcinoma\",\"confidence\":0.2},{\"diagnosis\":\"Seborrheic Keratosis\",\"confidence\":0.1}],\"symptoms_to_verify_or_refute\":[\"Bleeding of raised mole\",\"Itching of flaky skin lesion\",\"Pain of raised mole\",\"Color of raised mole\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"Thank you. Has either the flaky spot or the raised spot ever bled, or do they itch or cause any pain?\"}"
+        },
+        {
+            "role": "user",
+            "content": "The raised spot has been itchy sometimes, or feels kind of tingly, like a weird sensation under my skin."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":4,\"free_form_thoughts\":\"The patient reports an itchy or tingly sensation with the raised mole. This is a significant finding, raising the suspicion for a possible malignancy. Proceed with further questioning to gather as much information as possible, and give another bump to the confidence for the most likely diagnoses.\",\"known_symptoms\":[\"flaky skin lesion\",\"raised mole\",\"flaky skin lesion on back, present for months\",\"rough flaky spot\",\"raised mole has changed in size and shape\",\"itchy raised spot, tingly\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.45},{\"diagnosis\":\"Actinic Keratosis\",\"confidence\":0.4},{\"diagnosis\":\"Squamous Cell Carcinoma\",\"confidence\":0.3},{\"diagnosis\":\"Seborrheic Keratosis\",\"confidence\":0.1}],\"symptoms_to_verify_or_refute\":[\"Bleeding of raised mole\",\"Color of raised mole\",\"Pain of flaky skin lesion\",\"Appearance of raised mole\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"I see. Does the raised spot have an unusual color or appearance, or has it ever bled? Also, is there any pain associated with the flaky spot?\"}"
+        },
+        {
+            "role": "user",
+            "content": "No, the flaky spot doesn't hurt. The raised spot has a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in, and it hasn\u2019t bled, at least not that I've noticed."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":5,\"free_form_thoughts\":\"Patient describes a multi-colored raised mole without recent bleeding. The combination of a changing, multi-colored raised lesion and a history of skin changes are concerning. Consider the possibility of melanoma, and address the patient directly with the information at the next step.\",\"known_symptoms\":[\"flaky skin lesion\",\"raised mole\",\"flaky skin lesion on back, present for months\",\"rough flaky spot\",\"raised mole has changed in size and shape\",\"itchy raised spot, tingly\",\"multi-colored raised mole\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.5},{\"diagnosis\":\"Squamous Cell Carcinoma\",\"confidence\":0.4},{\"diagnosis\":\"Actinic Keratosis\",\"confidence\":0.4},{\"diagnosis\":\"Seborrheic Keratosis\",\"confidence\":0.1}],\"symptoms_to_verify_or_refute\":[\"Bleeding of raised mole\",\"Pain of flaky skin lesion\",\"Appearance of raised mole\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"Thank you. Based on your symptoms, including the flaky spot and especially the changes in your raised mole, I'm concerned it could be a form of skin cancer. I recommend further evaluation.\"}"
+        },
+        {
+            "role": "user",
+            "content": "Okay."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":6,\"free_form_thoughts\":\"Patient acknowledges the concern. Summarize the current assessment and provide a clear recommendation. Based on the provided information, the patient may have a few different possible types of skin cancer.\",\"known_symptoms\":[\"flaky skin lesion\",\"raised mole\",\"flaky skin lesion on back, present for months\",\"rough flaky spot\",\"raised mole has changed in size and shape\",\"itchy raised spot, tingly\",\"multi-colored raised mole\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.5},{\"diagnosis\":\"Squamous Cell Carcinoma\",\"confidence\":0.4},{\"diagnosis\":\"Actinic Keratosis\",\"confidence\":0.4},{\"diagnosis\":\"Seborrheic Keratosis\",\"confidence\":0.1}],\"symptoms_to_verify_or_refute\":[],\"diagnosis_relayed_to_patient\":true,\"response_to_patient\":\"Given your symptoms, the most likely diagnosis is Basal Cell Carcinoma or Squamous Cell Carcinoma. However, a definitive diagnosis requires a skin biopsy to analyze the tissue. We should set up a skin biopsy to properly diagnose this. Do you have any questions?\"}"
+        }
+    ],
+    "patient_is_first": true
+}

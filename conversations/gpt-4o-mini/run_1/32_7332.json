@@ -22,7 +22,7 @@
             "shiny or waxy bump": "It looks kinda like a smooth, shiny pimple, but it never pops or goes away."
         },
         "interaction_metadata": {
-            "diagnosis": "Skin cancer (e.g., melanoma)",
+            "diagnosis": "melanoma",
             "diagnosis_success": true,
             "interaction_duration": 3,
             "num_symptoms_recovered": 7,
@@ -38,17 +38,17 @@
                 7
             ],
             "diagnosis_confidence_history": {
-                "Skin cancer (e.g., melanoma)": [
+                "melanoma": [
                     0.3,
                     0.7,
                     0.9
                 ],
-                "Dermatological condition (e.g., dermatitis, eczema, or psoriasis)": [
+                "dermatological condition (e.g., dermatitis, eczema, or psoriasis)": [
                     0.5,
                     0.4,
                     0.4
                 ],
-                "Skin infection (e.g., fungal or bacterial)": [
+                "skin infection (e.g., fungal or bacterial)": [
                     0.4,
                     0.3,
                     0.3

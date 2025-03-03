@@ -22,7 +22,7 @@
             "induration": "It feels thicker or harder than the rest of my skin, like there's something under there."
         },
         "interaction_metadata": {
-            "diagnosis": "Melanoma",
+            "diagnosis": "melanoma",
             "diagnosis_success": true,
             "interaction_duration": 4,
             "num_symptoms_recovered": 5,
@@ -40,25 +40,25 @@
                 5
             ],
             "diagnosis_confidence_history": {
-                "Melanoma": [
+                "melanoma": [
                     0.4,
                     0.6,
                     0.8,
                     0.9
                 ],
-                "Squamous cell carcinoma": [
+                "squamous cell carcinoma": [
                     0.1,
                     0.1,
                     0.1,
                     NaN
                 ],
-                "Basal cell carcinoma": [
+                "basal cell carcinoma": [
                     0.2,
                     0.2,
                     0.2,
                     NaN
                 ],
-                "Benign nevus": [
+                "benign nevus": [
                     0.1,
                     0.05,
                     0.05,

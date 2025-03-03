@@ -22,7 +22,7 @@
             "telangiectasia": "There are these tiny, spidery red blood vessels around the spot that I didn\u2019t notice before."
         },
         "interaction_metadata": {
-            "diagnosis": "Melanoma",
+            "diagnosis": "melanoma",
             "diagnosis_success": true,
             "interaction_duration": 5,
             "num_symptoms_recovered": 8,
@@ -38,40 +38,33 @@
                 6
             ],
             "diagnosis_confidence_history": {
-                "Melanoma": [
+                "melanoma": [
+                    0.4,
                     NaN,
-                    0.6,
-                    0.75,
-                    0.85,
-                    0.85
+                    NaN,
+                    NaN,
+                    NaN
                 ],
-                "Psoriasis": [
+                "psoriasis": [
                     0.1,
                     0.05,
                     0.05,
                     0.05,
                     0.05
                 ],
-                "Squamous Cell Carcinoma": [
+                "squamous cell carcinoma": [
                     NaN,
                     0.2,
                     0.35,
                     0.45,
                     0.45
                 ],
-                "Eczema/Dermatitis": [
+                "eczema/dermatitis": [
                     0.2,
                     0.1,
                     0.1,
                     0.1,
                     0.1
-                ],
-                "Skin Cancer (likely Squamous Cell Carcinoma or Melanoma)": [
-                    0.4,
-                    NaN,
-                    NaN,
-                    NaN,
-                    NaN
                 ]
             }
         }

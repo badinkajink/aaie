@@ -22,7 +22,7 @@
             "telangiectasia": "There are these tiny, spidery red blood vessels around the spot that I didn\u2019t notice before."
         },
         "interaction_metadata": {
-            "diagnosis": "Squamous cell carcinoma (SCC)",
+            "diagnosis": "squamous cell carcinoma (scc)",
             "diagnosis_success": false,
             "interaction_duration": 5,
             "num_symptoms_recovered": 6,
@@ -42,21 +42,21 @@
                 6
             ],
             "diagnosis_confidence_history": {
-                "Basal cell carcinoma (BCC)": [
+                "basal cell carcinoma (bcc)": [
                     0.2,
                     0.3,
                     0.3,
                     0.3,
                     0.3
                 ],
-                "Squamous cell carcinoma (SCC)": [
+                "squamous cell carcinoma (scc)": [
                     0.3,
                     0.5,
                     0.6,
                     0.65,
                     0.65
                 ],
-                "Actinic Keratosis (AK)": [
+                "actinic keratosis (ak)": [
                     0.1,
                     0.2,
                     0.4,

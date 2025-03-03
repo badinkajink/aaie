@@ -22,8 +22,8 @@
             "border irregularity": "The edges are all jagged, kinda messy, not smooth like my other moles."
         },
         "interaction_metadata": {
-            "diagnosis": "Possible skin cancer (e.g., Melanoma)",
-            "diagnosis_success": false,
+            "diagnosis": "melanoma",
+            "diagnosis_success": true,
             "interaction_duration": 6,
             "num_symptoms_recovered": 5,
             "confidence_history": [
@@ -43,7 +43,7 @@
                 5
             ],
             "diagnosis_confidence_history": {
-                "Possible skin cancer (e.g., Basal Cell Carcinoma, Squamous Cell Carcinoma)": [
+                "possible skin cancer (e.g., basal cell carcinoma, squamous cell carcinoma)": [
                     0.3,
                     0.4,
                     0.4,
@@ -51,7 +51,7 @@
                     0.5,
                     0.5
                 ],
-                "Inflammatory skin condition (e.g., dermatitis, psoriasis)": [
+                "inflammatory skin condition (e.g., dermatitis, psoriasis)": [
                     0.1,
                     0.3,
                     0.2,
@@ -59,7 +59,7 @@
                     0.2,
                     0.2
                 ],
-                "Possible skin cancer (e.g., Melanoma)": [
+                "melanoma": [
                     NaN,
                     NaN,
                     0.6,

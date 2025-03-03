@@ -22,7 +22,7 @@
             "induration": "It feels thicker or harder than the rest of my skin, like there's something under there."
         },
         "interaction_metadata": {
-            "diagnosis": "Basal cell carcinoma",
+            "diagnosis": "basal cell carcinoma",
             "diagnosis_success": false,
             "interaction_duration": 6,
             "num_symptoms_recovered": 6,
@@ -43,7 +43,7 @@
                 6
             ],
             "diagnosis_confidence_history": {
-                "Psoriasis": [
+                "psoriasis": [
                     0.4,
                     0.45,
                     0.4,
@@ -51,7 +51,7 @@
                     0.4,
                     0.4
                 ],
-                "Basal cell carcinoma": [
+                "basal cell carcinoma": [
                     0.5,
                     0.55,
                     0.8,
@@ -59,7 +59,7 @@
                     0.9,
                     0.95
                 ],
-                "Squamous cell carcinoma": [
+                "squamous cell carcinoma": [
                     0.5,
                     0.5,
                     0.7,
@@ -67,7 +67,7 @@
                     0.8,
                     0.85
                 ],
-                "Skin infection (e.g. cellulitis)": [
+                "skin infection (e.g. cellulitis)": [
                     0.7,
                     0.65,
                     0.4,
@@ -75,7 +75,7 @@
                     0.4,
                     0.4
                 ],
-                "Dermatitis (contact or allergic)": [
+                "dermatitis (contact or allergic)": [
                     0.65,
                     0.75,
                     0.5,

@@ -22,7 +22,7 @@
             "hyperkeratosis": "There's this rough, flaky spot that won\u2019t go away, and sometimes it peels."
         },
         "interaction_metadata": {
-            "diagnosis": "Basal Cell Carcinoma (BCC)",
+            "diagnosis": "basal cell carcinoma (bcc)",
             "diagnosis_success": false,
             "interaction_duration": 7,
             "num_symptoms_recovered": 5,
@@ -45,7 +45,7 @@
                 6
             ],
             "diagnosis_confidence_history": {
-                "Basal Cell Carcinoma (BCC)": [
+                "basal cell carcinoma (bcc)": [
                     0.3,
                     0.4,
                     0.5,
@@ -54,7 +54,7 @@
                     0.75,
                     0.75
                 ],
-                "Squamous Cell Carcinoma (SCC)": [
+                "squamous cell carcinoma (scc)": [
                     0.2,
                     0.3,
                     0.4,
@@ -63,7 +63,7 @@
                     0.65,
                     0.65
                 ],
-                "Actinic Keratosis": [
+                "actinic keratosis": [
                     0.1,
                     0.15,
                     0.2,

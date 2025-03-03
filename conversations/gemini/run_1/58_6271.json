@@ -22,8 +22,8 @@
             "induration": "It feels thicker or harder than the rest of my skin, like there's something under there."
         },
         "interaction_metadata": {
-            "diagnosis": "Skin cancer (melanoma)",
-            "diagnosis_success": false,
+            "diagnosis": "melanoma",
+            "diagnosis_success": true,
             "interaction_duration": 4,
             "num_symptoms_recovered": 5,
             "confidence_history": [
@@ -40,25 +40,25 @@
                 5
             ],
             "diagnosis_confidence_history": {
-                "Eczema": [
+                "eczema": [
                     0.2,
                     0.2,
                     0.2,
                     0.2
                 ],
-                "Skin cancer (melanoma)": [
+                "melanoma": [
                     NaN,
                     0.5,
                     0.7,
                     0.85
                 ],
-                "Contact dermatitis": [
+                "contact dermatitis": [
                     0.1,
                     0.1,
                     0.1,
                     0.1
                 ],
-                "Skin cancer (unspecified type)": [
+                "skin cancer (unspecified type)": [
                     0.3,
                     0.4,
                     0.5,

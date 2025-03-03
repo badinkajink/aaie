@@ -22,7 +22,7 @@
             "nodule formation": "It\u2019s kind of thick or raised, not flat like some of my other moles."
         },
         "interaction_metadata": {
-            "diagnosis": "Melanoma",
+            "diagnosis": "melanoma",
             "diagnosis_success": true,
             "interaction_duration": 5,
             "num_symptoms_recovered": 7,
@@ -42,21 +42,21 @@
                 7
             ],
             "diagnosis_confidence_history": {
-                "Seborrheic Keratosis": [
+                "seborrheic keratosis": [
                     0.5,
                     0.5,
                     0.5,
                     0.5,
                     0.5
                 ],
-                "Atypical Nevus": [
+                "atypical nevus": [
                     0.6,
                     0.6,
                     0.7,
                     0.75,
                     0.75
                 ],
-                "Melanoma": [
+                "melanoma": [
                     0.7,
                     0.8,
                     0.9,

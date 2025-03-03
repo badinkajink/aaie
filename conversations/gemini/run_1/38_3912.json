@@ -22,7 +22,7 @@
             "nodule formation": "It\u2019s kind of thick or raised, not flat like some of my other moles."
         },
         "interaction_metadata": {
-            "diagnosis": "Atypical Nevus",
+            "diagnosis": "atypical nevus",
             "diagnosis_success": false,
             "interaction_duration": 8,
             "num_symptoms_recovered": 2,
@@ -46,7 +46,7 @@
                 2
             ],
             "diagnosis_confidence_history": {
-                "Melanoma": [
+                "melanoma": [
                     NaN,
                     NaN,
                     0.3,
@@ -56,7 +56,7 @@
                     0.55,
                     0.6
                 ],
-                "Atypical Nevus": [
+                "atypical nevus": [
                     NaN,
                     NaN,
                     0.4,

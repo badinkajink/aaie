@@ -22,7 +22,7 @@
             "telangiectasia": "There are these tiny, spidery red blood vessels around the spot that I didn\u2019t notice before."
         },
         "interaction_metadata": {
-            "diagnosis": "Melanoma",
+            "diagnosis": "melanoma",
             "diagnosis_success": true,
             "interaction_duration": 8,
             "num_symptoms_recovered": 11,
@@ -45,7 +45,7 @@
                 11
             ],
             "diagnosis_confidence_history": {
-                "Psoriasis": [
+                "psoriasis": [
                     0.3,
                     0.35,
                     0.5,
@@ -55,7 +55,7 @@
                     0.4,
                     0.4
                 ],
-                "Actinic Keratosis": [
+                "actinic keratosis": [
                     0.1,
                     0.15,
                     0.15,
@@ -65,7 +65,7 @@
                     NaN,
                     NaN
                 ],
-                "Melanoma": [
+                "melanoma": [
                     NaN,
                     NaN,
                     NaN,
@@ -75,7 +75,7 @@
                     0.6,
                     0.8
                 ],
-                "Eczema (Atopic Dermatitis)": [
+                "eczema (atopic dermatitis)": [
                     0.2,
                     0.25,
                     0.3,

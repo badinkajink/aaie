@@ -22,7 +22,7 @@
             "induration": "It feels thicker or harder than the rest of my skin, like there's something under there."
         },
         "interaction_metadata": {
-            "diagnosis": "Skin lesion (e.g., basal cell carcinoma)",
+            "diagnosis": "skin lesion (e.g., basal cell carcinoma)",
             "diagnosis_success": false,
             "interaction_duration": 5,
             "num_symptoms_recovered": 4,
@@ -42,21 +42,21 @@
                 4
             ],
             "diagnosis_confidence_history": {
-                "Skin infection (e.g., cellulitis)": [
+                "skin infection (e.g., cellulitis)": [
                     0.3,
                     0.4,
                     0.3,
                     0.2,
                     0.2
                 ],
-                "Skin lesion (e.g., basal cell carcinoma)": [
+                "skin lesion (e.g., basal cell carcinoma)": [
                     0.2,
                     0.3,
                     0.5,
                     0.7,
                     0.7
                 ],
-                "Contact dermatitis": [
+                "contact dermatitis": [
                     0.1,
                     0.2,
                     0.2,

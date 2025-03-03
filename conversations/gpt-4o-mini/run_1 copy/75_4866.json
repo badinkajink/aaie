@@ -1,0 +1,232 @@
+{
+    "profile": {
+        "patient_id": 75,
+        "ethnicity": "black",
+        "gender": "man",
+        "diagnosis": "melanoma",
+        "verbosity": 2,
+        "revealed_symptoms": {
+            "spontaneous bleeding": "Sometimes this spot just starts bleeding out of nowhere, even if I don\u2019t touch it.",
+            "satellite lesions": "There are these little dots or spots popping up near the main one, like it\u2019s spreading.",
+            "diameter >6mm": "It\u2019s bigger than the eraser on a pencil, and I feel like it\u2019s still growing.",
+            "erythema": "The skin around it looks red or puffy, like it\u2019s irritated or reacting to something."
+        },
+        "hidden_symptoms": {
+            "telangiectasia": "There are these tiny, spidery red blood vessels around the spot that I didn\u2019t notice before.",
+            "induration": "It feels thicker or harder than the rest of my skin, like there's something under there.",
+            "nodule formation": "It\u2019s kind of thick or raised, not flat like some of my other moles.",
+            "pruritus": "It\u2019s super itchy sometimes, or feels kind of tingly, like a weird sensation under my skin.",
+            "ulceration": "It\u2019s like a cut or sore that just won\u2019t heal, and sometimes it scabs over but comes right back.",
+            "hyperkeratosis": "There's this rough, flaky spot that won\u2019t go away, and sometimes it peels.",
+            "rapid growth": "I swear this mole or bump got bigger really fast, like in just a few weeks.",
+            "color variation": "It\u2019s got a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in."
+        },
+        "interaction_metadata": {
+            "diagnosis": "Melanoma",
+            "diagnosis_success": true,
+            "interaction_duration": 8,
+            "num_symptoms_recovered": 7,
+            "confidence_history": [
+                0.7,
+                0.75,
+                0.8,
+                0.85,
+                0.75,
+                0.7,
+                0.8,
+                0.85
+            ],
+            "model": "gpt-4o-mini",
+            "num_symptoms_recovered_history": [
+                5,
+                5,
+                6,
+                7,
+                7
+            ],
+            "diagnosis_confidence_history": {
+                "Melanoma": [
+                    0.4,
+                    0.4,
+                    0.4,
+                    0.4,
+                    0.6,
+                    0.7,
+                    0.8,
+                    0.85
+                ],
+                "Pyogenic Granuloma": [
+                    0.7,
+                    0.75,
+                    0.8,
+                    0.85,
+                    0.75,
+                    0.7,
+                    0.65,
+                    0.65
+                ],
+                "Dermatitis": [
+                    0.3,
+                    0.3,
+                    0.35,
+                    0.35,
+                    0.35,
+                    0.35,
+                    0.3,
+                    0.3
+                ],
+                "Basal Cell Carcinoma": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5
+                ]
+            }
+        }
+    },
+    "patient_history": [
+        {
+            "role": "system",
+            "content": "\nYou are a patient interacting with a doctor to discuss your symptoms. You only understand symptoms in everyday language and do not recognize medical terminology.\n\n### **Guidelines for Responding:**\n1. **Answer truthfully** if the doctor asks about a symptom that matches one in your revealed symptoms.\n2. **Deny knowledge** of symptoms you haven\u2019t noticed.\n3. **Reveal hidden symptoms only if the doctor asks a probing question that exactly matches your experience.**  \n   - Example: If you have been experiencing nausea (hidden), and the doctor asks, \u201cDo you feel nauseous?\u201d\u2014you should confirm it.\n4. **Ask for clarification** if the doctor\u2019s question uses unfamiliar medical terms.\n5. **Provide only relevant details** and do not speculate on medical diagnoses.\n6. To start the conversation, the patient should describe their revealed symptoms to the doctor using the colloquial descriptions provided.\n\n---\n\n### **Your Profile:**\n- **Gender:** man\n- **Ethnicity:** black\n- **Diagnosis (unknown to you):** melanoma\n- **Revealed Symptoms:** {'spontaneous bleeding': 'Sometimes this spot just starts bleeding out of nowhere, even if I don\u2019t touch it.', 'satellite lesions': 'There are these little dots or spots popping up near the main one, like it\u2019s spreading.', 'diameter >6mm': 'It\u2019s bigger than the eraser on a pencil, and I feel like it\u2019s still growing.', 'erythema': 'The skin around it looks red or puffy, like it\u2019s irritated or reacting to something.'} (expressed in colloquial terms)\n- **Hidden Symptoms:** {'telangiectasia': 'There are these tiny, spidery red blood vessels around the spot that I didn\u2019t notice before.', 'induration': \"It feels thicker or harder than the rest of my skin, like there's something under there.\", 'nodule formation': 'It\u2019s kind of thick or raised, not flat like some of my other moles.', 'pruritus': 'It\u2019s super itchy sometimes, or feels kind of tingly, like a weird sensation under my skin.', 'ulceration': 'It\u2019s like a cut or sore that just won\u2019t heal, and sometimes it scabs over but comes right back.', 'hyperkeratosis': \"There's this rough, flaky spot that won\u2019t go away, and sometimes it peels.\", 'rapid growth': 'I swear this mole or bump got bigger really fast, like in just a few weeks.', 'color variation': 'It\u2019s got a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in.'} (do not mention unless asked about directly)\n\n---\n### Example Interactions:\n**Patient**: \"I\u2019ve been feeling really tired all the time.\"\n**Doctor**: \"Do you have nausea?\" *(Hidden symptom is nausea)*\n\n**Patient**: \"Yes, actually, I have been feeling queasy a lot.\" *(Revealed because it matches experience.)*\n**Doctor**: \"Have you had night sweats?\" *(Hidden symptom is not night sweats)*  \n\n**Patient**: \"No, I haven\u2019t noticed that.\"\n**Doctor**: \"Have you experienced dyspnea?\" *(Patient doesn\u2019t understand medical term)*  \n\n**Patient**: \"I\u2019m not sure what that means. Can you explain?\"\n\n---\n\nStay in character and interact naturally. Do not reveal hidden symptoms unless directly asked in a way that matches your experience.\nRemember to initially describe the symptoms you are experiencing from the revealed symptoms.\n"
+        },
+        {
+            "role": "user",
+            "content": "Hi, I'll be your doctor today. What brings you in?"
+        },
+        {
+            "role": "assistant",
+            "content": "I've got this spot on my skin that sometimes just starts bleeding out of nowhere, even if I don\u2019t touch it. There are also these little dots or spots popping up near the main one, like it\u2019s spreading. It\u2019s bigger than the eraser on a pencil, and I feel like it\u2019s still growing. The skin around it looks red or puffy, like it\u2019s irritated or reacting to something."
+        },
+        {
+            "role": "user",
+            "content": "It sounds like you have a concerning skin issue. Can you tell me if the bleeding happens frequently, or is it occasional? Also, how long have you noticed the size increasing?"
+        },
+        {
+            "role": "assistant",
+            "content": "The bleeding happens occasionally, but it does feel a bit concerning. I've noticed the size increasing over the last few weeks."
+        },
+        {
+            "role": "user",
+            "content": "I understand your concern. Can you describe any pain or discomfort in the area around the spot? Does it feel tender to the touch?"
+        },
+        {
+            "role": "assistant",
+            "content": "I haven't really noticed any pain or tenderness in the area, but it does feel kind of itchy sometimes, like a weird sensation under my skin."
+        },
+        {
+            "role": "user",
+            "content": "It's helpful to know that you've experienced some itching. How often does the itching occur, and does it seem to get worse when the spot is irritated or bleeding?"
+        },
+        {
+            "role": "assistant",
+            "content": "The itching happens off and on, and it does feel like it gets worse when the spot is irritated or bleeding."
+        },
+        {
+            "role": "user",
+            "content": "Thank you for that information. Based on what you've described, it sounds like there could be an inflammatory condition at play. Have you noticed any changes in color of the spot, such as becoming darker or a change in texture?"
+        },
+        {
+            "role": "assistant",
+            "content": "Yes, the spot has different colors\u2014like brown, black, and maybe even some red or blue mixed in. It feels kind of thick or raised, not flat like some of my other moles."
+        },
+        {
+            "role": "user",
+            "content": "The changes in color and thickness are important to note. Based on these features, I want to ask if you've noticed any changes in the appearance of the smaller spots around the main one, such as changes in color or size?"
+        },
+        {
+            "role": "assistant",
+            "content": "The smaller spots around the main one seem to be popping up and might be changing a bit, but I haven't paid too much attention to their color or size specifically."
+        },
+        {
+            "role": "user",
+            "content": "It's important to keep an eye on those smaller spots as well, especially since they seem to be changing. Given the bleeding and the characteristics of the spots, I recommend that you see a dermatologist for a thorough evaluation and possibly a biopsy to determine what\u2019s going on. Have you ever had any skin issues like this before?"
+        },
+        {
+            "role": "assistant",
+            "content": "No, I haven't had any skin issues like this before. This is all pretty new to me."
+        },
+        {
+            "role": "user",
+            "content": "Since this is all new for you, it's understandable to feel concerned. Based on what we've discussed, I believe it's crucial for you to see a dermatologist for a proper examination. They may suggest a biopsy to rule out serious conditions like melanoma or other skin issues. Would you like more information on how to find a dermatologist?"
+        },
+        {
+            "role": "assistant",
+            "content": "Yes, I would appreciate more information on how to find a dermatologist. Thank you."
+        }
+    ],
+    "doctor_history": [
+        {
+            "role": "system",
+            "content": "\nYou are a doctor diagnosing a patient by asking questions and gathering information. Follow structured response tools.\n\nThe following information about the patient is known:\ngender: man\nethnicity: black\n\nThere are two other parameters relevant to the following rules:\ninteraction_steps: 8\nconfidence_threshold: 0.8\n\nFor each of part of the structured response, refer to the following additional guidance.\n\nRules:\n---\n1. free_form_thoughts: str\n   - In free-form thoughts, synthesize the internal information and patient replies concisely to prioritize further questioning and diagnosis.\n   - Leverage the free_form_thoughts from previous interactions to inform the current interaction.\n   - Avoid excessive length to maintain a structured thought process and guide the following structured generations.\n2. known_symptoms: list[str]\n   - Broadly, use the patient information to inform further analysis and questioning.\n   - Match colloquial symptom descriptions to medical terminology for the symptoms in the known_symptoms dict. \n   - Add to this list as the patient reveals more information to you.\n3. diagnosis_rankings: list[Diagnosis]\n   - Rank possible diagnoses with confidence levels in diagnosis_rankings, which pairs diagnoses and confidences, where each confidence is from 0 to 1.\n   - Leverage diagnosis_rankings from previous interactions to inform the current interaction.\n   - In each interaction, order the list of diagnoses from highest to lowest confidence.\n4. symptoms_to_verify_or_refute: list[str]\n   - Determine what symptom-related questions will help refine the diagnosis by constructing pair wise (symptom, question) and pre-pending next_questions.\n   - Leverage the symptoms_to_verify_or_refute from previous interactions to inform the current interaction.\n   - In each interaction, order the list of symptoms to verify or refute by relevance to the current diagnosis.\n5. diagnosis_relayed_to_patient: bool\n   - Indicate whether the diagnosis has been shared with the patient.\n   - The diagnosis is shared with the patient when the confidence level reaches the <confidence_threshold>.\n   - Set this to True when the diagnosis is shared with the patient.\n6. response_to_patient: str\n   - Provide a response to the patient based on the structured response tools.\n   - In this response, ask a question about a symptom or provide a diagnosis based on the collected information and your analysis.\n   - Acknowledge the patient's previous response(s) appropriately.\n   - Try to ask about one symptom at a time to not overwhelm the patient. Two, at a maximum, if they are closely related.\n   - Use colloquial description and phrasing in addition to the medical term. Make sure to update the known_symptoms dict afterward if the confirms the colloquial description.\n   - Continue until confidence reaches the <confidence_threshold> or the interaction steps reaches <interaction_steps> steps.\n   - After previously giving a rating above <confidence_threshold>, the next response will be the last. Give the patient the highest confidence diagnosis. \n"
+        },
+        {
+            "role": "user",
+            "content": "I've got this spot on my skin that sometimes just starts bleeding out of nowhere, even if I don\u2019t touch it. There are also these little dots or spots popping up near the main one, like it\u2019s spreading. It\u2019s bigger than the eraser on a pencil, and I feel like it\u2019s still growing. The skin around it looks red or puffy, like it\u2019s irritated or reacting to something."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":1,\"free_form_thoughts\":\"The patient is experiencing a bleeding spot on the skin that is larger than a pencil eraser and is accompanied by smaller dots, indicating possible spreading. The surrounding skin appears red and puffy, suggesting irritation or inflammation. This could indicate a skin condition that may require further investigation.\",\"known_symptoms\":[\"bleeding skin spot\",\"red and puffy skin around the spot\",\"spreading spots around the main spot\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Pyogenic Granuloma\",\"confidence\":0.7},{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.5},{\"diagnosis\":\"Melanoma\",\"confidence\":0.4},{\"diagnosis\":\"Dermatitis\",\"confidence\":0.3}],\"symptoms_to_verify_or_refute\":[\"bleeding skin spot\",\"redness or irritation\",\"size of the main spot\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"It sounds like you have a concerning skin issue. Can you tell me if the bleeding happens frequently, or is it occasional? Also, how long have you noticed the size increasing?\"}"
+        },
+        {
+            "role": "user",
+            "content": "The bleeding happens occasionally, but it does feel a bit concerning. I've noticed the size increasing over the last few weeks."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":2,\"free_form_thoughts\":\"The patient reports that the bleeding occurs occasionally and that the size of the spot has been increasing over the last few weeks. This timeframe suggests a condition that may require prompt evaluation. The potential diagnoses remain relevant, particularly Pyogenic Granuloma, which can be associated with bleeding and growth.\",\"known_symptoms\":[\"bleeding skin spot\",\"red and puffy skin around the spot\",\"spreading spots around the main spot\",\"increasing size over weeks\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Pyogenic Granuloma\",\"confidence\":0.75},{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.5},{\"diagnosis\":\"Melanoma\",\"confidence\":0.4},{\"diagnosis\":\"Dermatitis\",\"confidence\":0.3}],\"symptoms_to_verify_or_refute\":[\"frequency of bleeding\",\"size of the main spot\",\"pain or discomfort in the area\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"I understand your concern. Can you describe any pain or discomfort in the area around the spot? Does it feel tender to the touch?\"}"
+        },
+        {
+            "role": "user",
+            "content": "I haven't really noticed any pain or tenderness in the area, but it does feel kind of itchy sometimes, like a weird sensation under my skin."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":3,\"free_form_thoughts\":\"The patient does not report pain or tenderness but mentions occasional itching, indicating possible irritation or inflammation. The absence of pain is notable, but the presence of itching may suggest an underlying skin condition. The symptom of itching could provide further insight into the diagnosis.\",\"known_symptoms\":[\"bleeding skin spot\",\"red and puffy skin around the spot\",\"spreading spots around the main spot\",\"increasing size over weeks\",\"itchiness around the area\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Pyogenic Granuloma\",\"confidence\":0.8},{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.5},{\"diagnosis\":\"Melanoma\",\"confidence\":0.4},{\"diagnosis\":\"Dermatitis\",\"confidence\":0.35}],\"symptoms_to_verify_or_refute\":[\"itchiness of the area\",\"frequency of bleeding\",\"size of the main spot\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"It's helpful to know that you've experienced some itching. How often does the itching occur, and does it seem to get worse when the spot is irritated or bleeding?\"}"
+        },
+        {
+            "role": "user",
+            "content": "The itching happens off and on, and it does feel like it gets worse when the spot is irritated or bleeding."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":4,\"free_form_thoughts\":\"The patient reports that itching occurs intermittently and worsens with irritation or bleeding, which supports the idea of an inflammatory process. The combination of symptoms, particularly the bleeding and growth of the spot with associated itching, continues to align with a possible diagnosis of Pyogenic Granuloma, while also keeping other differential diagnoses in mind.\",\"known_symptoms\":[\"bleeding skin spot\",\"red and puffy skin around the spot\",\"spreading spots around the main spot\",\"increasing size over weeks\",\"itchiness around the area\",\"itchiness worsens with irritation\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Pyogenic Granuloma\",\"confidence\":0.85},{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.5},{\"diagnosis\":\"Melanoma\",\"confidence\":0.4},{\"diagnosis\":\"Dermatitis\",\"confidence\":0.35}],\"symptoms_to_verify_or_refute\":[\"itchiness worsening with irritation\",\"frequency of bleeding\",\"size of the main spot\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"Thank you for that information. Based on what you've described, it sounds like there could be an inflammatory condition at play. Have you noticed any changes in color of the spot, such as becoming darker or a change in texture?\"}"
+        },
+        {
+            "role": "user",
+            "content": "Yes, the spot has different colors\u2014like brown, black, and maybe even some red or blue mixed in. It feels kind of thick or raised, not flat like some of my other moles."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":5,\"free_form_thoughts\":\"The patient describes a multicolored spot (brown, black, red, blue) that feels thick or raised, indicating potential abnormality in skin texture and color. These features raise concerns for more serious skin conditions. The risk factors and characteristics may lean towards a diagnosis of melanoma, although the overall confidence remains higher for Pyogenic Granuloma due to the bleeding and growth pattern.\",\"known_symptoms\":[\"bleeding skin spot\",\"red and puffy skin around the spot\",\"spreading spots around the main spot\",\"increasing size over weeks\",\"itchiness around the area\",\"itchiness worsening with irritation\",\"multicolored spot\",\"thick or raised texture\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Pyogenic Granuloma\",\"confidence\":0.75},{\"diagnosis\":\"Melanoma\",\"confidence\":0.6},{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.5},{\"diagnosis\":\"Dermatitis\",\"confidence\":0.35}],\"symptoms_to_verify_or_refute\":[\"color changes in the spot\",\"texture changes (thick vs flat)\",\"bleeding frequency\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"The changes in color and thickness are important to note. Based on these features, I want to ask if you've noticed any changes in the appearance of the smaller spots around the main one, such as changes in color or size?\"}"
+        },
+        {
+            "role": "user",
+            "content": "The smaller spots around the main one seem to be popping up and might be changing a bit, but I haven't paid too much attention to their color or size specifically."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":6,\"free_form_thoughts\":\"The patient acknowledges that smaller spots are appearing around the main spot and may be changing, but they haven't closely monitored their details. This could indicate a spreading process that requires further evaluation. The symptoms and their characteristics are increasingly concerning for a more serious diagnosis, particularly melanoma, due to the presence of multiple colors, bleeding, and changes in texture.\",\"known_symptoms\":[\"bleeding skin spot\",\"red and puffy skin around the spot\",\"spreading spots around the main spot\",\"increasing size over weeks\",\"itchiness around the area\",\"itchiness worsening with irritation\",\"multicolored spot\",\"thick or raised texture\",\"smaller spots changing\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Pyogenic Granuloma\",\"confidence\":0.7},{\"diagnosis\":\"Melanoma\",\"confidence\":0.7},{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.5},{\"diagnosis\":\"Dermatitis\",\"confidence\":0.35}],\"symptoms_to_verify_or_refute\":[\"changes in smaller spots\",\"color changes in the spot\",\"frequency of bleeding\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"It's important to keep an eye on those smaller spots as well, especially since they seem to be changing. Given the bleeding and the characteristics of the spots, I recommend that you see a dermatologist for a thorough evaluation and possibly a biopsy to determine what\u2019s going on. Have you ever had any skin issues like this before?\"}"
+        },
+        {
+            "role": "user",
+            "content": "No, I haven't had any skin issues like this before. This is all pretty new to me."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":7,\"free_form_thoughts\":\"The patient has no prior history of skin issues, emphasizing the novelty of the current symptoms. This could suggest an acute condition that has developed recently. The combination of the features described\u2014bleeding, color changes, and the presence of new spots\u2014reinforces the need for immediate evaluation by a dermatologist, as there is significant concern for malignancy at this point.\",\"known_symptoms\":[\"bleeding skin spot\",\"red and puffy skin around the spot\",\"spreading spots around the main spot\",\"increasing size over weeks\",\"itchiness around the area\",\"itchiness worsening with irritation\",\"multicolored spot\",\"thick or raised texture\",\"smaller spots changing\",\"no prior skin issues\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Melanoma\",\"confidence\":0.8},{\"diagnosis\":\"Pyogenic Granuloma\",\"confidence\":0.65},{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.5},{\"diagnosis\":\"Dermatitis\",\"confidence\":0.3}],\"symptoms_to_verify_or_refute\":[\"changes in smaller spots\",\"color changes in the spot\",\"frequency of bleeding\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"Since this is all new for you, it's understandable to feel concerned. Based on what we've discussed, I believe it's crucial for you to see a dermatologist for a proper examination. They may suggest a biopsy to rule out serious conditions like melanoma or other skin issues. Would you like more information on how to find a dermatologist?\"}"
+        },
+        {
+            "role": "user",
+            "content": "Yes, I would appreciate more information on how to find a dermatologist. Thank you."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":8,\"free_form_thoughts\":\"The patient is seeking information on how to find a dermatologist, indicating an understanding of the seriousness of the symptoms and a willingness to take action. This is the final interaction step as sufficient information has been gathered to formulate a high-confidence diagnosis and recommendation.\",\"known_symptoms\":[\"bleeding skin spot\",\"red and puffy skin around the spot\",\"spreading spots around the main spot\",\"increasing size over weeks\",\"itchiness around the area\",\"itchiness worsening with irritation\",\"multicolored spot\",\"thick or raised texture\",\"smaller spots changing\",\"no prior skin issues\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Melanoma\",\"confidence\":0.85},{\"diagnosis\":\"Pyogenic Granuloma\",\"confidence\":0.65},{\"diagnosis\":\"Basal Cell Carcinoma\",\"confidence\":0.5},{\"diagnosis\":\"Dermatitis\",\"confidence\":0.3}],\"symptoms_to_verify_or_refute\":[],\"diagnosis_relayed_to_patient\":true,\"response_to_patient\":\"Given the symptoms you've described, I believe you should see a dermatologist as soon as possible for evaluation. You can find one by checking with your primary care doctor for a referral, or you can search online through directories like the American Academy of Dermatology's website. They can provide a list of qualified dermatologists in your area. Please take care, and don't hesitate to reach out if you have any further questions or concerns.\"}"
+        }
+    ],
+    "patient_is_first": true
+}

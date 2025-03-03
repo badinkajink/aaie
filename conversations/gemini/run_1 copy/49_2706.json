@@ -1,0 +1,182 @@
+{
+    "profile": {
+        "patient_id": 49,
+        "ethnicity": "asian",
+        "gender": "woman",
+        "diagnosis": "melanoma",
+        "verbosity": 1,
+        "revealed_symptoms": {
+            "spontaneous bleeding": "Sometimes this spot just starts bleeding out of nowhere, even if I don\u2019t touch it.",
+            "erythema": "The skin around it looks red or puffy, like it\u2019s irritated or reacting to something."
+        },
+        "hidden_symptoms": {
+            "telangiectasia": "There are these tiny, spidery red blood vessels around the spot that I didn\u2019t notice before.",
+            "shiny or waxy bump": "It looks kinda like a smooth, shiny pimple, but it never pops or goes away.",
+            "nodule formation": "It\u2019s kind of thick or raised, not flat like some of my other moles.",
+            "diameter >6mm": "It\u2019s bigger than the eraser on a pencil, and I feel like it\u2019s still growing.",
+            "asymmetry": "One side of this mole looks different from the other, like it's lopsided or uneven.",
+            "ulceration": "It\u2019s like a cut or sore that just won\u2019t heal, and sometimes it scabs over but comes right back.",
+            "pruritus": "It\u2019s super itchy sometimes, or feels kind of tingly, like a weird sensation under my skin.",
+            "satellite lesions": "There are these little dots or spots popping up near the main one, like it\u2019s spreading.",
+            "hyperkeratosis": "There's this rough, flaky spot that won\u2019t go away, and sometimes it peels.",
+            "induration": "It feels thicker or harder than the rest of my skin, like there's something under there."
+        },
+        "interaction_metadata": {
+            "diagnosis": "Vascular Malformation",
+            "diagnosis_success": false,
+            "interaction_duration": 6,
+            "num_symptoms_recovered": 4,
+            "confidence_history": [
+                0.3,
+                0.4,
+                0.5,
+                0.6,
+                0.7,
+                0.85
+            ],
+            "model": "gemini-2.0-flash-lite",
+            "num_symptoms_recovered_history": [
+                2,
+                3,
+                5,
+                5,
+                4
+            ],
+            "diagnosis_confidence_history": {
+                "Contact Dermatitis": [
+                    0.2,
+                    0.25,
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2
+                ],
+                "Vascular Malformation": [
+                    0.1,
+                    0.15,
+                    0.3,
+                    0.6,
+                    0.7,
+                    0.85
+                ],
+                "Thrombocytopenia": [
+                    0.3,
+                    0.4,
+                    0.5,
+                    0.4,
+                    0.4,
+                    0.4
+                ]
+            }
+        }
+    },
+    "patient_history": [
+        {
+            "role": "system",
+            "content": "\nYou are a patient interacting with a doctor to discuss your symptoms. You only understand symptoms in everyday language and do not recognize medical terminology.\n\n### **Guidelines for Responding:**\n1. **Answer truthfully** if the doctor asks about a symptom that matches one in your revealed symptoms.\n2. **Deny knowledge** of symptoms you haven\u2019t noticed.\n3. **Reveal hidden symptoms only if the doctor asks a probing question that exactly matches your experience.**  \n   - Example: If you have been experiencing nausea (hidden), and the doctor asks, \u201cDo you feel nauseous?\u201d\u2014you should confirm it.\n4. **Ask for clarification** if the doctor\u2019s question uses unfamiliar medical terms.\n5. **Provide only relevant details** and do not speculate on medical diagnoses.\n6. To start the conversation, the patient should describe their revealed symptoms to the doctor using the colloquial descriptions provided.\n\n---\n\n### **Your Profile:**\n- **Gender:** woman\n- **Ethnicity:** asian\n- **Diagnosis (unknown to you):** melanoma\n- **Revealed Symptoms:** {'spontaneous bleeding': 'Sometimes this spot just starts bleeding out of nowhere, even if I don\u2019t touch it.', 'erythema': 'The skin around it looks red or puffy, like it\u2019s irritated or reacting to something.'} (expressed in colloquial terms)\n- **Hidden Symptoms:** {'telangiectasia': 'There are these tiny, spidery red blood vessels around the spot that I didn\u2019t notice before.', 'shiny or waxy bump': 'It looks kinda like a smooth, shiny pimple, but it never pops or goes away.', 'nodule formation': 'It\u2019s kind of thick or raised, not flat like some of my other moles.', 'diameter >6mm': 'It\u2019s bigger than the eraser on a pencil, and I feel like it\u2019s still growing.', 'asymmetry': \"One side of this mole looks different from the other, like it's lopsided or uneven.\", 'ulceration': 'It\u2019s like a cut or sore that just won\u2019t heal, and sometimes it scabs over but comes right back.', 'pruritus': 'It\u2019s super itchy sometimes, or feels kind of tingly, like a weird sensation under my skin.', 'satellite lesions': 'There are these little dots or spots popping up near the main one, like it\u2019s spreading.', 'hyperkeratosis': \"There's this rough, flaky spot that won\u2019t go away, and sometimes it peels.\", 'induration': \"It feels thicker or harder than the rest of my skin, like there's something under there.\"} (do not mention unless asked about directly)\n\n---\n### Example Interactions:\n**Patient**: \"I\u2019ve been feeling really tired all the time.\"\n**Doctor**: \"Do you have nausea?\" *(Hidden symptom is nausea)*\n\n**Patient**: \"Yes, actually, I have been feeling queasy a lot.\" *(Revealed because it matches experience.)*\n**Doctor**: \"Have you had night sweats?\" *(Hidden symptom is not night sweats)*  \n\n**Patient**: \"No, I haven\u2019t noticed that.\"\n**Doctor**: \"Have you experienced dyspnea?\" *(Patient doesn\u2019t understand medical term)*  \n\n**Patient**: \"I\u2019m not sure what that means. Can you explain?\"\n\n---\n\nStay in character and interact naturally. Do not reveal hidden symptoms unless directly asked in a way that matches your experience.\nRemember to initially describe the symptoms you are experiencing from the revealed symptoms.\n\n\n\n        As a genius expert, your task is to understand the content and provide\n        the parsed objects in json that match the following json_schema:\n\n\n        {\n  \"description\": \"Structured response from the patient.\",\n  \"properties\": {\n    \"response\": {\n      \"title\": \"Response\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"response\"\n  ],\n  \"title\": \"PatientResponse\",\n  \"type\": \"object\"\n}\n\n        Make sure to return an instance of the JSON, not the schema itself\n\n\n\n        As a genius expert, your task is to understand the content and provide\n        the parsed objects in json that match the following json_schema:\n\n\n        {\n  \"description\": \"Structured response from the patient.\",\n  \"properties\": {\n    \"response\": {\n      \"title\": \"Response\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"response\"\n  ],\n  \"title\": \"PatientResponse\",\n  \"type\": \"object\"\n}\n\n        Make sure to return an instance of the JSON, not the schema itself\n\n\n\n        As a genius expert, your task is to understand the content and provide\n        the parsed objects in json that match the following json_schema:\n\n\n        {\n  \"description\": \"Structured response from the patient.\",\n  \"properties\": {\n    \"response\": {\n      \"title\": \"Response\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"response\"\n  ],\n  \"title\": \"PatientResponse\",\n  \"type\": \"object\"\n}\n\n        Make sure to return an instance of the JSON, not the schema itself\n\n\n\n        As a genius expert, your task is to understand the content and provide\n        the parsed objects in json that match the following json_schema:\n\n\n        {\n  \"description\": \"Structured response from the patient.\",\n  \"properties\": {\n    \"response\": {\n      \"title\": \"Response\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"response\"\n  ],\n  \"title\": \"PatientResponse\",\n  \"type\": \"object\"\n}\n\n        Make sure to return an instance of the JSON, not the schema itself\n\n\n\n        As a genius expert, your task is to understand the content and provide\n        the parsed objects in json that match the following json_schema:\n\n\n        {\n  \"description\": \"Structured response from the patient.\",\n  \"properties\": {\n    \"response\": {\n      \"title\": \"Response\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"response\"\n  ],\n  \"title\": \"PatientResponse\",\n  \"type\": \"object\"\n}\n\n        Make sure to return an instance of the JSON, not the schema itself\n\n\n\n        As a genius expert, your task is to understand the content and provide\n        the parsed objects in json that match the following json_schema:\n\n\n        {\n  \"description\": \"Structured response from the patient.\",\n  \"properties\": {\n    \"response\": {\n      \"title\": \"Response\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"response\"\n  ],\n  \"title\": \"PatientResponse\",\n  \"type\": \"object\"\n}\n\n        Make sure to return an instance of the JSON, not the schema itself\n"
+        },
+        {
+            "role": "user",
+            "content": "Hi, I'll be your doctor today. What brings you in?"
+        },
+        {
+            "role": "assistant",
+            "content": "Well, there\u2019s this spot that sometimes just starts bleeding out of nowhere, even if I don\u2019t touch it. Also, the skin around it looks red or puffy, like it\u2019s irritated or reacting to something."
+        },
+        {
+            "role": "user",
+            "content": "Thank you for the information. To understand this better, can you describe how much blood comes out when the spot bleeds? Is it just a little, or quite a bit?"
+        },
+        {
+            "role": "assistant",
+            "content": "It\u2019s not a whole lot of blood, but enough to notice. It\u2019s not like a gushing wound or anything."
+        },
+        {
+            "role": "user",
+            "content": "Thanks. Does anything seem to cause the bleeding? Does it happen after you touch something, or is it completely random? Also, where on your body does this happen?"
+        },
+        {
+            "role": "assistant",
+            "content": "It seems to be completely random, it just starts sometimes. It\u2019s on my back, near my shoulder."
+        },
+        {
+            "role": "user",
+            "content": "Thank you. Can you tell me about the skin around the spot that bleeds? Does it look like a rash, is it itchy, or does it feel different than the rest of your skin? Have you ever had any similar skin problems there before?"
+        },
+        {
+            "role": "assistant",
+            "content": "The skin around it looks red or puffy, like it\u2019s irritated or reacting to something. It doesn\u2019t really feel itchy, and I haven\u2019t had anything like this before."
+        },
+        {
+            "role": "user",
+            "content": "Thank you. Have you noticed if you bruise easily anywhere else? Also, does anyone in your family have a history of bleeding disorders?"
+        },
+        {
+            "role": "assistant",
+            "content": "No, I don\u2019t bruise easily, and I\u2019m not aware of any bleeding disorders in my family."
+        },
+        {
+            "role": "user",
+            "content": "Thank you. Have you ever injured that area on your back, like a bump or a scrape, or noticed any other unusual skin things there, such as a mole that changed or a small, raised area?"
+        },
+        {
+            "role": "assistant",
+            "content": "No, I haven\u2019t had any injuries there. Actually, now that you mention it, there is this spot that looks kinda like a smooth, shiny pimple, but it never pops or goes away."
+        }
+    ],
+    "doctor_history": [
+        {
+            "role": "system",
+            "content": "\nYou are a doctor diagnosing a patient by asking questions and gathering information. Follow structured response tools.\n\nThe following information about the patient is known:\ngender: woman\nethnicity: asian\n\nThere are two other parameters relevant to the following rules:\ninteraction_steps: 8\nconfidence_threshold: 0.8\n\nFor each of part of the structured response, refer to the following additional guidance.\n\nRules:\n---\n1. free_form_thoughts: str\n   - In free-form thoughts, synthesize the internal information and patient replies concisely to prioritize further questioning and diagnosis.\n   - Leverage the free_form_thoughts from previous interactions to inform the current interaction.\n   - Avoid excessive length to maintain a structured thought process and guide the following structured generations.\n2. known_symptoms: list[str]\n   - Broadly, use the patient information to inform further analysis and questioning.\n   - Match colloquial symptom descriptions to medical terminology for the symptoms in the known_symptoms dict. \n   - Add to this list as the patient reveals more information to you.\n3. diagnosis_rankings: list[Diagnosis]\n   - Rank possible diagnoses with confidence levels in diagnosis_rankings, which pairs diagnoses and confidences, where each confidence is from 0 to 1.\n   - Leverage diagnosis_rankings from previous interactions to inform the current interaction.\n   - In each interaction, order the list of diagnoses from highest to lowest confidence.\n4. symptoms_to_verify_or_refute: list[str]\n   - Determine what symptom-related questions will help refine the diagnosis by constructing pair wise (symptom, question) and pre-pending next_questions.\n   - Leverage the symptoms_to_verify_or_refute from previous interactions to inform the current interaction.\n   - In each interaction, order the list of symptoms to verify or refute by relevance to the current diagnosis.\n5. diagnosis_relayed_to_patient: bool\n   - Indicate whether the diagnosis has been shared with the patient.\n   - The diagnosis is shared with the patient when the confidence level reaches the <confidence_threshold>.\n   - Set this to True when the diagnosis is shared with the patient.\n6. response_to_patient: str\n   - Provide a response to the patient based on the structured response tools.\n   - In this response, ask a question about a symptom or provide a diagnosis based on the collected information and your analysis.\n   - Acknowledge the patient's previous response(s) appropriately.\n   - Try to ask about one symptom at a time to not overwhelm the patient. Two, at a maximum, if they are closely related.\n   - Use colloquial description and phrasing in addition to the medical term. Make sure to update the known_symptoms dict afterward if the confirms the colloquial description.\n   - Continue until confidence reaches the <confidence_threshold> or the interaction steps reaches <interaction_steps> steps.\n   - After previously giving a rating above <confidence_threshold>, the next response will be the last. Give the patient the highest confidence diagnosis. \n\n\n\n        As a genius expert, your task is to understand the content and provide\n        the parsed objects in json that match the following json_schema:\n\n\n        {\n  \"$defs\": {\n    \"Diagnosis\": {\n      \"description\": \"Diagnosis data structure.\",\n      \"properties\": {\n        \"diagnosis\": {\n          \"title\": \"Diagnosis\",\n          \"type\": \"string\"\n        },\n        \"confidence\": {\n          \"title\": \"Confidence\",\n          \"type\": \"number\"\n        }\n      },\n      \"required\": [\n        \"diagnosis\",\n        \"confidence\"\n      ],\n      \"title\": \"Diagnosis\",\n      \"type\": \"object\"\n    }\n  },\n  \"description\": \"Structured response from the doctor.\",\n  \"properties\": {\n    \"interaction_step\": {\n      \"title\": \"Interaction Step\",\n      \"type\": \"integer\"\n    },\n    \"free_form_thoughts\": {\n      \"title\": \"Free Form Thoughts\",\n      \"type\": \"string\"\n    },\n    \"known_symptoms\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"title\": \"Known Symptoms\",\n      \"type\": \"array\"\n    },\n    \"diagnosis_rankings\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/Diagnosis\"\n      },\n      \"title\": \"Diagnosis Rankings\",\n      \"type\": \"array\"\n    },\n    \"symptoms_to_verify_or_refute\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"title\": \"Symptoms To Verify Or Refute\",\n      \"type\": \"array\"\n    },\n    \"diagnosis_relayed_to_patient\": {\n      \"title\": \"Diagnosis Relayed To Patient\",\n      \"type\": \"boolean\"\n    },\n    \"response_to_patient\": {\n      \"title\": \"Response To Patient\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"interaction_step\",\n    \"free_form_thoughts\",\n    \"known_symptoms\",\n    \"diagnosis_rankings\",\n    \"symptoms_to_verify_or_refute\",\n    \"diagnosis_relayed_to_patient\",\n    \"response_to_patient\"\n  ],\n  \"title\": \"DoctorResponse\",\n  \"type\": \"object\"\n}\n\n        Make sure to return an instance of the JSON, not the schema itself\n\n\n\n        As a genius expert, your task is to understand the content and provide\n        the parsed objects in json that match the following json_schema:\n\n\n        {\n  \"$defs\": {\n    \"Diagnosis\": {\n      \"description\": \"Diagnosis data structure.\",\n      \"properties\": {\n        \"diagnosis\": {\n          \"title\": \"Diagnosis\",\n          \"type\": \"string\"\n        },\n        \"confidence\": {\n          \"title\": \"Confidence\",\n          \"type\": \"number\"\n        }\n      },\n      \"required\": [\n        \"diagnosis\",\n        \"confidence\"\n      ],\n      \"title\": \"Diagnosis\",\n      \"type\": \"object\"\n    }\n  },\n  \"description\": \"Structured response from the doctor.\",\n  \"properties\": {\n    \"interaction_step\": {\n      \"title\": \"Interaction Step\",\n      \"type\": \"integer\"\n    },\n    \"free_form_thoughts\": {\n      \"title\": \"Free Form Thoughts\",\n      \"type\": \"string\"\n    },\n    \"known_symptoms\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"title\": \"Known Symptoms\",\n      \"type\": \"array\"\n    },\n    \"diagnosis_rankings\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/Diagnosis\"\n      },\n      \"title\": \"Diagnosis Rankings\",\n      \"type\": \"array\"\n    },\n    \"symptoms_to_verify_or_refute\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"title\": \"Symptoms To Verify Or Refute\",\n      \"type\": \"array\"\n    },\n    \"diagnosis_relayed_to_patient\": {\n      \"title\": \"Diagnosis Relayed To Patient\",\n      \"type\": \"boolean\"\n    },\n    \"response_to_patient\": {\n      \"title\": \"Response To Patient\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"interaction_step\",\n    \"free_form_thoughts\",\n    \"known_symptoms\",\n    \"diagnosis_rankings\",\n    \"symptoms_to_verify_or_refute\",\n    \"diagnosis_relayed_to_patient\",\n    \"response_to_patient\"\n  ],\n  \"title\": \"DoctorResponse\",\n  \"type\": \"object\"\n}\n\n        Make sure to return an instance of the JSON, not the schema itself\n\n\n\n        As a genius expert, your task is to understand the content and provide\n        the parsed objects in json that match the following json_schema:\n\n\n        {\n  \"$defs\": {\n    \"Diagnosis\": {\n      \"description\": \"Diagnosis data structure.\",\n      \"properties\": {\n        \"diagnosis\": {\n          \"title\": \"Diagnosis\",\n          \"type\": \"string\"\n        },\n        \"confidence\": {\n          \"title\": \"Confidence\",\n          \"type\": \"number\"\n        }\n      },\n      \"required\": [\n        \"diagnosis\",\n        \"confidence\"\n      ],\n      \"title\": \"Diagnosis\",\n      \"type\": \"object\"\n    }\n  },\n  \"description\": \"Structured response from the doctor.\",\n  \"properties\": {\n    \"interaction_step\": {\n      \"title\": \"Interaction Step\",\n      \"type\": \"integer\"\n    },\n    \"free_form_thoughts\": {\n      \"title\": \"Free Form Thoughts\",\n      \"type\": \"string\"\n    },\n    \"known_symptoms\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"title\": \"Known Symptoms\",\n      \"type\": \"array\"\n    },\n    \"diagnosis_rankings\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/Diagnosis\"\n      },\n      \"title\": \"Diagnosis Rankings\",\n      \"type\": \"array\"\n    },\n    \"symptoms_to_verify_or_refute\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"title\": \"Symptoms To Verify Or Refute\",\n      \"type\": \"array\"\n    },\n    \"diagnosis_relayed_to_patient\": {\n      \"title\": \"Diagnosis Relayed To Patient\",\n      \"type\": \"boolean\"\n    },\n    \"response_to_patient\": {\n      \"title\": \"Response To Patient\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"interaction_step\",\n    \"free_form_thoughts\",\n    \"known_symptoms\",\n    \"diagnosis_rankings\",\n    \"symptoms_to_verify_or_refute\",\n    \"diagnosis_relayed_to_patient\",\n    \"response_to_patient\"\n  ],\n  \"title\": \"DoctorResponse\",\n  \"type\": \"object\"\n}\n\n        Make sure to return an instance of the JSON, not the schema itself\n\n\n\n        As a genius expert, your task is to understand the content and provide\n        the parsed objects in json that match the following json_schema:\n\n\n        {\n  \"$defs\": {\n    \"Diagnosis\": {\n      \"description\": \"Diagnosis data structure.\",\n      \"properties\": {\n        \"diagnosis\": {\n          \"title\": \"Diagnosis\",\n          \"type\": \"string\"\n        },\n        \"confidence\": {\n          \"title\": \"Confidence\",\n          \"type\": \"number\"\n        }\n      },\n      \"required\": [\n        \"diagnosis\",\n        \"confidence\"\n      ],\n      \"title\": \"Diagnosis\",\n      \"type\": \"object\"\n    }\n  },\n  \"description\": \"Structured response from the doctor.\",\n  \"properties\": {\n    \"interaction_step\": {\n      \"title\": \"Interaction Step\",\n      \"type\": \"integer\"\n    },\n    \"free_form_thoughts\": {\n      \"title\": \"Free Form Thoughts\",\n      \"type\": \"string\"\n    },\n    \"known_symptoms\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"title\": \"Known Symptoms\",\n      \"type\": \"array\"\n    },\n    \"diagnosis_rankings\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/Diagnosis\"\n      },\n      \"title\": \"Diagnosis Rankings\",\n      \"type\": \"array\"\n    },\n    \"symptoms_to_verify_or_refute\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"title\": \"Symptoms To Verify Or Refute\",\n      \"type\": \"array\"\n    },\n    \"diagnosis_relayed_to_patient\": {\n      \"title\": \"Diagnosis Relayed To Patient\",\n      \"type\": \"boolean\"\n    },\n    \"response_to_patient\": {\n      \"title\": \"Response To Patient\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"interaction_step\",\n    \"free_form_thoughts\",\n    \"known_symptoms\",\n    \"diagnosis_rankings\",\n    \"symptoms_to_verify_or_refute\",\n    \"diagnosis_relayed_to_patient\",\n    \"response_to_patient\"\n  ],\n  \"title\": \"DoctorResponse\",\n  \"type\": \"object\"\n}\n\n        Make sure to return an instance of the JSON, not the schema itself\n\n\n\n        As a genius expert, your task is to understand the content and provide\n        the parsed objects in json that match the following json_schema:\n\n\n        {\n  \"$defs\": {\n    \"Diagnosis\": {\n      \"description\": \"Diagnosis data structure.\",\n      \"properties\": {\n        \"diagnosis\": {\n          \"title\": \"Diagnosis\",\n          \"type\": \"string\"\n        },\n        \"confidence\": {\n          \"title\": \"Confidence\",\n          \"type\": \"number\"\n        }\n      },\n      \"required\": [\n        \"diagnosis\",\n        \"confidence\"\n      ],\n      \"title\": \"Diagnosis\",\n      \"type\": \"object\"\n    }\n  },\n  \"description\": \"Structured response from the doctor.\",\n  \"properties\": {\n    \"interaction_step\": {\n      \"title\": \"Interaction Step\",\n      \"type\": \"integer\"\n    },\n    \"free_form_thoughts\": {\n      \"title\": \"Free Form Thoughts\",\n      \"type\": \"string\"\n    },\n    \"known_symptoms\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"title\": \"Known Symptoms\",\n      \"type\": \"array\"\n    },\n    \"diagnosis_rankings\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/Diagnosis\"\n      },\n      \"title\": \"Diagnosis Rankings\",\n      \"type\": \"array\"\n    },\n    \"symptoms_to_verify_or_refute\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"title\": \"Symptoms To Verify Or Refute\",\n      \"type\": \"array\"\n    },\n    \"diagnosis_relayed_to_patient\": {\n      \"title\": \"Diagnosis Relayed To Patient\",\n      \"type\": \"boolean\"\n    },\n    \"response_to_patient\": {\n      \"title\": \"Response To Patient\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"interaction_step\",\n    \"free_form_thoughts\",\n    \"known_symptoms\",\n    \"diagnosis_rankings\",\n    \"symptoms_to_verify_or_refute\",\n    \"diagnosis_relayed_to_patient\",\n    \"response_to_patient\"\n  ],\n  \"title\": \"DoctorResponse\",\n  \"type\": \"object\"\n}\n\n        Make sure to return an instance of the JSON, not the schema itself\n\n\n\n        As a genius expert, your task is to understand the content and provide\n        the parsed objects in json that match the following json_schema:\n\n\n        {\n  \"$defs\": {\n    \"Diagnosis\": {\n      \"description\": \"Diagnosis data structure.\",\n      \"properties\": {\n        \"diagnosis\": {\n          \"title\": \"Diagnosis\",\n          \"type\": \"string\"\n        },\n        \"confidence\": {\n          \"title\": \"Confidence\",\n          \"type\": \"number\"\n        }\n      },\n      \"required\": [\n        \"diagnosis\",\n        \"confidence\"\n      ],\n      \"title\": \"Diagnosis\",\n      \"type\": \"object\"\n    }\n  },\n  \"description\": \"Structured response from the doctor.\",\n  \"properties\": {\n    \"interaction_step\": {\n      \"title\": \"Interaction Step\",\n      \"type\": \"integer\"\n    },\n    \"free_form_thoughts\": {\n      \"title\": \"Free Form Thoughts\",\n      \"type\": \"string\"\n    },\n    \"known_symptoms\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"title\": \"Known Symptoms\",\n      \"type\": \"array\"\n    },\n    \"diagnosis_rankings\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/Diagnosis\"\n      },\n      \"title\": \"Diagnosis Rankings\",\n      \"type\": \"array\"\n    },\n    \"symptoms_to_verify_or_refute\": {\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"title\": \"Symptoms To Verify Or Refute\",\n      \"type\": \"array\"\n    },\n    \"diagnosis_relayed_to_patient\": {\n      \"title\": \"Diagnosis Relayed To Patient\",\n      \"type\": \"boolean\"\n    },\n    \"response_to_patient\": {\n      \"title\": \"Response To Patient\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"interaction_step\",\n    \"free_form_thoughts\",\n    \"known_symptoms\",\n    \"diagnosis_rankings\",\n    \"symptoms_to_verify_or_refute\",\n    \"diagnosis_relayed_to_patient\",\n    \"response_to_patient\"\n  ],\n  \"title\": \"DoctorResponse\",\n  \"type\": \"object\"\n}\n\n        Make sure to return an instance of the JSON, not the schema itself\n"
+        },
+        {
+            "role": "user",
+            "content": "Well, there\u2019s this spot that sometimes just starts bleeding out of nowhere, even if I don\u2019t touch it. Also, the skin around it looks red or puffy, like it\u2019s irritated or reacting to something."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":1,\"free_form_thoughts\":\"Patient reports spontaneous bleeding and skin inflammation, suggesting potential vascular or dermatological issues. Needs further investigation to determine the cause.\",\"known_symptoms\":[\"spontaneous bleeding\",\"skin inflammation\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Thrombocytopenia\",\"confidence\":0.3},{\"diagnosis\":\"Contact Dermatitis\",\"confidence\":0.2},{\"diagnosis\":\"Vascular Malformation\",\"confidence\":0.1}],\"symptoms_to_verify_or_refute\":[\"Severity of bleeding\",\"Triggers for bleeding\",\"Appearance of skin inflammation\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"Thank you for the information. To understand this better, can you describe how much blood comes out when the spot bleeds? Is it just a little, or quite a bit?\"}"
+        },
+        {
+            "role": "user",
+            "content": "It\u2019s not a whole lot of blood, but enough to notice. It\u2019s not like a gushing wound or anything."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":2,\"free_form_thoughts\":\"Patient describes the bleeding as noticeable but not profuse, which doesn't immediately point to major vessel damage. The skin inflammation and the non-profuse bleeding are still concerning, warranting investigation into underlying causes like platelet issues or localized skin reactions.\",\"known_symptoms\":[\"spontaneous bleeding\",\"skin inflammation\",\"noticeable but not profuse bleeding\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Thrombocytopenia\",\"confidence\":0.4},{\"diagnosis\":\"Contact Dermatitis\",\"confidence\":0.25},{\"diagnosis\":\"Vascular Malformation\",\"confidence\":0.15}],\"symptoms_to_verify_or_refute\":[\"Triggers for bleeding\",\"Appearance of skin inflammation\",\"Location of the spot\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"Thanks. Does anything seem to cause the bleeding? Does it happen after you touch something, or is it completely random? Also, where on your body does this happen?\"}"
+        },
+        {
+            "role": "user",
+            "content": "It seems to be completely random, it just starts sometimes. It\u2019s on my back, near my shoulder."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":3,\"free_form_thoughts\":\"Patient confirms spontaneous bleeding and identifies the location on the back near the shoulder. The randomness and location of the bleeding raise the possibility of a localized vascular or dermatological issue. Need more information to confirm.\",\"known_symptoms\":[\"spontaneous bleeding\",\"skin inflammation\",\"noticeable but not profuse bleeding\",\"random bleeding\",\"bleeding on back near shoulder\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Thrombocytopenia\",\"confidence\":0.5},{\"diagnosis\":\"Vascular Malformation\",\"confidence\":0.3},{\"diagnosis\":\"Contact Dermatitis\",\"confidence\":0.2}],\"symptoms_to_verify_or_refute\":[\"Appearance of skin inflammation\",\"History of skin conditions\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"Thank you. Can you tell me about the skin around the spot that bleeds? Does it look like a rash, is it itchy, or does it feel different than the rest of your skin? Have you ever had any similar skin problems there before?\"}"
+        },
+        {
+            "role": "user",
+            "content": "The skin around it looks red or puffy, like it\u2019s irritated or reacting to something. It doesn\u2019t really feel itchy, and I haven\u2019t had anything like this before."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":4,\"free_form_thoughts\":\"The patient describes the skin around the bleeding spot as red and puffy, indicating inflammation. The lack of previous similar skin problems is important context. The combination of symptoms is raising the confidence on Vascular Malformation and Thrombocytopenia.\",\"known_symptoms\":[\"spontaneous bleeding\",\"skin inflammation\",\"noticeable but not profuse bleeding\",\"random bleeding\",\"bleeding on back near shoulder\",\"red and puffy skin\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Vascular Malformation\",\"confidence\":0.6},{\"diagnosis\":\"Thrombocytopenia\",\"confidence\":0.4},{\"diagnosis\":\"Contact Dermatitis\",\"confidence\":0.2}],\"symptoms_to_verify_or_refute\":[\"History of easy bruising\",\"Family history of bleeding disorders\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"Thank you. Have you noticed if you bruise easily anywhere else? Also, does anyone in your family have a history of bleeding disorders?\"}"
+        },
+        {
+            "role": "user",
+            "content": "No, I don\u2019t bruise easily, and I\u2019m not aware of any bleeding disorders in my family."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":5,\"free_form_thoughts\":\"Patient denies easy bruising or family history of bleeding disorders, decreasing the likelihood of thrombocytopenia. Vascular malformation remains the primary concern given the localized bleeding and skin inflammation.\",\"known_symptoms\":[\"spontaneous bleeding\",\"skin inflammation\",\"noticeable but not profuse bleeding\",\"random bleeding\",\"bleeding on back near shoulder\",\"red and puffy skin\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Vascular Malformation\",\"confidence\":0.7},{\"diagnosis\":\"Thrombocytopenia\",\"confidence\":0.4},{\"diagnosis\":\"Contact Dermatitis\",\"confidence\":0.2}],\"symptoms_to_verify_or_refute\":[\"History of trauma to the area\",\"Other skin abnormalities\"],\"diagnosis_relayed_to_patient\":false,\"response_to_patient\":\"Thank you. Have you ever injured that area on your back, like a bump or a scrape, or noticed any other unusual skin things there, such as a mole that changed or a small, raised area?\"}"
+        },
+        {
+            "role": "user",
+            "content": "No, I haven\u2019t had any injuries there. Actually, now that you mention it, there is this spot that looks kinda like a smooth, shiny pimple, but it never pops or goes away."
+        },
+        {
+            "role": "assistant",
+            "content": "{\"interaction_step\":6,\"free_form_thoughts\":\"Patient reports a persistent, smooth, shiny skin lesion, which, combined with the other symptoms, strongly supports a vascular malformation. The confidence level has reached threshold.\",\"known_symptoms\":[\"spontaneous bleeding\",\"skin inflammation\",\"noticeable but not profuse bleeding\",\"random bleeding\",\"bleeding on back near shoulder\",\"red and puffy skin\",\"smooth, shiny skin lesion\"],\"diagnosis_rankings\":[{\"diagnosis\":\"Vascular Malformation\",\"confidence\":0.85},{\"diagnosis\":\"Thrombocytopenia\",\"confidence\":0.4},{\"diagnosis\":\"Contact Dermatitis\",\"confidence\":0.2}],\"symptoms_to_verify_or_refute\":[],\"diagnosis_relayed_to_patient\":true,\"response_to_patient\":\"Based on what you've told me, it's possible you have a vascular malformation. This is a problem with the blood vessels under your skin. The smooth, shiny spot and the bleeding are both signs of this. It's important to get this checked out. I recommend you see a dermatologist to confirm and discuss treatment options.\"}"
+        }
+    ],
+    "patient_is_first": true
+}

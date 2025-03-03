@@ -22,7 +22,7 @@
             "color variation": "It\u2019s got a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in."
         },
         "interaction_metadata": {
-            "diagnosis": "Dermatological condition such as a benign tumor or skin cancer",
+            "diagnosis": "dermatological condition such as a benign tumor or skin cancer",
             "diagnosis_success": false,
             "interaction_duration": 5,
             "num_symptoms_recovered": 8,
@@ -42,21 +42,21 @@
                 8
             ],
             "diagnosis_confidence_history": {
-                "Possible skin infection or inflammation": [
+                "possible skin infection or inflammation": [
                     0.6,
                     0.6,
                     0.6,
                     0.6,
                     0.6
                 ],
-                "Dermatological condition such as a benign tumor or skin cancer": [
+                "dermatological condition such as a benign tumor or skin cancer": [
                     0.5,
                     0.5,
                     0.5,
                     0.7,
                     0.8
                 ],
-                "Allergic reaction or dermatitis": [
+                "allergic reaction or dermatitis": [
                     0.4,
                     0.4,
                     0.4,

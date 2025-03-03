@@ -22,7 +22,7 @@
             "hyperkeratosis": "There's this rough, flaky spot that won\u2019t go away, and sometimes it peels."
         },
         "interaction_metadata": {
-            "diagnosis": "Melanoma",
+            "diagnosis": "melanoma",
             "diagnosis_success": true,
             "interaction_duration": 4,
             "num_symptoms_recovered": 7,
@@ -41,19 +41,19 @@
                 7
             ],
             "diagnosis_confidence_history": {
-                "Melanoma": [
+                "melanoma": [
                     0.6,
                     0.75,
                     0.8,
                     0.85
                 ],
-                "Basal Cell Carcinoma": [
+                "basal cell carcinoma": [
                     0.2,
                     0.15,
                     0.1,
                     0.08
                 ],
-                "Squamous Cell Carcinoma": [
+                "squamous cell carcinoma": [
                     0.1,
                     0.05,
                     0.05,

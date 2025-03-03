@@ -22,7 +22,7 @@
             "rapid growth": "I swear this mole or bump got bigger really fast, like in just a few weeks."
         },
         "interaction_metadata": {
-            "diagnosis": "Melanoma",
+            "diagnosis": "melanoma",
             "diagnosis_success": true,
             "interaction_duration": 7,
             "num_symptoms_recovered": 5,
@@ -44,7 +44,7 @@
                 5
             ],
             "diagnosis_confidence_history": {
-                "Melanoma": [
+                "melanoma": [
                     0.5,
                     0.5,
                     0.5,
@@ -53,7 +53,7 @@
                     0.8,
                     0.8
                 ],
-                "Squamous Cell Carcinoma": [
+                "squamous cell carcinoma": [
                     0.6,
                     0.6,
                     0.6,
@@ -62,7 +62,7 @@
                     0.6,
                     0.6
                 ],
-                "Basal Cell Carcinoma": [
+                "basal cell carcinoma": [
                     0.7,
                     0.7,
                     0.7,
@@ -71,7 +71,7 @@
                     0.7,
                     0.7
                 ],
-                "Infection": [
+                "infection": [
                     0.3,
                     0.3,
                     0.3,
@@ -80,7 +80,7 @@
                     0.3,
                     0.3
                 ],
-                "Chronic Dermatitis": [
+                "chronic dermatitis": [
                     0.4,
                     0.4,
                     0.4,

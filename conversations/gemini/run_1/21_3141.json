@@ -22,7 +22,7 @@
             "telangiectasia": "There are these tiny, spidery red blood vessels around the spot that I didn\u2019t notice before."
         },
         "interaction_metadata": {
-            "diagnosis": "Basal Cell Carcinoma",
+            "diagnosis": "basal cell carcinoma",
             "diagnosis_success": false,
             "interaction_duration": 6,
             "num_symptoms_recovered": 5,
@@ -43,7 +43,7 @@
                 5
             ],
             "diagnosis_confidence_history": {
-                "Basal Cell Carcinoma": [
+                "basal cell carcinoma": [
                     0.2,
                     0.25,
                     0.35,
@@ -51,7 +51,7 @@
                     0.5,
                     0.5
                 ],
-                "Actinic Keratosis": [
+                "actinic keratosis": [
                     0.3,
                     0.4,
                     0.45,
@@ -59,7 +59,7 @@
                     0.4,
                     0.4
                 ],
-                "Seborrheic Keratosis": [
+                "seborrheic keratosis": [
                     0.1,
                     0.1,
                     0.1,
@@ -67,7 +67,7 @@
                     0.1,
                     0.1
                 ],
-                "Squamous Cell Carcinoma": [
+                "squamous cell carcinoma": [
                     0.1,
                     0.15,
                     0.2,

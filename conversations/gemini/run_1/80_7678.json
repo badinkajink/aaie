@@ -22,8 +22,8 @@
             "color variation": "It\u2019s got a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in."
         },
         "interaction_metadata": {
-            "diagnosis": "Skin Cancer (possible melanoma or basal cell carcinoma)",
-            "diagnosis_success": false,
+            "diagnosis": "melanoma",
+            "diagnosis_success": true,
             "interaction_duration": 6,
             "num_symptoms_recovered": 4,
             "confidence_history": [
@@ -43,7 +43,7 @@
                 6
             ],
             "diagnosis_confidence_history": {
-                "Skin Cancer (possible melanoma or basal cell carcinoma)": [
+                "melanoma": [
                     0.3,
                     0.5,
                     0.6,
@@ -51,7 +51,7 @@
                     0.7,
                     0.7
                 ],
-                "Skin infection (possible cellulitis)": [
+                "skin infection (possible cellulitis)": [
                     0.2,
                     0.2,
                     0.1,
@@ -59,7 +59,7 @@
                     0.1,
                     0.1
                 ],
-                "Benign skin lesion (e.g., atypical nevus)": [
+                "benign skin lesion (e.g., atypical nevus)": [
                     0.1,
                     0.1,
                     0.2,

@@ -22,7 +22,7 @@
             "color variation": "It\u2019s got a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in."
         },
         "interaction_metadata": {
-            "diagnosis": "Melanoma",
+            "diagnosis": "melanoma",
             "diagnosis_success": true,
             "interaction_duration": 6,
             "num_symptoms_recovered": 5,
@@ -43,7 +43,7 @@
                 7
             ],
             "diagnosis_confidence_history": {
-                "Melanoma": [
+                "melanoma": [
                     NaN,
                     NaN,
                     NaN,
@@ -51,7 +51,7 @@
                     0.85,
                     0.9
                 ],
-                "Skin cancer (other types)": [
+                "skin cancer (other types)": [
                     NaN,
                     NaN,
                     NaN,
@@ -59,7 +59,7 @@
                     0.5,
                     0.6
                 ],
-                "Infected wound": [
+                "infected wound": [
                     0.1,
                     0.2,
                     0.2,
@@ -67,7 +67,7 @@
                     NaN,
                     NaN
                 ],
-                "Benign skin growth": [
+                "benign skin growth": [
                     0.1,
                     0.1,
                     0.1,
@@ -75,7 +75,7 @@
                     0.1,
                     0.1
                 ],
-                "Skin cancer (potential)": [
+                "skin cancer (potential)": [
                     0.3,
                     0.5,
                     0.7,

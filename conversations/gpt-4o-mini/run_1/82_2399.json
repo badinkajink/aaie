@@ -22,7 +22,7 @@
             "color variation": "It\u2019s got a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in."
         },
         "interaction_metadata": {
-            "diagnosis": "Melanoma",
+            "diagnosis": "melanoma",
             "diagnosis_success": true,
             "interaction_duration": 6,
             "num_symptoms_recovered": 9,
@@ -43,7 +43,7 @@
                 9
             ],
             "diagnosis_confidence_history": {
-                "Melanoma": [
+                "melanoma": [
                     0.5,
                     0.5,
                     0.8,
@@ -51,7 +51,7 @@
                     0.9,
                     0.9
                 ],
-                "Squamous Cell Carcinoma": [
+                "squamous cell carcinoma": [
                     0.6,
                     0.6,
                     0.6,
@@ -59,7 +59,7 @@
                     0.6,
                     0.6
                 ],
-                "Basal Cell Carcinoma": [
+                "basal cell carcinoma": [
                     0.7,
                     0.7,
                     0.7,
@@ -67,7 +67,7 @@
                     0.7,
                     0.7
                 ],
-                "Skin Infection (e.g., Cellulitis)": [
+                "skin infection (e.g., cellulitis)": [
                     0.4,
                     0.4,
                     0.4,
@@ -75,7 +75,7 @@
                     0.4,
                     0.4
                 ],
-                "Dermatitis": [
+                "dermatitis": [
                     0.3,
                     0.3,
                     0.3,

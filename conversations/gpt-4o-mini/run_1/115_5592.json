@@ -22,7 +22,7 @@
             "rapid growth": "I swear this mole or bump got bigger really fast, like in just a few weeks."
         },
         "interaction_metadata": {
-            "diagnosis": "Basal Cell Carcinoma",
+            "diagnosis": "basal cell carcinoma",
             "diagnosis_success": false,
             "interaction_duration": 6,
             "num_symptoms_recovered": 7,
@@ -43,7 +43,7 @@
                 7
             ],
             "diagnosis_confidence_history": {
-                "Skin infection": [
+                "skin infection": [
                     0.4,
                     0.45,
                     0.45,
@@ -51,7 +51,7 @@
                     0.5,
                     0.5
                 ],
-                "Dermatitis": [
+                "dermatitis": [
                     0.3,
                     0.35,
                     0.35,
@@ -59,7 +59,7 @@
                     0.4,
                     0.4
                 ],
-                "Squamous Cell Carcinoma": [
+                "squamous cell carcinoma": [
                     0.5,
                     0.55,
                     0.65,
@@ -67,7 +67,7 @@
                     0.7,
                     0.7
                 ],
-                "Basal Cell Carcinoma": [
+                "basal cell carcinoma": [
                     0.7,
                     0.75,
                     0.8,

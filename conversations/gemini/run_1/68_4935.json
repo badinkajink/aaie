@@ -22,7 +22,7 @@
             "border irregularity": "The edges are all jagged, kinda messy, not smooth like my other moles."
         },
         "interaction_metadata": {
-            "diagnosis": "Melanoma",
+            "diagnosis": "melanoma",
             "diagnosis_success": true,
             "interaction_duration": 4,
             "num_symptoms_recovered": 10,
@@ -40,19 +40,19 @@
                 10
             ],
             "diagnosis_confidence_history": {
-                "Melanoma": [
+                "melanoma": [
                     0.4,
                     0.6,
                     0.75,
                     0.85
                 ],
-                "Basal Cell Carcinoma": [
+                "basal cell carcinoma": [
                     0.1,
                     0.1,
                     0.1,
                     0.1
                 ],
-                "Dysplastic Nevus": [
+                "dysplastic nevus": [
                     0.2,
                     0.2,
                     0.2,

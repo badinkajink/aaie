@@ -22,8 +22,8 @@
             "shiny or waxy bump": "It looks kinda like a smooth, shiny pimple, but it never pops or goes away."
         },
         "interaction_metadata": {
-            "diagnosis": "Dermatological lesion (e.g., mole, cyst, or melanoma)",
-            "diagnosis_success": false,
+            "diagnosis": "melanoma",
+            "diagnosis_success": true,
             "interaction_duration": 5,
             "num_symptoms_recovered": 4,
             "confidence_history": [
@@ -42,21 +42,21 @@
                 4
             ],
             "diagnosis_confidence_history": {
-                "Allergic reaction": [
+                "allergic reaction": [
                     0.4,
                     0.4,
                     0.4,
                     0.4,
                     0.4
                 ],
-                "Dermatological condition (e.g., eczema, dermatitis, or skin infection)": [
+                "dermatological condition (e.g., eczema, dermatitis, or skin infection)": [
                     0.6,
                     0.6,
                     0.6,
                     0.5,
                     0.5
                 ],
-                "Dermatological lesion (e.g., mole, cyst, or melanoma)": [
+                "melanoma": [
                     0.5,
                     0.7,
                     0.8,

@@ -22,7 +22,7 @@
             "color variation": "It\u2019s got a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in."
         },
         "interaction_metadata": {
-            "diagnosis": "Melanoma",
+            "diagnosis": "melanoma",
             "diagnosis_success": true,
             "interaction_duration": 8,
             "num_symptoms_recovered": 7,
@@ -45,7 +45,7 @@
                 7
             ],
             "diagnosis_confidence_history": {
-                "Melanoma": [
+                "melanoma": [
                     0.4,
                     0.4,
                     0.4,
@@ -55,7 +55,7 @@
                     0.8,
                     0.85
                 ],
-                "Pyogenic Granuloma": [
+                "pyogenic granuloma": [
                     0.7,
                     0.75,
                     0.8,
@@ -65,7 +65,7 @@
                     0.65,
                     0.65
                 ],
-                "Dermatitis": [
+                "dermatitis": [
                     0.3,
                     0.3,
                     0.35,
@@ -75,7 +75,7 @@
                     0.3,
                     0.3
                 ],
-                "Basal Cell Carcinoma": [
+                "basal cell carcinoma": [
                     0.5,
                     0.5,
                     0.5,

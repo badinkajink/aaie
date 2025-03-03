@@ -22,7 +22,7 @@
             "shiny or waxy bump": "It looks kinda like a smooth, shiny pimple, but it never pops or goes away."
         },
         "interaction_metadata": {
-            "diagnosis": "Suspicious dermatological lesion (consider biopsy)",
+            "diagnosis": "suspicious dermatological lesion (consider biopsy)",
             "diagnosis_success": false,
             "interaction_duration": 8,
             "num_symptoms_recovered": 6,
@@ -45,7 +45,7 @@
                 11
             ],
             "diagnosis_confidence_history": {
-                "Suspicious dermatological lesion (further investigation is urgently needed)": [
+                "suspicious dermatological lesion (further investigation is urgently needed)": [
                     NaN,
                     NaN,
                     NaN,
@@ -55,7 +55,7 @@
                     NaN,
                     NaN
                 ],
-                "Suspicious dermatological lesion (consider biopsy)": [
+                "suspicious dermatological lesion (consider biopsy)": [
                     NaN,
                     NaN,
                     NaN,
@@ -65,7 +65,7 @@
                     0.7,
                     0.7
                 ],
-                "Dermatological condition (further investigation needed)": [
+                "dermatological condition (further investigation needed)": [
                     0.1,
                     0.2,
                     0.4,

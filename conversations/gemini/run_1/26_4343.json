@@ -22,7 +22,7 @@
             "shiny or waxy bump": "It looks kinda like a smooth, shiny pimple, but it never pops or goes away."
         },
         "interaction_metadata": {
-            "diagnosis": "Skin Cancer",
+            "diagnosis": "skin cancer",
             "diagnosis_success": false,
             "interaction_duration": 4,
             "num_symptoms_recovered": 6,
@@ -41,19 +41,19 @@
                 6
             ],
             "diagnosis_confidence_history": {
-                "Eczema": [
+                "eczema": [
                     0.1,
                     0.1,
                     0.1,
                     0.1
                 ],
-                "Contact Dermatitis": [
+                "contact dermatitis": [
                     0.2,
                     0.2,
                     0.2,
                     0.2
                 ],
-                "Skin Cancer": [
+                "skin cancer": [
                     0.1,
                     0.4,
                     0.7,

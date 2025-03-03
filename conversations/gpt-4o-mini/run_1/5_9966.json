@@ -22,7 +22,7 @@
             "induration": "It feels thicker or harder than the rest of my skin, like there's something under there."
         },
         "interaction_metadata": {
-            "diagnosis": "Melanoma",
+            "diagnosis": "melanoma",
             "diagnosis_success": true,
             "interaction_duration": 5,
             "num_symptoms_recovered": 2,
@@ -42,21 +42,21 @@
                 2
             ],
             "diagnosis_confidence_history": {
-                "Basal Cell Carcinoma": [
+                "basal cell carcinoma": [
                     0.4,
                     0.4,
                     0.4,
                     0.6,
                     0.6
                 ],
-                "Seborrheic Keratosis": [
+                "seborrheic keratosis": [
                     0.5,
                     0.5,
                     0.5,
                     0.4,
                     0.4
                 ],
-                "Melanoma": [
+                "melanoma": [
                     0.7,
                     0.6,
                     0.6,

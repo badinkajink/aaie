@@ -22,7 +22,7 @@
             "spontaneous bleeding": "Sometimes this spot just starts bleeding out of nowhere, even if I don\u2019t touch it."
         },
         "interaction_metadata": {
-            "diagnosis": "Melanoma",
+            "diagnosis": "melanoma",
             "diagnosis_success": true,
             "interaction_duration": 4,
             "num_symptoms_recovered": 4,
@@ -40,19 +40,19 @@
                 10
             ],
             "diagnosis_confidence_history": {
-                "Melanoma": [
+                "melanoma": [
                     0.6,
                     0.75,
                     0.85,
                     0.9
                 ],
-                "Basal Cell Carcinoma": [
+                "basal cell carcinoma": [
                     0.2,
                     0.25,
                     0.25,
                     0.25
                 ],
-                "Actinic Keratosis": [
+                "actinic keratosis": [
                     0.3,
                     0.3,
                     0.3,

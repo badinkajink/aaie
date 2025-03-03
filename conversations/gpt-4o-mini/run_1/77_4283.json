@@ -22,7 +22,7 @@
             "color variation": "It\u2019s got a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in."
         },
         "interaction_metadata": {
-            "diagnosis": "Skin infection (like folliculitis or abscess)",
+            "diagnosis": "skin infection (like folliculitis or abscess)",
             "diagnosis_success": false,
             "interaction_duration": 8,
             "num_symptoms_recovered": 5,
@@ -41,7 +41,7 @@
                 5
             ],
             "diagnosis_confidence_history": {
-                "Skin infection (like folliculitis or abscess)": [
+                "skin infection (like folliculitis or abscess)": [
                     0.7,
                     0.75,
                     0.7,
@@ -51,7 +51,7 @@
                     0.7,
                     0.7
                 ],
-                "Dermatitis (allergic or irritant)": [
+                "dermatitis (allergic or irritant)": [
                     0.6,
                     0.65,
                     0.7,
@@ -61,7 +61,7 @@
                     0.65,
                     0.65
                 ],
-                "Basal cell carcinoma or squamous cell carcinoma": [
+                "basal cell carcinoma or squamous cell carcinoma": [
                     0.5,
                     0.5,
                     0.5,
@@ -71,7 +71,7 @@
                     0.5,
                     0.5
                 ],
-                "Keratocystic odontogenic tumor": [
+                "keratocystic odontogenic tumor": [
                     0.4,
                     0.4,
                     0.4,

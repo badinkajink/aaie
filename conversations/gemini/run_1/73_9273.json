@@ -22,8 +22,8 @@
             "color variation": "It\u2019s got a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in."
         },
         "interaction_metadata": {
-            "diagnosis": "Skin Cancer (e.g., Melanoma)",
-            "diagnosis_success": false,
+            "diagnosis": "melanoma",
+            "diagnosis_success": true,
             "interaction_duration": 4,
             "num_symptoms_recovered": 5,
             "confidence_history": [
@@ -40,25 +40,25 @@
                 8
             ],
             "diagnosis_confidence_history": {
-                "Skin Cancer (e.g., Basal Cell Carcinoma, Squamous Cell Carcinoma)": [
+                "skin cancer (e.g., basal cell carcinoma, squamous cell carcinoma)": [
                     0.4,
                     0.4,
                     0.5,
                     0.5
                 ],
-                "Skin Cancer (e.g., Melanoma)": [
+                "melanoma": [
                     NaN,
                     0.6,
                     0.75,
                     0.8
                 ],
-                "Inflammatory Skin Condition (e.g., eczema, psoriasis)": [
+                "inflammatory skin condition (e.g., eczema, psoriasis)": [
                     0.2,
                     NaN,
                     NaN,
                     NaN
                 ],
-                "Infected Skin Lesion (e.g., bacterial infection)": [
+                "infected skin lesion (e.g., bacterial infection)": [
                     0.3,
                     0.2,
                     0.2,

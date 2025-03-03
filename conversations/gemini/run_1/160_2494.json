@@ -22,7 +22,7 @@
             "pruritus": "It\u2019s super itchy sometimes, or feels kind of tingly, like a weird sensation under my skin."
         },
         "interaction_metadata": {
-            "diagnosis": "Melanoma",
+            "diagnosis": "melanoma",
             "diagnosis_success": true,
             "interaction_duration": 4,
             "num_symptoms_recovered": 5,
@@ -41,19 +41,19 @@
                 5
             ],
             "diagnosis_confidence_history": {
-                "Melanoma": [
+                "melanoma": [
                     0.6,
                     0.7,
                     0.8,
                     0.9
                 ],
-                "Basal Cell Carcinoma": [
+                "basal cell carcinoma": [
                     0.3,
                     0.2,
                     0.15,
                     0.08
                 ],
-                "Squamous Cell Carcinoma": [
+                "squamous cell carcinoma": [
                     0.1,
                     0.1,
                     0.05,

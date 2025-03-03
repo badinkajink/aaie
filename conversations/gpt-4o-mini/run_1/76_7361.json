@@ -22,7 +22,7 @@
             "color variation": "It\u2019s got a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in."
         },
         "interaction_metadata": {
-            "diagnosis": "Malignant Melanoma",
+            "diagnosis": "melanoma",
             "diagnosis_success": true,
             "interaction_duration": 6,
             "num_symptoms_recovered": 6,
@@ -43,7 +43,7 @@
                 6
             ],
             "diagnosis_confidence_history": {
-                "Skin Infection": [
+                "skin infection": [
                     0.4,
                     0.45,
                     0.5,
@@ -51,7 +51,7 @@
                     0.45,
                     0.45
                 ],
-                "Squamous Cell Carcinoma": [
+                "squamous cell carcinoma": [
                     0.5,
                     0.55,
                     0.55,
@@ -59,7 +59,7 @@
                     0.55,
                     0.55
                 ],
-                "Basal Cell Carcinoma": [
+                "basal cell carcinoma": [
                     0.6,
                     0.65,
                     0.65,
@@ -67,7 +67,7 @@
                     0.65,
                     0.65
                 ],
-                "Allergic Reaction": [
+                "allergic reaction": [
                     0.3,
                     0.35,
                     0.45,
@@ -75,7 +75,7 @@
                     0.35,
                     0.35
                 ],
-                "Malignant Melanoma": [
+                "melanoma": [
                     NaN,
                     NaN,
                     NaN,

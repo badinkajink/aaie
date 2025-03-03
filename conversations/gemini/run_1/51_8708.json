@@ -22,7 +22,7 @@
             "induration": "It feels thicker or harder than the rest of my skin, like there's something under there."
         },
         "interaction_metadata": {
-            "diagnosis": "Skin Cancer (e.g., Basal Cell Carcinoma, Squamous Cell Carcinoma)",
+            "diagnosis": "skin cancer (e.g., basal cell carcinoma, squamous cell carcinoma)",
             "diagnosis_success": false,
             "interaction_duration": 7,
             "num_symptoms_recovered": 4,
@@ -44,7 +44,7 @@
                 4
             ],
             "diagnosis_confidence_history": {
-                "Skin infection (Bacterial or Fungal)": [
+                "skin infection (bacterial or fungal)": [
                     0.1,
                     0.15,
                     0.15,
@@ -53,7 +53,7 @@
                     0.15,
                     0.15
                 ],
-                "Skin Cancer (e.g., Basal Cell Carcinoma, Squamous Cell Carcinoma)": [
+                "skin cancer (e.g., basal cell carcinoma, squamous cell carcinoma)": [
                     0.05,
                     0.08,
                     0.25,
@@ -62,7 +62,7 @@
                     0.55,
                     0.55
                 ],
-                "Contact Dermatitis": [
+                "contact dermatitis": [
                     0.1,
                     0.15,
                     0.2,
@@ -71,7 +71,7 @@
                     0.2,
                     0.2
                 ],
-                "Eczema (Atopic Dermatitis)": [
+                "eczema (atopic dermatitis)": [
                     NaN,
                     NaN,
                     0.3,

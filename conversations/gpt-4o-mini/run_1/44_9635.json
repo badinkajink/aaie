@@ -22,7 +22,7 @@
             "nodule formation": "It\u2019s kind of thick or raised, not flat like some of my other moles."
         },
         "interaction_metadata": {
-            "diagnosis": "Basal Cell Carcinoma",
+            "diagnosis": "basal cell carcinoma",
             "diagnosis_success": false,
             "interaction_duration": 7,
             "num_symptoms_recovered": 6,
@@ -44,7 +44,7 @@
                 8
             ],
             "diagnosis_confidence_history": {
-                "Vascular Lesion": [
+                "vascular lesion": [
                     0.3,
                     0.4,
                     0.4,
@@ -53,7 +53,7 @@
                     0.4,
                     0.4
                 ],
-                "Seborrheic Keratosis": [
+                "seborrheic keratosis": [
                     0.5,
                     0.5,
                     0.5,
@@ -62,7 +62,7 @@
                     0.5,
                     0.5
                 ],
-                "Dermatofibroma": [
+                "dermatofibroma": [
                     0.3,
                     0.4,
                     0.4,
@@ -71,7 +71,7 @@
                     0.4,
                     0.4
                 ],
-                "Melanocytic Nevus (Mole)": [
+                "melanocytic nevus (mole)": [
                     0.6,
                     0.6,
                     0.6,
@@ -80,7 +80,7 @@
                     0.6,
                     0.6
                 ],
-                "Basal Cell Carcinoma": [
+                "basal cell carcinoma": [
                     0.4,
                     0.7,
                     0.75,

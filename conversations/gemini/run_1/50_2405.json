@@ -22,7 +22,7 @@
             "induration": "It feels thicker or harder than the rest of my skin, like there's something under there."
         },
         "interaction_metadata": {
-            "diagnosis": "Skin Cancer",
+            "diagnosis": "skin cancer",
             "diagnosis_success": false,
             "interaction_duration": 6,
             "num_symptoms_recovered": 5,
@@ -43,7 +43,7 @@
                 6
             ],
             "diagnosis_confidence_history": {
-                "Inflammatory Dermatitis": [
+                "inflammatory dermatitis": [
                     0.2,
                     0.2,
                     0.4,
@@ -51,7 +51,7 @@
                     0.4,
                     0.4
                 ],
-                "Infected Ulcer": [
+                "infected ulcer": [
                     0.1,
                     0.1,
                     0.1,
@@ -59,7 +59,7 @@
                     0.1,
                     0.1
                 ],
-                "Skin Cancer": [
+                "skin cancer": [
                     0.3,
                     0.6,
                     0.7,

@@ -22,7 +22,7 @@
             "erythema": "The skin around it looks red or puffy, like it\u2019s irritated or reacting to something."
         },
         "interaction_metadata": {
-            "diagnosis": "Melanoma",
+            "diagnosis": "melanoma",
             "diagnosis_success": true,
             "interaction_duration": 4,
             "num_symptoms_recovered": 6,
@@ -40,19 +40,19 @@
                 11
             ],
             "diagnosis_confidence_history": {
-                "Melanoma": [
+                "melanoma": [
                     0.4,
                     0.6,
                     0.75,
                     0.85
                 ],
-                "Basal Cell Carcinoma": [
+                "basal cell carcinoma": [
                     0.2,
                     0.2,
                     0.2,
                     0.2
                 ],
-                "Actinic Keratosis": [
+                "actinic keratosis": [
                     0.1,
                     0.1,
                     0.1,

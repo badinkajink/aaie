@@ -22,7 +22,7 @@
             "telangiectasia": "There are these tiny, spidery red blood vessels around the spot that I didn\u2019t notice before."
         },
         "interaction_metadata": {
-            "diagnosis": "Basal Cell Carcinoma",
+            "diagnosis": "basal cell carcinoma",
             "diagnosis_success": false,
             "interaction_duration": 5,
             "num_symptoms_recovered": 6,
@@ -42,35 +42,35 @@
                 6
             ],
             "diagnosis_confidence_history": {
-                "Psoriasis": [
+                "psoriasis": [
                     0.4,
                     0.4,
                     0.4,
                     0.4,
                     0.4
                 ],
-                "Chronic Ulcer": [
+                "chronic ulcer": [
                     0.5,
                     0.5,
                     0.5,
                     0.5,
                     0.5
                 ],
-                "Eczema": [
+                "eczema": [
                     0.3,
                     0.3,
                     0.3,
                     0.3,
                     0.3
                 ],
-                "Basal Cell Carcinoma": [
+                "basal cell carcinoma": [
                     0.7,
                     0.75,
                     0.8,
                     0.85,
                     0.9
                 ],
-                "Squamous Cell Carcinoma": [
+                "squamous cell carcinoma": [
                     0.6,
                     0.65,
                     0.7,

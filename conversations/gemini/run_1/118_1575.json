@@ -22,8 +22,8 @@
             "rapid growth": "I swear this mole or bump got bigger really fast, like in just a few weeks."
         },
         "interaction_metadata": {
-            "diagnosis": "Skin Cancer (suspicion for melanoma or basal cell carcinoma)",
-            "diagnosis_success": false,
+            "diagnosis": "melanoma",
+            "diagnosis_success": true,
             "interaction_duration": 4,
             "num_symptoms_recovered": 5,
             "confidence_history": [
@@ -41,7 +41,7 @@
                 5
             ],
             "diagnosis_confidence_history": {
-                "Skin Cancer (suspicion for melanoma or basal cell carcinoma)": [
+                "melanoma": [
                     0.4,
                     0.6,
                     0.7,

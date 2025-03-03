@@ -22,7 +22,7 @@
             "hyperkeratosis": "There's this rough, flaky spot that won\u2019t go away, and sometimes it peels."
         },
         "interaction_metadata": {
-            "diagnosis": "Skin Cancer (likely basal cell carcinoma or squamous cell carcinoma)",
+            "diagnosis": "skin cancer (likely basal cell carcinoma or squamous cell carcinoma)",
             "diagnosis_success": false,
             "interaction_duration": 5,
             "num_symptoms_recovered": 5,
@@ -42,21 +42,21 @@
                 5
             ],
             "diagnosis_confidence_history": {
-                "Skin Cancer (likely basal cell carcinoma or squamous cell carcinoma)": [
+                "skin cancer (likely basal cell carcinoma or squamous cell carcinoma)": [
                     0.6,
                     0.6,
                     0.75,
                     0.8,
                     0.85
                 ],
-                "Benign skin lesion (e.g., atypical mole)": [
+                "benign skin lesion (e.g., atypical mole)": [
                     0.2,
                     0.2,
                     0.15,
                     0.1,
                     0.1
                 ],
-                "Skin infection": [
+                "skin infection": [
                     0.1,
                     0.1,
                     0.05,

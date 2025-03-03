@@ -22,7 +22,7 @@
             "color variation": "It\u2019s got a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in."
         },
         "interaction_metadata": {
-            "diagnosis": "Basal Cell Carcinoma",
+            "diagnosis": "basal cell carcinoma",
             "diagnosis_success": false,
             "interaction_duration": 6,
             "num_symptoms_recovered": 9,
@@ -39,7 +39,7 @@
                 9
             ],
             "diagnosis_confidence_history": {
-                "Melanoma": [
+                "melanoma": [
                     0.5,
                     0.55,
                     0.55,
@@ -47,7 +47,7 @@
                     0.55,
                     0.55
                 ],
-                "Squamous Cell Carcinoma": [
+                "squamous cell carcinoma": [
                     0.6,
                     0.65,
                     0.65,
@@ -55,7 +55,7 @@
                     0.65,
                     0.65
                 ],
-                "Seborrheic Keratosis": [
+                "seborrheic keratosis": [
                     0.4,
                     0.4,
                     0.4,
@@ -63,7 +63,7 @@
                     0.4,
                     0.4
                 ],
-                "Basal Cell Carcinoma": [
+                "basal cell carcinoma": [
                     0.7,
                     0.7,
                     0.7,

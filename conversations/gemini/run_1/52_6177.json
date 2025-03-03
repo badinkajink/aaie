@@ -22,8 +22,8 @@
             "induration": "It feels thicker or harder than the rest of my skin, like there's something under there."
         },
         "interaction_metadata": {
-            "diagnosis": "Skin Cancer (e.g., Melanoma, Basal Cell Carcinoma)",
-            "diagnosis_success": false,
+            "diagnosis": "melanoma",
+            "diagnosis_success": true,
             "interaction_duration": 5,
             "num_symptoms_recovered": 6,
             "confidence_history": [
@@ -42,21 +42,21 @@
                 6
             ],
             "diagnosis_confidence_history": {
-                "Vascular Lesion (e.g., Hemangioma)": [
+                "vascular lesion (e.g., hemangioma)": [
                     0.1,
                     0.1,
                     0.1,
                     0.1,
                     0.1
                 ],
-                "Inflammatory Skin Condition (e.g., Eczema, Psoriasis)": [
+                "inflammatory skin condition (e.g., eczema, psoriasis)": [
                     0.2,
                     0.2,
                     0.2,
                     0.2,
                     0.2
                 ],
-                "Skin Cancer (e.g., Melanoma, Basal Cell Carcinoma)": [
+                "melanoma": [
                     0.3,
                     0.6,
                     0.7,

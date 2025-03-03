@@ -22,8 +22,8 @@
             "shiny or waxy bump": "It looks kinda like a smooth, shiny pimple, but it never pops or goes away."
         },
         "interaction_metadata": {
-            "diagnosis": "Atypical nevus or melanoma",
-            "diagnosis_success": false,
+            "diagnosis": "melanoma",
+            "diagnosis_success": true,
             "interaction_duration": 4,
             "num_symptoms_recovered": 6,
             "confidence_history": [
@@ -40,31 +40,31 @@
                 6
             ],
             "diagnosis_confidence_history": {
-                "Skin infection (e.g., fungal, bacterial)": [
+                "skin infection (e.g., fungal, bacterial)": [
                     0.6,
                     0.5,
                     0.4,
                     0.3
                 ],
-                "Dermatological reaction (e.g., allergic reaction, dermatitis)": [
+                "dermatological reaction (e.g., allergic reaction, dermatitis)": [
                     0.7,
                     0.6,
                     0.5,
                     0.4
                 ],
-                "Psoriasis or other inflammatory skin conditions": [
+                "psoriasis or other inflammatory skin conditions": [
                     0.4,
                     0.4,
                     0.3,
                     0.2
                 ],
-                "Atypical nevus or melanoma": [
+                "melanoma": [
                     NaN,
                     0.8,
                     0.9,
                     0.95
                 ],
-                "Nevi (moles) with atypical features that could be concerning": [
+                "nevi (moles) with atypical features that could be concerning": [
                     0.5,
                     NaN,
                     NaN,

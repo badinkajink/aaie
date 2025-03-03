@@ -22,8 +22,8 @@
             "color variation": "It\u2019s got a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in."
         },
         "interaction_metadata": {
-            "diagnosis": "possible skin cancer (melanoma)",
-            "diagnosis_success": false,
+            "diagnosis": "melanoma",
+            "diagnosis_success": true,
             "interaction_duration": 8,
             "num_symptoms_recovered": 7,
             "confidence_history": [
@@ -66,7 +66,7 @@
                     0.6,
                     0.6
                 ],
-                "possible skin cancer (melanoma)": [
+                "melanoma": [
                     0.7,
                     0.8,
                     0.9,

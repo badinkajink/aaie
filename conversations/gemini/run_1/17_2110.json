@@ -22,7 +22,7 @@
             "telangiectasia": "There are these tiny, spidery red blood vessels around the spot that I didn\u2019t notice before."
         },
         "interaction_metadata": {
-            "diagnosis": "Actinic Keratosis",
+            "diagnosis": "actinic keratosis",
             "diagnosis_success": false,
             "interaction_duration": 8,
             "num_symptoms_recovered": 5,
@@ -45,7 +45,7 @@
                 5
             ],
             "diagnosis_confidence_history": {
-                "Psoriasis": [
+                "psoriasis": [
                     0.3,
                     0.4,
                     0.3,
@@ -55,7 +55,7 @@
                     0.3,
                     0.3
                 ],
-                "Actinic Keratosis": [
+                "actinic keratosis": [
                     0.2,
                     0.3,
                     0.5,
@@ -65,7 +65,7 @@
                     0.78,
                     0.8
                 ],
-                "Skin Cancer (e.g., Basal Cell Carcinoma)": [
+                "skin cancer (e.g., basal cell carcinoma)": [
                     0.1,
                     0.2,
                     0.4,

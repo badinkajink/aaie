@@ -22,7 +22,7 @@
             "rapid growth": "I swear this mole or bump got bigger really fast, like in just a few weeks."
         },
         "interaction_metadata": {
-            "diagnosis": "Melanoma",
+            "diagnosis": "melanoma",
             "diagnosis_success": true,
             "interaction_duration": 6,
             "num_symptoms_recovered": 9,
@@ -43,7 +43,7 @@
                 7
             ],
             "diagnosis_confidence_history": {
-                "Melanoma": [
+                "melanoma": [
                     0.2,
                     0.2,
                     0.6,
@@ -51,7 +51,7 @@
                     0.75,
                     0.8
                 ],
-                "Squamous cell carcinoma": [
+                "squamous cell carcinoma": [
                     0.3,
                     0.4,
                     0.4,
@@ -59,7 +59,7 @@
                     0.4,
                     0.4
                 ],
-                "Basal cell carcinoma": [
+                "basal cell carcinoma": [
                     0.4,
                     0.5,
                     0.5,

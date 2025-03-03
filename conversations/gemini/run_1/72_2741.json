@@ -22,8 +22,8 @@
             "color variation": "It\u2019s got a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in."
         },
         "interaction_metadata": {
-            "diagnosis": "Skin Cancer (e.g., Melanoma)",
-            "diagnosis_success": false,
+            "diagnosis": "melanoma",
+            "diagnosis_success": true,
             "interaction_duration": 5,
             "num_symptoms_recovered": 5,
             "confidence_history": [
@@ -42,49 +42,42 @@
                 5
             ],
             "diagnosis_confidence_history": {
-                "Skin Cancer (e.g., Melanoma, Squamous Cell Carcinoma)": [
-                    0.4,
-                    0.6,
-                    NaN,
-                    NaN,
-                    NaN
-                ],
-                "Eczema or Dermatitis": [
-                    0.1,
-                    0.05,
-                    0.05,
-                    0.03,
-                    0.02
-                ],
-                "Bacterial Skin Infection (e.g., Cellulitis)": [
-                    0.2,
-                    0.15,
-                    0.05,
-                    0.03,
-                    0.02
-                ],
-                "Actinic Keratosis": [
-                    NaN,
-                    0.05,
-                    0.05,
-                    0.03,
-                    0.02
-                ],
-                "Skin Cancer (e.g., Melanoma)": [
+                "melanoma": [
                     NaN,
                     NaN,
                     0.8,
                     0.85,
                     0.9
                 ],
-                "Basal Cell Carcinoma": [
+                "eczema or dermatitis": [
+                    0.1,
+                    0.05,
+                    0.05,
+                    0.03,
+                    0.02
+                ],
+                "bacterial skin infection (e.g., cellulitis)": [
+                    0.2,
+                    0.15,
+                    0.05,
+                    0.03,
+                    0.02
+                ],
+                "actinic keratosis": [
+                    NaN,
+                    0.05,
+                    0.05,
+                    0.03,
+                    0.02
+                ],
+                "basal cell carcinoma": [
                     NaN,
                     NaN,
                     NaN,
                     0.03,
                     0.02
                 ],
-                "Fungal Skin Infection (e.g., Tinea)": [
+                "fungal skin infection (e.g., tinea)": [
                     0.1,
                     0.1,
                     0.05,

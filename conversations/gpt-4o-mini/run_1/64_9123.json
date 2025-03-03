@@ -22,7 +22,7 @@
             "border irregularity": "The edges are all jagged, kinda messy, not smooth like my other moles."
         },
         "interaction_metadata": {
-            "diagnosis": "Melanoma",
+            "diagnosis": "melanoma",
             "diagnosis_success": true,
             "interaction_duration": 7,
             "num_symptoms_recovered": 8,
@@ -44,7 +44,7 @@
                 8
             ],
             "diagnosis_confidence_history": {
-                "Melanoma": [
+                "melanoma": [
                     0.3,
                     0.5,
                     0.5,
@@ -53,7 +53,7 @@
                     0.95,
                     0.95
                 ],
-                "Seborrheic Keratosis": [
+                "seborrheic keratosis": [
                     0.5,
                     0.5,
                     0.5,
@@ -62,7 +62,7 @@
                     0.5,
                     0.5
                 ],
-                "Basal Cell Carcinoma": [
+                "basal cell carcinoma": [
                     0.6,
                     0.7,
                     0.75,
@@ -71,7 +71,7 @@
                     0.75,
                     0.75
                 ],
-                "Cherry Angioma": [
+                "cherry angioma": [
                     0.4,
                     0.4,
                     0.4,
@@ -80,7 +80,7 @@
                     0.4,
                     0.4
                 ],
-                "Pyogenic Granuloma": [
+                "pyogenic granuloma": [
                     0.4,
                     0.4,
                     0.4,

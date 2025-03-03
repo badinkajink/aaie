@@ -22,7 +22,7 @@
             "shiny or waxy bump": "It looks kinda like a smooth, shiny pimple, but it never pops or goes away."
         },
         "interaction_metadata": {
-            "diagnosis": "Melanoma",
+            "diagnosis": "melanoma",
             "diagnosis_success": true,
             "interaction_duration": 6,
             "num_symptoms_recovered": 8,
@@ -44,7 +44,7 @@
                 8
             ],
             "diagnosis_confidence_history": {
-                "Melanoma": [
+                "melanoma": [
                     0.9,
                     0.9,
                     0.9,
@@ -52,7 +52,7 @@
                     0.95,
                     0.95
                 ],
-                "Squamous cell carcinoma": [
+                "squamous cell carcinoma": [
                     0.6,
                     0.6,
                     0.6,
@@ -60,7 +60,7 @@
                     0.65,
                     0.65
                 ],
-                "Dysplastic nevus": [
+                "dysplastic nevus": [
                     0.5,
                     0.5,
                     0.5,
@@ -68,7 +68,7 @@
                     0.55,
                     0.55
                 ],
-                "Basal cell carcinoma": [
+                "basal cell carcinoma": [
                     0.7,
                     0.7,
                     0.7,

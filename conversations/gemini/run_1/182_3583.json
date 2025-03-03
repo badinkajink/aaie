@@ -22,8 +22,8 @@
             "color variation": "It\u2019s got a bunch of different colors\u2014like brown, black, maybe even some red or blue mixed in."
         },
         "interaction_metadata": {
-            "diagnosis": "Suspicious for Skin Cancer (possible basal cell carcinoma, squamous cell carcinoma, or melanoma)",
-            "diagnosis_success": false,
+            "diagnosis": "melanoma",
+            "diagnosis_success": true,
             "interaction_duration": 5,
             "num_symptoms_recovered": 10,
             "confidence_history": [
@@ -42,7 +42,7 @@
                 10
             ],
             "diagnosis_confidence_history": {
-                "Suspicious for Skin Cancer (possible basal cell carcinoma, squamous cell carcinoma, or melanoma)": [
+                "melanoma": [
                     0.4,
                     0.5,
                     0.55,

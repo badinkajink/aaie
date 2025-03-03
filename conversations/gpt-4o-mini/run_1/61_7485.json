@@ -22,7 +22,7 @@
             "border irregularity": "The edges are all jagged, kinda messy, not smooth like my other moles."
         },
         "interaction_metadata": {
-            "diagnosis": "malignant melanoma",
+            "diagnosis": "melanoma",
             "diagnosis_success": true,
             "interaction_duration": 5,
             "num_symptoms_recovered": 8,
@@ -49,7 +49,7 @@
                     0.3,
                     0.3
                 ],
-                "malignant melanoma": [
+                "melanoma": [
                     0.3,
                     0.3,
                     0.3,

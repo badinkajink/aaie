@@ -22,7 +22,7 @@
             "hyperkeratosis": "There's this rough, flaky spot that won\u2019t go away, and sometimes it peels."
         },
         "interaction_metadata": {
-            "diagnosis": "Basal Cell Carcinoma",
+            "diagnosis": "basal cell carcinoma",
             "diagnosis_success": false,
             "interaction_duration": 7,
             "num_symptoms_recovered": 6,
@@ -45,7 +45,7 @@
                 6
             ],
             "diagnosis_confidence_history": {
-                "Eczema": [
+                "eczema": [
                     0.5,
                     0.5,
                     0.5,
@@ -54,7 +54,7 @@
                     0.5,
                     0.5
                 ],
-                "Contact Dermatitis": [
+                "contact dermatitis": [
                     0.6,
                     0.6,
                     0.5,
@@ -63,7 +63,7 @@
                     0.5,
                     0.5
                 ],
-                "Basal Cell Carcinoma": [
+                "basal cell carcinoma": [
                     0.3,
                     0.5,
                     0.7,
@@ -72,7 +72,7 @@
                     0.9,
                     0.95
                 ],
-                "Skin Infection (like Impetigo)": [
+                "skin infection (like impetigo)": [
                     0.4,
                     0.4,
                     0.4,
@@ -81,7 +81,7 @@
                     0.4,
                     0.4
                 ],
-                "Psoriasis": [
+                "psoriasis": [
                     0.4,
                     0.4,
                     0.4,

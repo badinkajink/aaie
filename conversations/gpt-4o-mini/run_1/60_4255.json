@@ -22,7 +22,7 @@
             "border irregularity": "The edges are all jagged, kinda messy, not smooth like my other moles."
         },
         "interaction_metadata": {
-            "diagnosis": "potential skin cancer (e.g., melanoma)",
+            "diagnosis": "melanoma",
             "diagnosis_success": true,
             "interaction_duration": 6,
             "num_symptoms_recovered": 7,
@@ -51,7 +51,7 @@
                     0.65,
                     0.6
                 ],
-                "potential skin cancer (e.g., melanoma)": [
+                "melanoma": [
                     0.7,
                     0.75,
                     0.85,
