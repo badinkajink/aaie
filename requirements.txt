@@ -11,3 +11,4 @@ matplotlib
 plotly
 seaborn
 pandas
+thefuzz
